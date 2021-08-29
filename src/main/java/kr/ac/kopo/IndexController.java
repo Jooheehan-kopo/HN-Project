@@ -22,4 +22,10 @@ public class IndexController {
 		System.out.println("account/accountMain");
 		return "account/accountMain";
 	}
+	
+	@GetMapping("stock/stockMain")
+	public String stock() {
+		System.out.println("stock/stockMain");
+		return "stock/stockMain";
+	}
 }

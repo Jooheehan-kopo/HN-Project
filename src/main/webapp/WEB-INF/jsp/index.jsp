@@ -12,7 +12,10 @@
 <body class="host_version"> 
 
 	<!-- Modal -->
-<jsp:include page="/WEB-INF/include/login.jsp"/>
+	
+		
+		
+		
 
     <!-- LOADER -->
 	<div id="preloader">
@@ -44,43 +47,12 @@
 	</div>
 	<!-- END LOADER -->
 
-    <header class="header header_style_01">
-        <nav class="megamenu navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" ></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a class="active" href="${ pageContext.request.contextPath }/index">Home</a></li>
-                       
-                        <li class="dropdown">
-						   <a href="${pageContext.request.contextPath }/accountMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">은행계좌 <span class="navbar-collapse collapse"></span></a>
-						    <ul class="dropdown-menu" role="menu">
-						       <li><a href="${pageContext.request.contextPath }/account/accountMain">개설</a></li>
-						       <li><a href="#">조회</a></li>
-						       <li><a href="#">이체</a></li>
-						    </ul>
-						</li>
-                        <li><a href="domain.html">Domain</a></li>
-                        <li><a href="${pageContext.request.contextPath }/">Hosting</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="btn-light btn-radius btn-brd log" href="#" data-toggle="modal" data-target="#login"><i class="flaticon-padlock"></i> Customer Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+      <!-- header -->
+   
+   	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
+   	
+   	
+   	
 	
 	<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="false" >
 		<!-- Indicators -->
@@ -734,92 +706,7 @@
         <a href="#"><h3>Interesting our awesome web design services? Just drop an email to us and get quote for free!</h3></a>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting-light.png" alt="">
-                            <small>Web Hosting Template</small>
-                        </div>
-                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
-                        <p>Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-
-				<div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Information Link</h3>
-                        </div>
-                        <ul class="footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Pricing</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Faq</a></li>
-							<li><a href="#">Contact</a></li>
-                        </ul><!-- end links -->
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-				
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Contact Details</h3>
-                        </div>
-
-                        <ul class="footer-links">
-                            <li><a href="mailto:#">info@yoursite.com</a></li>
-                            <li><a href="#">www.yoursite.com</a></li>
-                            <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                            <li>+61 3 8376 6284</li>
-                        </ul><!-- end links -->
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-
-                <div class="col-md-2 col-sm-2 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Social</h3>
-                        </div>
-                        <ul class="footer-links">
-                            <li><a href="#"><i class="fa fa-facebook"></i> 22.543 Likes</a></li>
-                            <li><a href="#"><i class="fa fa-github"></i> 128 Projects</a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i> 12.860 Followers</a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i> 3312 Shots</a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i>3331 Pins</a></li>
-                        </ul><!-- end links -->
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </footer><!-- end footer -->
-
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">                   
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 Design By: <a href="https://html.design/">html design</a> Distributed By: <a href="https://themewagon.com/">ThemeWagon</a></p> 
-                </div>
-
-                <div class="footer-right">
-                    <form method="get" action="#">
-                        <input placeholder="Subscribe our newsletter.." name="search">
-                        <i class="fa fa-envelope-o"></i>
-                    </form>
-                </div>
-            </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
-
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-
-    <!-- ALL JS FILES -->
-    <script src="${ pageContext.request.contextPath }/resources/js/all.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="${ pageContext.request.contextPath }/resources/js/custom.js"></script>
+	<jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
 
 </body>
 </html>

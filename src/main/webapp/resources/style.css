@@ -605,7 +605,7 @@ li.social-links a {
 }
 
 .first-section h2 strong{
-	color: #008485;
+	color: #00aeef;
 }
 
 .first-section .lead {
@@ -652,6 +652,7 @@ li.social-links a {
 .section.db h3 {
     color: #ffffff;
 }
+
 
 
 /*------------------------------------------------------------------
@@ -1820,7 +1821,7 @@ select.mobile-device {
 }
 
 
-/*# sourceMappingURL=bootstrap-select.css.map */
+
 
 .bootstrap-select > .btn {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;

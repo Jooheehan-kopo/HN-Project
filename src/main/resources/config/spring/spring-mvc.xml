@@ -14,7 +14,7 @@
     <mvc:annotation-driven />
 	<mvc:default-servlet-handler />
 	
-<!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	<property name="location" value="classpath:config/prop/db.properties"/>
 	<property name="fileEncoding" value="UTF-8"/>
 	</bean>
@@ -32,10 +32,10 @@
 		<property name="configLocation" value="classpath:config/mybatis/sqlMapConfig.xml"/>
 		<property name="mapperLocations" value="classpath:config/sqlmap/oracle/*.xml"></property>
 	</bean>
-	 -->
-<!-- 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+	 
+ 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory"/>	
-	</bean> -->
+	</bean> 
 	
 	
 	<mvc:view-resolvers>

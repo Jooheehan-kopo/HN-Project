@@ -8,7 +8,7 @@
 </head>
 <body class="host_version"> 
 
-	<jsp:include page="/WEB-INF/include/login.jsp"></jsp:include>
+	
 	
     <!-- LOADER -->
 	<div id="preloader">
@@ -40,35 +40,11 @@
 	</div>
 	<!-- END LOADER -->
 
-    <header class="header header_style_01">
-        <nav class="megamenu navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image"></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a class="active" href="features.html">Features </a></li>
-                        <li><a href="domain.html">Domain</a></li>
-                        <li><a href="hosting.html">Hosting</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="btn-light btn-radius btn-brd log" href="#" data-toggle="modal" data-target="#login"><i class="flaticon-padlock"></i> Customer Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+       <!-- header -->
+   
+   	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
+   	
+   	
 	
 	<div class="all-title-box">
 		<div class="container text-center">
