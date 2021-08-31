@@ -48,10 +48,11 @@
 	</div>
 	<!-- END LOADER -->
 
-      <!-- header -->
+      <!-- ADMIN HEADER -->
    
-   	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
+   	<jsp:include page="/WEB-INF/include/adminHeader.jsp"></jsp:include>
    	
+		<!-- END HEADER -->
    	
    	
 	
@@ -64,17 +65,17 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<div id="home" class="first-section" style="background-image:url('${ pageContext.request.contextPath }/resources/images/uploads/hanamain.png');">
+				<div id="home" class="first-section" style="background-image:url('uploads/slider-01.jpg');">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
-									<h2 data-animation="animated zoomInRight">Best <strong>HANA-EDU</strong> Company</h2>
-									<p class="lead" data-animation="animated fadeInLeft"> </p>
-									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
+									<h2 data-animation="animated zoomInRight">Best <strong>관리자페이지!</strong> Company</h2>
+									<p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
+									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">View Plans</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">체험시작!</a>
+									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">All Features</a>
 								</div>
 							</div>
 						</div><!-- end row -->            
@@ -88,11 +89,11 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
-									<h2 data-animation="animated zoomInRight">나의 가상계좌로  <strong>투자</strong>해보기!</h2>
-									<p class="lead" data-animation="animated fadeInLeft">맛보기 주식체험을 통해 투자습관 up! 내 기록을 친구들과 함께 공유해요~ 1등에겐 서프라이즈 이벤트를!  </p>
-									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">주식체험 바로가기</a>
+									<h2 data-animation="animated zoomInRight">Find the right <strong>Hosting</strong></h2>
+									<p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
+									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">View Plans</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">지금바로 회원가입</a>
+									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">All Features</a>
 								</div>
 							</div>
 						</div><!-- end row -->            

@@ -19,22 +19,22 @@
                         <li><a class="active" href="${ pageContext.request.contextPath }/index">Home</a></li>
                        
                         <li class="dropdown">
-						   <a href="${pageContext.request.contextPath }/accountMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">은행계좌 <span class="navbar-collapse collapse"></span></a>
+						   <a href="${pageContext.request.contextPath }/accountMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">계좌관리 <span class="navbar-collapse collapse"></span></a>
 						    <ul class="dropdown-menu" role="menu">
 						       <li><a href="${pageContext.request.contextPath }/account/accountMain">개설</a></li>
 						       <li><a href="#">조회</a></li>
 						       <li><a href="#">이체</a></li>
 						    </ul>
 						</li>
-                        <li><a href="${pageContext.request.contextPath }/stock/stockMain">주식</a></li>
-                        <li><a href="${pageContext.request.contextPath }/">Hosting</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="${pageContext.request.contextPath }/stock/stockMain">주식계좌관리</a></li>
+                        <li><a href="${pageContext.request.contextPath }/">업데이트</a></li>
+                        <li><a href="pricing.html">게시글관리</a></li>
+                        <li><a href="testimonials.html">고객검색</a></li>
                         
                     </ul>
                     <c:if test="${empty userVO }">
 	                    <ul class="nav navbar-nav navbar-right">
-	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/login" ><i class="flaticon-padlock"></i>로그인</a></li>
+	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/adminLogin" ><i class="flaticon-padlock"></i>본인인증</a></li>
 	                    </ul>
                     </c:if>
                      <c:if test ="${not empty userVO }">
@@ -45,7 +45,7 @@
 	                     </li>
 	                 	</c:if> --%>
 	 
-	  						<li><c:out value="${userVO.id}"/>님</li>
+	  						<li><c:out value="${userVO.id}"/>관리자님</li>
 	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/logout" ><i class="flaticon-padlock"></i>로그아웃</a></li>
 	  					 </ul>
   					 </c:if>

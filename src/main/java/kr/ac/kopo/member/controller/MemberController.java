@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import kr.ac.kopo.member.service.MemberServiceImpl;
 import kr.ac.kopo.member.vo.MemberVO;
@@ -38,14 +39,22 @@ public class MemberController {
 			return "login/login";
 		}
 		
-		model.addAttribute("userVO", userVO);
+		//관리자페이지로 이동//?
+		if(userVO.getType().equals("S")) {
+			return "admin/index";
+		}
+	
+		
+		session.setAttribute("userVO", userVO);
 		
 		return "redirect:/"; //로그인성공시 홈화면으로 이동
 	}
-	
+
 	@GetMapping("/logout")
-	public String logout(HttpSession session) {
-		session.invalidate();
+	public String logout(SessionStatus sessionStatus) {
+//		session.invalidate(); //얘가 안먹힘. sessionAttribute로 하면.
+		
+		sessionStatus.setComplete();
 		return "redirect:/";
 	}
 	

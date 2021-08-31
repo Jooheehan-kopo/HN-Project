@@ -1,5 +1,7 @@
 package kr.ac.kopo;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -27,5 +29,13 @@ public class IndexController {
 	public String stock() {
 		System.out.println("stock/stockMain");
 		return "stock/stockMain";
+	}
+	
+
+	
+	@GetMapping("admin/index")
+	public String adminIndex() {
+		System.out.println("admin/index");
+		return "admin/index";
 	}
 }
