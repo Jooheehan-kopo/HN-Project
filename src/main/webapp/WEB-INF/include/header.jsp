@@ -22,14 +22,14 @@
 						   <a href="${pageContext.request.contextPath }/accountMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">은행계좌 <span class="navbar-collapse collapse"></span></a>
 						    <ul class="dropdown-menu" role="menu">
 						       <li><a href="${pageContext.request.contextPath }/account/accountMain">개설</a></li>
-						       <li><a href="#">조회</a></li>
+						       <li><a href="${pageContext.request.contextPath }/account/accountSearch">조회</a></li>
 						       <li><a href="#">이체</a></li>
 						    </ul>
 						</li>
                         <li><a href="${pageContext.request.contextPath }/stock/stockMain">주식</a></li>
-                        <li><a href="${pageContext.request.contextPath }/">Hosting</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="${pageContext.request.contextPath }/member/rank">친구순위</a></li>
+                        <li><a href="${pageContext.request.contextPath }/media/hanaTV">하나티비</a></li>
+                        <li><a href="testimonials.html">마이페이지</a></li>
                         
                     </ul>
                     <c:if test="${empty userVO }">

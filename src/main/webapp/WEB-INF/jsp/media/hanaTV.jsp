@@ -2,13 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+
 <!-- HEAD -->
 <jsp:include page="/WEB-INF/include/head.jsp"/>
 
-</head>
+
 <body class="host_version"> 
 
-	
+<!-- login -->
+
 	
     <!-- LOADER -->
 	<div id="preloader">
@@ -40,11 +42,12 @@
 	</div>
 	<!-- END LOADER -->
 
-       <!-- header -->
+        <!-- header -->
    
    	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
    	
    	
+   	<!-- main image -->
 	
 	<div class="all-title-box">
 		<div class="container text-center">
@@ -54,12 +57,7 @@
 	
     <div id="overviews" class="section wb">
         <div class="container">
-            <div class="section-title row text-center">
-                <div class="col-md-8 col-md-offset-2">
-                    <h3>Features</h3>
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
-                </div>
-            </div><!-- end title -->
+            
 
             <hr class="invis"> 
 
@@ -233,15 +231,7 @@
 		</div><!-- end container -->
 	</div><!-- end section -->
 
-    <div id="pricing" class="section lb">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Ready to get started?</h3>
-                <p class="lead">Get the red carpet treatment <strong>just $39 per month!</strong> It is estimated that 3.5 million established by personal blogs.<br> From each other, we share paid WordPress themes WP Service...</p>
-            </div><!-- end title -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
+    
     <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('uploads/parallax_04.jpg');">
         <div class="container">
             <div class="section-title text-center">
@@ -333,27 +323,28 @@
         </div><!-- end container -->
     </div><!-- end section -->
 
-  
+
+
     <div class="parallax section db parallax-off" style="background-image:url('uploads/parallax_02.jpg');">
         <div class="container">
             <div class="row logos">
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="uploads/logo_01.png" alt="" class="img-repsonsive"></a>
+                    <a href="#"><img src="resources/uploads/logo_01.png" alt="" class="img-repsonsive"></a>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="uploads/logo_02.png" alt="" class="img-repsonsive"></a>
+                    <a href="#"><img src="resources/uploads/logo_02.png" alt="" class="img-repsonsive"></a>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="uploads/logo_03.png" alt="" class="img-repsonsive"></a>
+                    <a href="#"><img src="resources/uploads/logo_03.png" alt="" class="img-repsonsive"></a>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="uploads/logo_04.png" alt="" class="img-repsonsive"></a>
+                    <a href="#"><img src="resources/uploads/logo_04.png" alt="" class="img-repsonsive"></a>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="uploads/logo_05.png" alt="" class="img-repsonsive"></a>
+                    <a href="#"><img src="resources/uploads/logo_05.png" alt="" class="img-repsonsive"></a>
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                    <a href="#"><img src="uploads/logo_06.png" alt="" class="img-repsonsive"></a>
+                    <a href="#"><img src="resources/uploads/logo_06.png" alt="" class="img-repsonsive"></a>
                 </div>
             </div><!-- end row -->
         </div><!-- end container -->
@@ -363,7 +354,9 @@
         <a href="#"><h3>Interesting our awesome web design services? Just drop an email to us and get quote for free!</h3></a>
     </section>
 
-  <jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
+   	<jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
+
+
 
 </body>
 </html>

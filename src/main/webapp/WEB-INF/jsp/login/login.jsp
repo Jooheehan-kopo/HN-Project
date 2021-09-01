@@ -16,7 +16,7 @@
 
 	<!-- header -->
 	<!-- LOADER -->
-	<div id="preloader">
+	<!-- <div id="preloader">
 		<div class="loading">
 			<div class="finger finger-1">
 				<div class="finger-item">
@@ -44,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- END LOADER -->
 
 

@@ -18,5 +18,6 @@ public class StockDAOTest {
 	@Test
 	public void stockTest() throws Exception{
 		service.insert(null);
+	
 	}
 }

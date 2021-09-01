@@ -24,6 +24,9 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 	
+	
+	
+	
 	@RequestMapping("/board")
 	public ModelAndView selectAll() {
 		List<BoardVO> boardList = service.selectAllBoard();

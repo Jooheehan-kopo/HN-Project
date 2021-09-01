@@ -20,9 +20,14 @@ public class IndexController {
 	}
 	
 	@GetMapping("account/accountMain")
-	public String page() {
+	public String acMain() {
 		System.out.println("account/accountMain");
 		return "account/accountMain";
+	}
+	@GetMapping("account/accountSearch")
+	public String acSearch() {
+		System.out.println("account/accountSearch");
+		return "account/accountSearch";
 	}
 	
 	@GetMapping("stock/stockMain")
@@ -37,5 +42,17 @@ public class IndexController {
 	public String adminIndex() {
 		System.out.println("admin/index");
 		return "admin/index";
+	}
+	
+	@GetMapping("member/rank")
+	public String rank() {
+		System.out.println("member/rank");
+		return "member/rank";
+	}
+	
+	@GetMapping("media/hanaTV")
+	public String hanaTV() {
+		System.out.println("media/hanaTV");
+		return "media/hanaTV";
 	}
 }

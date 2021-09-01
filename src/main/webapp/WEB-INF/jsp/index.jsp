@@ -64,7 +64,7 @@
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<div id="home" class="first-section" style="background-image:url('${ pageContext.request.contextPath }/resources/images/uploads/hanamain.png');">
+				<div id="home" class="first-section" style="background-image:url('${ pageContext.request.contextPath }/resources/uploads/hanamain.png');">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
@@ -82,7 +82,7 @@
 				</div><!-- end section -->
 			</div>
 			<div class="item">
-				<div id="home" class="first-section" style="background-image:url('uploads/slider-02.jpg');">
+				<div id="home" class="first-section" style="background-image:url('resources/uploads/slider-02.png');">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
@@ -100,7 +100,7 @@
 				</div><!-- end section -->
 			</div>
 			<div class="item">
-				<div id="home" class="first-section" style="background-image:url('uploads/slider-03.jpg');">
+				<div id="home" class="first-section" style="background-image:url('resources/uploads/slider-03.png');">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
@@ -138,7 +138,7 @@
             <div class="section-title row text-center">
                 <div class="col-md-8 col-md-offset-2">
                     <h3>About</h3>
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                    <p class="lead">가상계좌개설, 투자체험을 통해 투자를 쉽고 재미있게! 부담없이!</p>
                 </div>
             </div><!-- end title -->
         
