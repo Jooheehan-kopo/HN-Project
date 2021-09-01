@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 
 <!-- HEAD -->
+
 <jsp:include page="/WEB-INF/include/head.jsp"/>
+	
 
 
 <body class="host_version"> 
@@ -50,10 +52,22 @@
    	<!-- main image -->
 	
 	<div class="all-title-box">
-		<div class="container text-center">
-			<h1>Features<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+		<div class="container text-center" >
+			<h1>하나티비<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
 		</div>
 	</div>
+	<hr>
+	<div class="">
+		<div class="container text-center" id="video-channel"></div>
+			<br>
+			<hr>
+			<br>
+		<div class="container text-center" id="video-container"></div>
+		
+	</div>
+
+ <script src="${ pageContext.request.contextPath }/resources/js/main.js"></script>
+	
 	
     <div id="overviews" class="section wb">
         <div class="container">
@@ -62,21 +76,17 @@
             <hr class="invis"> 
 
             <div class="row"> 
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <i class="flaticon-server global-radius effect-1 alignleft"></i>
-                        <h3>Unlimited Bandwidth</h3>
-                        <p>Our Landigoo responsive site template elements 100% compatible with all mobile devices and modern browsers! <small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
+               
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                        <i class="flaticon-cloud-computing-1 global-radius effect-1 alignleft"></i>
+                       
                         <h3>Unlimited Traffic</h3>
                         <p>When you need anything about for Landigoo template, just drop an email or leave a feedback from TF!<small class="readmore"><a href="#">Read more</a></small></p>
                     </div><!-- end icon-wrapper -->
                 </div><!-- end col -->
+                
+                
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">

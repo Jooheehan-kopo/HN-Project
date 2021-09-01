@@ -19,6 +19,7 @@
     <link rel="apple-touch-icon" href="${ pageContext.request.contextPath }/resources/images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
+    
     <link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="${ pageContext.request.contextPath }/resources/style.css">
