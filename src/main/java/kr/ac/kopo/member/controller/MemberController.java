@@ -50,6 +50,14 @@ public class MemberController {
 		return "redirect:/"; //로그인성공시 홈화면으로 이동
 	}
 
+	
+	@GetMapping("member/resister")
+	public String index() {
+		System.out.println("resister");
+		return "member/resister";
+	}
+	
+	
 	@GetMapping("/logout")
 	public String logout(SessionStatus sessionStatus) {
 //		session.invalidate(); //얘가 안먹힘. sessionAttribute로 하면.

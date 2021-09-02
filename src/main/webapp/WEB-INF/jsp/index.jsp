@@ -70,9 +70,9 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
-									<h2 data-animation="animated zoomInRight">Best <strong>HANA-EDU</strong> Company</h2>
+									<h2 data-animation="animated zoomInRight">Best <strong>Play-HANA</strong> Company</h2>
 									<p class="lead" data-animation="animated fadeInLeft"> </p>
-									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
+									 <a data-scroll href="${pageContext.request.contextPath }/member/resister" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">체험시작!</a>
 								</div>
@@ -106,10 +106,9 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
-									<h2 data-animation="animated zoomInRight">Best <strong>VPS Servers</strong> Company</h2>
-									<p class="lead" data-animation="animated fadeInLeft">1 IP included with each server (more on request to justification)
-										Your Choice of any OS (CentOS, Windows, Debian, Fedora)
-										FREE Reboots</p>
+									<h2 data-animation="animated zoomInRight">나의 금융지식<strong>성향테스트</strong> Company</h2>
+									<p class="lead" data-animation="animated fadeInLeft">
+										14문제를 통한 나의 금융지식 투자 성향 테스트! 완료 후 SNS에 공유하기~~ 친구들의 성향도 파악해보자! 누가누가 잘하나!</p>
 									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">View Plans</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">All Features</a>

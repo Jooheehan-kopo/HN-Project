@@ -7,7 +7,7 @@
 
 	<select id="login" parameterType="memberVO" resultType="memberVO">
 		select id, name, password, type
-		from t_member
+		from member
 		where id= #{id} and password= #{password}
 	</select>
 </mapper>

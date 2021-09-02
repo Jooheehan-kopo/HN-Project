@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JH BANK 회원가입</title>
+  <title>PlayHana 회원가입</title>
 
   <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -20,14 +20,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
+  :root{
+	--body-background-color: #f5f6f7;
+	--font-color: #4e4e4e;
+	--border-gray-color : #dadada;
+	--naver-green-color: #04c75a;
+	--naver-green-border-color: #06b350;
+}
+
     body {
       min-height: 100vh;
-
-      background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
-      background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
-      background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
-      background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
-      background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+	  background:var(--body-background-color);
+      
     }
 
     .input-form {
@@ -181,7 +185,7 @@
 </script>
 <script>
 	function complete(){
-		alert(${user_name}'님, 환영합니다! 회원가입이 완료되었습니다.')
+		alert(${userVO.id}'님, 환영합니다! 회원가입이 완료되었습니다.')
 	}
 
 </script>
@@ -193,7 +197,7 @@
   <div class="container">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
-        <h4 class="mb-3">JH BANK 회원가입</h4>
+        <h4 class="mb-3">PlayHana 회원가입</h4>
         <form method ="post" action="<%=request.getContextPath()%>/joinnew.do" class="validation-form" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -229,7 +233,7 @@
 							        <h4 class="modal-title"></h4>
 							      </div>
 							      <div class="modal-body">
-							        <p>사용가능한/ 불가능한 아이디입니다.</p>
+							        <p>사용가능한 아이디입니다.</p>
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btn button primary" data-dismiss="modal">닫기</button>
@@ -305,8 +309,9 @@
       </div>
     </div>
     </div>
-    
-    <jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
+    <footer class="my-3 text-center text-small">
+      <p class="mb-1">&copy; 2021 PlayHana</p>
+    </footer>
  
   <script>
     window.addEventListener('load', () => {
@@ -324,7 +329,8 @@
       });
     }, false);
   </script>
-  
+  <!-- Scripts -->
+	
 </body>
 
 </html>

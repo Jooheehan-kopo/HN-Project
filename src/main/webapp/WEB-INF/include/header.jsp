@@ -36,6 +36,9 @@
 	                    <ul class="nav navbar-nav navbar-right">
 	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/login" ><i class="flaticon-padlock"></i>로그인</a></li>
 	                    </ul>
+	                    <ul class="nav navbar-nav navbar-right">
+	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/member/resister" ><i class="flaticon-padlock"></i>회원가입</a></li>
+	                    </ul>
                     </c:if>
                      <c:if test ="${not empty userVO }">
 	                     <ul class="nav navbar-nav navbar-right">

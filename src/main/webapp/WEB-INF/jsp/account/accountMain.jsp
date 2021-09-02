@@ -48,16 +48,18 @@
 	
 	<div class="all-title-box">
 		<div class="container text-center">
-			<h1>Features<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+			<h1>하나은행 계좌개설<span class="m_1"><br>비대면 계좌개설로 빠르고 간편하게!</span></h1>
 		</div>
+		
+		
 	</div>
 	
     <div id="overviews" class="section wb">
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 col-md-offset-2">
-                    <h3>Features</h3>
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                    <h3>나만의 계좌 개설하면 포인트가!</h3>
+                    <p class="lead">친구들과 함께 더치페이하기!</p>
                 </div>
             </div><!-- end title -->
 
