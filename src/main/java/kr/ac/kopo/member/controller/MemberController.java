@@ -54,7 +54,7 @@ public class MemberController {
 	@GetMapping("member/resister")
 	public String index() {
 		System.out.println("resister");
-		return "member/resister";
+		return "resister";
 	}
 	
 	

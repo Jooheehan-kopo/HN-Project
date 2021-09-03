@@ -12,7 +12,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" ></a>
+                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/hana1.png" ></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -26,10 +26,17 @@
 						       <li><a href="#">이체</a></li>
 						    </ul>
 						</li>
-                        <li><a href="${pageContext.request.contextPath }/stock/stockMain">주식</a></li>
+                        <li class="dropdown">
+                        	<a href="${pageContext.request.contextPath }/stock/stockMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">주식<span class="navbar-collapse collapse"></span></a>
+	                        	<ul class="dropdown-menu" role="menu">
+							       <li><a href="${pageContext.request.contextPath }/">개설</a></li>
+							       <li><a href="${pageContext.request.contextPath }/">조회</a></li>
+							       <li><a href="#">투자시작</a></li>
+							    </ul>
+                        </li>
                         <li><a href="${pageContext.request.contextPath }/member/rank">친구순위</a></li>
                         <li><a href="${pageContext.request.contextPath }/media/hanaTV">하나티비</a></li>
-                        <li><a href="testimonials.html">마이페이지</a></li>
+                        <li><a href="testimonials.html">머니뉴스</a></li>
                         
                     </ul>
                     <c:if test="${empty userVO }">
@@ -48,7 +55,7 @@
 	                     </li>
 	                 	</c:if> --%>
 	 
-	  						<li><c:out value="${userVO.id}"/>님</li>
+	  						<li><a class="btn-light btn-radius btn-brd log" href="#" ><c:out value="${userVO.name}"/>님</a></li>
 	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/logout" ><i class="flaticon-padlock"></i>로그아웃</a></li>
 	  					 </ul>
   					 </c:if>

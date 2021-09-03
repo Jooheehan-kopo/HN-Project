@@ -19,11 +19,13 @@ public class IndexController {
 		return "index";
 	}
 	
-	@GetMapping("account/accountMain")
-	public String acMain() {
-		System.out.println("account/accountMain");
-		return "account/accountMain";
-	}
+	
+	  @GetMapping("account/accountMain")
+	  public String acMain() {
+	  System.out.println("account/accountMain");
+	  return "account/accountMain";
+	  }
+	
 	@GetMapping("account/accountSearch")
 	public String acSearch() {
 		System.out.println("account/accountSearch");

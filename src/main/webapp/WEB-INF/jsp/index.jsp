@@ -69,8 +69,8 @@
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
-									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
-									<h2 data-animation="animated zoomInRight">Best <strong>Play-HANA</strong> Company</h2>
+									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
+									<h2 data-animation="animated zoomInRight"><strong>HANA DO</strong> 하나-두</h2>
 									<p class="lead" data-animation="animated fadeInLeft"> </p>
 									 <a data-scroll href="${pageContext.request.contextPath }/member/resister" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -87,7 +87,7 @@
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
-									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
+									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
 									<h2 data-animation="animated zoomInRight">나의 가상계좌로  <strong>투자</strong>해보기!</h2>
 									<p class="lead" data-animation="animated fadeInLeft">맛보기 주식체험을 통해 투자습관 up! 내 기록을 친구들과 함께 공유해요~ 1등에겐 서프라이즈 이벤트를!  </p>
 									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">주식체험 바로가기</a>
@@ -105,7 +105,7 @@
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
-									<img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" alt="image">
+									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
 									<h2 data-animation="animated zoomInRight">나의 금융지식<strong>성향테스트</strong> Company</h2>
 									<p class="lead" data-animation="animated fadeInLeft">
 										14문제를 통한 나의 금융지식 투자 성향 테스트! 완료 후 SNS에 공유하기~~ 친구들의 성향도 파악해보자! 누가누가 잘하나!</p>
