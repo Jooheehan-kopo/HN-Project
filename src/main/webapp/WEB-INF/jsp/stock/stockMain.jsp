@@ -84,67 +84,53 @@
                     <div class="tab-content">
                         <div class="tab-pane active fade in" id="tab1">
                             <div class="row text-center">
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Shared Hosting</h2>
-                                            <h3>$85/month</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
-                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
-                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="#contact" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
-                                        </div>
-                                    </div>
+                                <div class="">
+                               
+                               <!-- 현재 주식 인기 검색 순위(30개) -->
+                               <table class="table table-striped table-hover table-bordered">
+								  <thead>
+								    <tr>
+								      <th scope="col">#</th>
+								      <th scope="col">이름</th>
+								      <th scope="col">검색비율</th>
+								      <th scope="col">현재가</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								  <c:forEach items="${list }" var="stockVO" varStatus="loop">
+								  	${stockVO.no}
+								  
+								    <tr<c:if test="${ loop.index mod 2 ne 0 }"> class="odd"</c:if>>
+										
+								      <th scope="row"><c:out value="${stockVO.no}"/></th>
+								      <td><c:out value="${stockVO.name}"/></td>
+								      <td><c:out value="${stockVO.search_per}"/></td>
+								      <td><c:out value="${stockVO.now_p}"/></td>
+								    </tr>
+								   </c:forEach> 
+								   
+								   
+								    <tr>
+								      <th scope="row">2</th>
+								      <td><c:out value="${userVO.name }"></c:out></td>
+								      <td>Thornton</td>
+								      <td>@fat</td>
+								    </tr>
+								    <tr>
+								      <th scope="row">3</th>
+								      <td colspan="2">Larry the Bird</td>
+								      <td>@twitter</td>
+								    </tr>
+								  </tbody>
+								</table>
+								                               
+                               
+                               
+                               
+                               
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>WordPress Hosting</h2>
-                                            <h3>$59/year</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-text">
-                                            <p>This is a perfect choice for small businesses and startups.</p>
-                                        </div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
-                                            <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
-                                            <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="#contact" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <div class="pricing-table pricing-table-highlighted">
-                                        <div class="pricing-table-header grd1">
-                                            <h2>Reseller Hosting</h2>
-                                            <h3>$85/one-time</h3>
-                                        </div>
-                                        <div class="pricing-table-space"></div>
-                                        <div class="pricing-table-features">
-                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
-                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
-                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
-                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
-                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                                        </div>
-                                        <div class="pricing-table-sign-up">
-                                            <a href="#contact" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
-                                        </div>
-                                    </div>
-                                </div>
+                             
+                                
                             </div><!-- end row -->
                         </div><!-- end pane -->
 

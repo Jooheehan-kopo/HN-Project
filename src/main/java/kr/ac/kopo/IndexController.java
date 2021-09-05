@@ -32,12 +32,10 @@ public class IndexController {
 		return "account/accountSearch";
 	}
 	
-	@GetMapping("stock/stockMain")
-	public String stock() {
-		System.out.println("stock/stockMain");
-		return "stock/stockMain";
-	}
-	
+	/*
+	 * @GetMapping("stock/stockMain") public String stock() {
+	 * System.out.println("stock/stockMain"); return "stock/stockMain"; }
+	 */
 
 	
 	@GetMapping("admin/index")

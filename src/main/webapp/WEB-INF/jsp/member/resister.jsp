@@ -3,17 +3,72 @@
 <!DOCTYPE html>
 <html lang="ko">
 
+<!-- HEAD -->
+<jsp:include page="/WEB-INF/include/head.jsp" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+
+<body class="host_version">
+
+
+
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="loading">
+			<div class="finger finger-1">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="finger finger-2">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="finger finger-3">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="finger finger-4">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="last-finger">
+				<div class="last-finger-item">
+					<i></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END LOADER -->
+
+	<!-- header -->
+
+	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
+
+
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>
+				하나런 회원가입<span class="m_1"><br>하나런 페이지에 오신것을 환영합니다!</span>
+			</h1>
+		</div>
+
+
+	</div>
+
+
+
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlayHana 회원가입</title>
+
 
   <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
-    
+
 <!-- modal -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,7 +86,8 @@
     body {
       min-height: 100vh;
 	  background:var(--body-background-color);
-      
+	  
+
     }
 
     .input-form {
@@ -39,7 +95,6 @@
 
       margin-top: 80px;
       padding: 32px;
-
       background: #fff;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
@@ -48,6 +103,12 @@
       -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
       box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
     }
+    .forms{
+    	margin-left:auto;
+    	margin-right:auto;
+  	
+  	}
+    
   </style>
   
   <!-- 우편번호 (다음 api) -->
@@ -196,7 +257,7 @@
   
   <div class="container">
     <div class="input-form-backgroud row">
-      <div class="input-form col-md-12 mx-auto">
+    		<div class="input-form forms">
         <h4 class="mb-3">PlayHana 회원가입</h4>
         <form method ="post" action="<%=request.getContextPath()%>/joinnew.do" class="validation-form" novalidate>
           <div class="row">
@@ -307,7 +368,10 @@
           <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "complete()">가입 완료</button>
         </form>
       </div>
+    	
+    	
     </div>
+
     </div>
     <footer class="my-3 text-center text-small">
       <p class="mb-1">&copy; 2021 PlayHana</p>
@@ -331,6 +395,12 @@
   </script>
   <!-- Scripts -->
 	
+
+	<jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
+
 </body>
+
+
+
 
 </html>

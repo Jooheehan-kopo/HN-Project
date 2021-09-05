@@ -19,6 +19,7 @@ public class StockController {
 
 	@Autowired
 	private CrawlingService service;
+	
 	@GetMapping("/stock")
 	public void stockInfo(Model model) {
 		String url[] = {
@@ -26,7 +27,7 @@ public class StockController {
 		};
 		
 		for(int i = 0; i<url.length;i++) {
-			Log.info("@StockController, stockInfo url :" + url[i]);
+			//Log.info("@StockController, stockInfo url :" + url[i]);
 			service.insert(url[i]);
 		}
 		/*

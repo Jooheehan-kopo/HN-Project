@@ -19,6 +19,10 @@
 	<property name="fileEncoding" value="UTF-8"/>
 	</bean>
 	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="classpath:config/prop/application.properties"/>
+	<property name="fileEncoding" value="UTF-8"/>
+	</bean>
 	<bean id ="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method ="close">
 		<property name="driverClassName" value="${driver}"/>
 		<property name="url" value="${url}"/>

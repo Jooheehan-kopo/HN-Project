@@ -1,38 +1,74 @@
 package kr.ac.kopo;
 
+import static org.junit.Assert.assertNull;
+
+import java.util.List;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.web.servlet.ModelAndView;
 
+import kr.ac.kopo.board.vo.BoardVO;
 import kr.ac.kopo.crawler.service.CrawlingService;
 import kr.ac.kopo.sms.service.certificationService;
+import kr.ac.kopo.stock.dao.StockMainDAO;
+import kr.ac.kopo.stock.service.StockMainService;
+import kr.ac.kopo.stock.vo.StockMainVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:config/spring/spring-mvc.xml"})
 public class StockDAOTest {
-	@Autowired
+	
+//	@Autowired
 //	private StockDAO stockDAO;
 	private CrawlingService service;
 		
 	private certificationService certiService;
 	
+	@Autowired
+	private StockMainService sms;
+	
+	@Autowired
+	private StockMainDAO stockMDAO;
+	
+	@Autowired
+	private SqlSessionTemplate sessionTemplate;
+
+	
+	public void 전체게시글조회test() throws Exception {
+
+		List<StockMainVO> list = sessionTemplate.selectList("crawl.stock.selectAll");
+		for(StockMainVO board:list) {
+			System.out.println();
+		}
+		
+	}
+	@Test
+	public void showTodayStock() {
+//		List<StockMainVO> list = sessionTemplate.selectList("crawl.stock.selectAll");
+		List<StockMainVO> list = sms.showTodayStock();
+		
+		System.out.println("test list : " + list);
+	}
+ 	
 	@Ignore
 	@Test
 	public void stockTest() throws Exception{
 		service.insert(null);
 	
 	}
-	
+	@Ignore
 	@Test
 	public void realTest() throws Exception{
 		
 		String phoneNum = "\"01047739853\"";
-		certiService.certifiedPhoneNumber(phoneNum, "asfd");
+		certiService.certifiedPhoneNumber(phoneNum, "0000");
 	}
-	
 	@Ignore
 	@Test
 	public void testtest() throws Exception{
@@ -51,4 +87,6 @@ public class StockDAOTest {
 
 		
 	}
+	
+	
 }

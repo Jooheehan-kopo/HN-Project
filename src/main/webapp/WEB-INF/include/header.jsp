@@ -29,7 +29,7 @@
                         <li class="dropdown">
                         	<a href="${pageContext.request.contextPath }/stock/stockMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">주식<span class="navbar-collapse collapse"></span></a>
 	                        	<ul class="dropdown-menu" role="menu">
-							       <li><a href="${pageContext.request.contextPath }/">개설</a></li>
+							       <li><a href="${pageContext.request.contextPath }/stock/stockMain">개설</a></li>
 							       <li><a href="${pageContext.request.contextPath }/">조회</a></li>
 							       <li><a href="#">투자시작</a></li>
 							    </ul>

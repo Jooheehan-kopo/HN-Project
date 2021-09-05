@@ -6,17 +6,16 @@
 
 	
 
-<!-- 	<select id="selectAll" resultMap="boardMap">
-		select no, title, writer, content, to_char(reg_date, 'yyyy-mm-dd') as reg_date
-		from t_board
-		order by no desc
+ 	<select id="selectAll" resultType="stockmainVO">
+		select no, name, search_per, now_p
+		from stock
 	</select>
- -->
+
 	
 	<insert id="insertInfo" parameterType="stockVO" >
 		<foreach collection="list" open="DECLARE BEGIN" close="; END;" separator=";" item="menu">
 			insert into stock( no, name, search_per, now_p, ntob, updown, howmany, start_p, high_p, low_p, per, roe )
-				values( stock_no.nextval, #{menu.name},#{menu.search_per}, #{menu.now_p}, #{menu.ntob}, #{menu.updown}, #{menu.howmany}, #{menu.start_p}, #{menu.high_p}, #{menu.low_p},
+				values( seq_stock_no.nextval, #{menu.name},#{menu.search_per}, #{menu.now_p}, #{menu.ntob}, #{menu.updown}, #{menu.howmany}, #{menu.start_p}, #{menu.high_p}, #{menu.low_p},
 				 #{menu.per}, #{menu.roe})
 		</foreach>
 	</insert> 
