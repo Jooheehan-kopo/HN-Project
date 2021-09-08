@@ -87,4 +87,4 @@
     <!-- ALL JS FILES -->
     <script src="${ pageContext.request.contextPath }/resources/js/all.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="${ pageContext.request.contextPath }/resources/js/custom.js"></script>
+   <script src="${ pageContext.request.contextPath }/resources/js/custom.js"></script>

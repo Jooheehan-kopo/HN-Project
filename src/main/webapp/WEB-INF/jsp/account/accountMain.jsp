@@ -6,130 +6,8 @@
 <html lang="en">
 <!-- HEAD -->
 <jsp:include page="/WEB-INF/include/head.jsp" />
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-<script>
-
-
-		
-		$('#sendPhoneNumber').click(function(){
-	        	let phoneNumber = $('#inputPhoneNumber').val();
-	            console.log(phoneNumber)
-	            alert('인증번호 발송 완료!')
-	            url = '${ pageContext.request.contextPath }/send/sms'
-	            console.log(url)
-	            let data = phoneNumber 
-		
-	/*	$.ajax({
-            type: "post",
-            url: '${ pageContext.request.contextPath }/send/sms',
-            
-            contentType : 'application/json',
-     /*        data: {
-                "phoneNumber" : phoneNumber
-            }, 
-     		data : JSON.stringify(data), 
-            success: function(res){
-                $('#checkBtn').click(function(){
-                    if($.trim(res) == $('#inputCertifiedNumber').val()){
-                    	alert('인증성공')
-                    
-                        Swal.fire(
-                            '인증성공!',
-                            '휴대폰 인증이 정상적으로 완료되었습니다.',
-                            'success'
-                        ) 
-
-                        /* $.ajax({
-                            type: "GET",
-                            url: "/update/phone",
-                            data: {
-                                "phoneNumber" : $('#inputPhoneNumber').val()
-                            }
-                        }) 
-                        document.location.href="/home"; 
-                    }else{
-                   		alert('인증실패')
-                        Swal.fire({
-                            icon: 'error',
-                            title: '인증오류',
-                            text: '인증번호가 올바르지 않습니다!',
-                            footer: '<a href="/index">다음에 인증하기</a>'
-                        })  
-                    }
-                })
-
-
-            }
-        })
-        
-	})
-	})
-	*/
-	
-
-</script>
-
-<body class="host_version">
-
-
-
-	<!-- LOADER -->
-	<div id="preloader">
-		<div class="loading">
-			<div class="finger finger-1">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="finger finger-2">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="finger finger-3">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="finger finger-4">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="last-finger">
-				<div class="last-finger-item">
-					<i></i>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END LOADER -->
-
-	<!-- header -->
-
-	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
-
-
-
-	<div class="all-title-box">
-		<div class="container text-center">
-			<h1>
-				하나은행 계좌개설<span class="m_1"><br>비대면 계좌개설로 빠르고 간편하게!</span>
-			</h1>
-		</div>
-
-
-	</div>
-
-
-
-<head>
-
-
-
-  <!-- Bootstrap CSS -->
-
 <!-- modal -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -210,43 +88,6 @@
         }
     </script>
 <script>
-
-
-	
-/* 	function pwCheck(){
-		var ps = document.getElementById('pw').value;
-		var sc = ["!","@","#","$","%"];
-		var check_sc = 0;
-		
-		if(pw.length<6||pw.length>16){
-			window.alert("비밀번호는 6글자이상 16글자 이하만 가능합니다.");
-			document.getElementById('pw').value='';
-			
-		}
-		for(var i=0;i<sc.length;i++){
-			if(pw.indexOf(sc[i])!= -1){
-				check_sc=1;
-				
-			}
-		}
-		if(check_sc == 0){
-			window.alert('!,@,#,$,%의 특수문자가 들어있지 않습니다.')
-			document.getElementById('pw').value='';
-			
-		}
-		if(document.getElementById('pw').value!=''&& document.getElementById('pw2').value!=''){
-		    if(document.getElementById('pw').value==document.getElementById('pw2').value){
-                document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
-                document.getElementById('check').style.color='blue';
-            }
-            else{
-                document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
-                document.getElementById('check').style.color='red';
-            }
-		}
-		
-		
-	} */
 		
 
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -311,172 +152,103 @@
 	}
 
 </script>
-        
-</head>
-
-<body>
-  
-  <div class="container">
-    <div class="input-form-backgroud row">
-    		<div class="input-form forms">
-        <h4 class="mb-3">PlayHana 회원가입</h4>
-        <form method ="post" action="<%=request.getContextPath()%>/joinnew.do" class="validation-form" novalidate>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="name">이름</label>
-              <input type="text" class="form-control" name ="user_name" id="name" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                이름을 입력해주세요.
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="nickname">주민번호</label>
-              <input type="text" class="form-control" name="user_res_no" id="res_no" placeholder="(-)를 제외하고 입력." value="" required>
-              <div class="invalid-feedback">
-                주민번호를 입력해주세요.
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="id">아이디</label>
-            <input type="text" class="form-control" name="user_id" id="id" placeholder="아이디를 설정해주세요." required>
-            <!--중복확인 -->
-            <!-- Trigger the modal with a button -->
-			<button type="button" class="button primary" data-toggle="modal" data-target="#myModal">중복확인</button>
-            	<!-- Modal -->
-							<div id="myModal" class="modal fade" role="dialog">
-							  <div class="modal-dialog">
-							
-							    <!-- Modal content-->
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <button type="button" class="close button" data-dismiss="modal" style="height: 30px">&ensp;&times;&ensp;</button>
-							        <h4 class="modal-title"></h4>
-							      </div>
-							      <div class="modal-body">
-							        <p>사용가능한 아이디입니다.</p>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn button primary" data-dismiss="modal">닫기</button>
-							      </div>
-							    </div>
-							
-							  </div>
-							</div>
-            
-            
-            
-            
-            <div class="invalid-feedback">
-              아이디를 설정해주세요.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="password">비밀번호</label>
-           
-            <input type="password" class="form-control" name = "user_pw" id="pw" onchange="pwCheck()" placeholder="문자와 숫자를 혼합하세요." required>
-            <div class="invalid-feedback">
-              비밀번호를 설정해주세요.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="password">비밀번호 확인</label>
-            <input type="password" class="form-control" name = "" id="pw2" onchange="pwCheck()" placeholder="설정한 비밀번호를 한번 더 입력해주세요." required>&nbsp;<span id="check"></span>
-            <div class="invalid-feedback">
-              비밀번호 일치여부를 확인해주세요.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="email">이메일</label>
-            <input type="email" class="form-control" name="user_email" id="email" placeholder="you@example.com" required>
-            <div class="invalid-feedback">
-              이메일을 입력해주세요.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="phone">전화번호</label>
-            <input type="text" class="form-control" name = "user_phone" id="tel" placeholder="'-'제외하고 입력" required>
-            <div class="invalid-feedback">
-              전화번호를 입력해주세요.
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="address">주소</label>
-            <input type="text" name ="post" id="sample4_postcode" placeholder="우편번호">
-			<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-			<input type="text" name ="addr1" id="sample4_roadAddress" placeholder="도로명주소">
-			<input type="text" name= "addr2" id="sample4_jibunAddress" placeholder="지번주소">
-			<span id="guide" style="color:#999;display:none"></span>
-	
-
-          <div class="mb-3">
-            <label for="address2">상세주소<span class="text-muted">&nbsp;</span></label>
-            <input type="text" class="form-control" name= "addr3" id="address2" placeholder="상세주소를 입력해주세요." required>
-          </div>
-            <div class="invalid-feedback">
-              주소를 입력해주세요.
-            </div>
-          </div>
-
-          <hr class="mb-4">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="aggrement" required>
-            <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
-          </div>
-          <div class="mb-4"></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "complete()">가입 완료</button>
-        </form>
-      </div>
-    	
-    	
-    </div>
-
-    </div>
-    <footer class="my-3 text-center text-small">
-      <p class="mb-1">&copy; 2021 PlayHana</p>
-    </footer>
- 
-  <script>
-    window.addEventListener('load', () => {
-      const forms = document.getElementsByClassName('validation-form');
-
-      Array.prototype.filter.call(forms, (form) => {
-        form.addEventListener('submit', function (event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  </script>
-  <!-- Scripts -->
-	
 
 
 
+		
+<script>
+
+
+$(document).ready(function() {
+
+	$('#phoneckBtn').click(function() {
+		var phNum = $('#phoneNumber').val()
+
+		$.ajax({
+			type : 'GET',
+			url : '${pageContext.request.contextPath }/send/sms/' + phNum ,
+			success : function(data) {
+				var checkNum = data
+				alert(checkNum)
+
+			},
+			error : function() {
+				alert('Err')
+			}
+		})
+
+	})
+})
+
+
+</script>
 
 
 
+<jsp:include page="/WEB-INF/include/head.jsp"></jsp:include>
 
-
-
-	<%-- <form method="get" name="sendSMS" action="${pageContext.request.contextPath }/send/sms"> 
-		<div class="login-input-wrap">
-			<input placeholder="전화번호를 입력하세요"  id="inputPhoneNumber" name="phoneNumber" type="text"></input>
-		<!-- 	<button type="submit" id="sendPhoneNumber" >확인</button> -->
-			<button id="sendMail" >확인</button>
+<body class="host_version">
+	<!-- LOADER -->
+	<div id="preloader">
+		<div class="loading">
+			<div class="finger finger-1">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="finger finger-2">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="finger finger-3">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="finger finger-4">
+				<div class="finger-item">
+					<span></span><i></i>
+				</div>
+			</div>
+			<div class="last-finger">
+				<div class="last-finger-item">
+					<i></i>
+				</div>
+			</div>
 		</div>
---%>
+	</div>
+	<!-- END LOADER -->
 
-<!-- 	</form> -->
+	<!-- header -->
+
+	<jsp:include page="/WEB-INF/include/header.jsp"></jsp:include>
 
 
 
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>
+				하나은행 계좌개설<span class="m_1"><br>비대면 계좌개설로 빠르고 간편하게!</span>
+			</h1>
+		</div>
+
+
+	</div>
+
+
+
+
+
+
+  <!-- Bootstrap CSS -->
+
+
+
+
+
+
+ 
 
 	<div id="overviews" class="section wb">
 		<div class="container">
@@ -546,13 +318,6 @@
 		<!-- end container -->
 	</div>
 	<!-- end section -->
-
-
-
-
-
-
-
 
 	<jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
 

@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.board.vo.BoardVO;
+import kr.ac.kopo.crawler.dao.StockDAO;
 import kr.ac.kopo.crawler.service.CrawlingService;
 import kr.ac.kopo.sms.service.certificationService;
 import kr.ac.kopo.stock.dao.StockMainDAO;
@@ -24,8 +25,9 @@ import kr.ac.kopo.stock.vo.StockMainVO;
 @ContextConfiguration(locations = {"classpath:config/spring/spring-mvc.xml"})
 public class StockDAOTest {
 	
-//	@Autowired
-//	private StockDAO stockDAO;
+	@Autowired
+	private StockDAO stockDAO;
+	@Autowired
 	private CrawlingService service;
 		
 	private certificationService certiService;
@@ -48,6 +50,7 @@ public class StockDAOTest {
 		}
 		
 	}
+	@Ignore
 	@Test
 	public void showTodayStock() {
 //		List<StockMainVO> list = sessionTemplate.selectList("crawl.stock.selectAll");
@@ -56,7 +59,7 @@ public class StockDAOTest {
 		System.out.println("test list : " + list);
 	}
  	
-	@Ignore
+	
 	@Test
 	public void stockTest() throws Exception{
 		service.insert(null);

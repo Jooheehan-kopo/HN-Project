@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  
 <!DOCTYPE html>
 <html lang="en">
+<script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <!-- HEAD -->
 <jsp:include page="/WEB-INF/include/head.jsp"/>
 
 
 <body class="host_version"> 
+
 
 	<!-- Modal -->
 	
@@ -62,7 +63,7 @@
 	<div id="pricing" class="section lb">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Ready to get started?</h3>
+                <h3>인기순위 30개 종목</h3>
                 <p class="lead">Get the red carpet treatment <strong>just $39 per month!</strong> It is estimated that 3.5 million established by personal blogs.<br> From each other, we share paid WordPress themes WP Service...</p>
             </div><!-- end title -->
 
@@ -94,33 +95,37 @@
 								      <th scope="col">이름</th>
 								      <th scope="col">검색비율</th>
 								      <th scope="col">현재가</th>
+								      <th scope="col">전일비</th>
+								      <th scope="col">등략률</th>
+								      <th scope="col">거래량</th>
+								      <th scope="col">시가</th>
+								      <th scope="col">고가</th>
+								      <th scope="col">저가</th>
 								    </tr>
 								  </thead>
 								  <tbody>
 								  <c:forEach items="${list }" var="stockVO" varStatus="loop">
-								  	${stockVO.no}
+								  	
 								  
-								    <tr<c:if test="${ loop.index mod 2 ne 0 }"> class="odd"</c:if>>
+								    <tr>
 										
 								      <th scope="row"><c:out value="${stockVO.no}"/></th>
 								      <td><c:out value="${stockVO.name}"/></td>
 								      <td><c:out value="${stockVO.search_per}"/></td>
 								      <td><c:out value="${stockVO.now_p}"/></td>
+								      <td><c:out value="${stockVO.ntob}"/></td>
+								      <td><c:out value="${stockVO.updown}"/></td>
+								      <td><c:out value="${stockVO.howmany}"/></td>
+								      <td><c:out value="${stockVO.start_p}"/></td>
+								      <td><c:out value="${stockVO.high_p}"/></td>
+								      <td><c:out value="${stockVO.low_p}"/></td>
+								     
+								      
 								    </tr>
 								   </c:forEach> 
 								   
 								   
-								    <tr>
-								      <th scope="row">2</th>
-								      <td><c:out value="${userVO.name }"></c:out></td>
-								      <td>Thornton</td>
-								      <td>@fat</td>
-								    </tr>
-								    <tr>
-								      <th scope="row">3</th>
-								      <td colspan="2">Larry the Bird</td>
-								      <td>@twitter</td>
-								    </tr>
+								   
 								  </tbody>
 								</table>
 								                               
@@ -189,8 +194,14 @@
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 col-md-offset-2">
-                    <h3>Features</h3>
-                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                    <h3>나도 시작하러가기!</h3>
+                    <p class="lead">
+						주식체험으로 주린이도 손쉽게!<br>
+						해보고 싶었던 주식! 모의체험으로 금융 상식도 쑥쑥!<br>
+						내 돈으로 투자하기, 복잡하고 어렵지 않아요~!<br>
+						원하는 종목 담아담아~ 친구들과 함께 결과 공유! 질문사항은 피드백으로 고고!
+					</p>
+                    <a href="${pageContext.request.contextPath}/stock/resisterStock">주식계좌개설</a>
                 </div>
             </div><!-- end title -->
 

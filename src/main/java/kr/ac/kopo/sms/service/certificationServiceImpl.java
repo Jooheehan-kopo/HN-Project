@@ -26,7 +26,7 @@ public class certificationServiceImpl implements certificationService{
 		
 
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("to", phoneNumber.split("\"")[1]); // 수신전화번호
+		params.put("to", phoneNumber); // 수신전화번호
 		params.put("from", "01029950328");
 		params.put("text", "첫번째 보내는 테스트 문자 메시지!");
 		params.put("type", "SMS");

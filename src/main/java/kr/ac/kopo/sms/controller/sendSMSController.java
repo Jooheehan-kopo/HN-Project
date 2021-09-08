@@ -7,6 +7,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,8 +23,8 @@ public class sendSMSController {
 	
 	
 	@ResponseBody
-	@PostMapping("/send/sms")
-	public String sendSMS(@RequestBody String phoneNumber) {
+	@GetMapping("/send/sms/{phoneNumber}")
+	public String sendSMS(@PathVariable("phoneNumber") String phoneNumber) {
 		System.out.println("컨트롤러");
 		System.out.println(phoneNumber);
 		

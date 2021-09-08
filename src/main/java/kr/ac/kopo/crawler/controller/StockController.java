@@ -27,13 +27,13 @@ public class StockController {
 		};
 		
 		for(int i = 0; i<url.length;i++) {
-			//Log.info("@StockController, stockInfo url :" + url[i]);
+			Log.info("@StockController, stockInfo url :" + url[i]);
 			service.insert(url[i]);
 		}
 		/*
 		 * System.out.println("stock"); return "stock/stockMain";
+		 * 
 		 */
-		
 		System.out.println();
 	}
 }

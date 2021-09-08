@@ -9,6 +9,33 @@
 
 
 
+
+		
+<script>
+
+
+$(document).ready(function() {
+
+	$('#phoneckBtn').click(function() {
+		var phNum = $('#phoneNumber').val()
+
+		$.ajax({
+			type : 'GET',
+			url : '${pageContext.request.contextPath }/send/sms/' + phNum ,
+			success : function(data) {
+				var checkNum = data
+				alert(checkNum)
+
+			},
+			error : function() {
+				alert('Err')
+			}
+		})
+
+	})
+})
+</script>
+
 <body class="host_version">
 
 
@@ -54,7 +81,7 @@
 	<div class="all-title-box">
 		<div class="container text-center">
 			<h1>
-				하나런 회원가입<span class="m_1"><br>하나런 페이지에 오신것을 환영합니다!</span>
+				하나런 회원가입<span class="m_1"><br>하나런 페이지에 오신것을 환영합니다</span>
 			</h1>
 		</div>
 
@@ -149,43 +176,6 @@
         }
     </script>
 <script>
-
-
-	
-/* 	function pwCheck(){
-		var ps = document.getElementById('pw').value;
-		var sc = ["!","@","#","$","%"];
-		var check_sc = 0;
-		
-		if(pw.length<6||pw.length>16){
-			window.alert("비밀번호는 6글자이상 16글자 이하만 가능합니다.");
-			document.getElementById('pw').value='';
-			
-		}
-		for(var i=0;i<sc.length;i++){
-			if(pw.indexOf(sc[i])!= -1){
-				check_sc=1;
-				
-			}
-		}
-		if(check_sc == 0){
-			window.alert('!,@,#,$,%의 특수문자가 들어있지 않습니다.')
-			document.getElementById('pw').value='';
-			
-		}
-		if(document.getElementById('pw').value!=''&& document.getElementById('pw2').value!=''){
-		    if(document.getElementById('pw').value==document.getElementById('pw2').value){
-                document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
-                document.getElementById('check').style.color='blue';
-            }
-            else{
-                document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
-                document.getElementById('check').style.color='red';
-            }
-		}
-		
-		
-	} */
 		
 
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
@@ -259,7 +249,7 @@
     <div class="input-form-backgroud row">
     		<div class="input-form forms">
         <h4 class="mb-3">PlayHana 회원가입</h4>
-        <form method ="post" action="<%=request.getContextPath()%>/joinnew.do" class="validation-form" novalidate>
+        <form method ="post" action="${pageContext.request.contextPath}/account/accountMain" class="validation-form" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="name">이름</label>
@@ -340,6 +330,14 @@
               전화번호를 입력해주세요.
             </div>
           </div>
+          <div class="mb-3">
+            <label for="phone">본인인증</label>
+            <input placeholder="전화번호를 입력하세요" id="phoneNumber" name="phoneNumber" type="text"></input>
+						<input type="button" id="phoneckBtn" value="확인">
+            <div class="invalid-feedback">
+              전화번호를 입력해주세요.
+            </div>
+          </div>
 
           <div class="mb-3">
             <label for="address">주소</label>
@@ -396,10 +394,106 @@
   <!-- Scripts -->
 	
 
+
+
+
+
+
+
+
+
+	<%-- <form method="get" name="sendSMS" action="${pageContext.request.contextPath }/send/sms"> 
+		<div class="login-input-wrap">
+			<input placeholder="전화번호를 입력하세요"  id="inputPhoneNumber" name="phoneNumber" type="text"></input>
+		<!-- 	<button type="submit" id="sendPhoneNumber" >확인</button> -->
+			<button id="sendMail" >확인</button>
+		</div>
+--%>
+
+<!-- 	</form> -->
+
+
+
+
+	<div id="overviews" class="section wb">
+		<div class="container">
+			<div class="section-title row text-center">
+				<div class="col-md-8 col-md-offset-2">
+					<h3>나만의 계좌 개설하면 포인트가!</h3>
+					<p class="lead">친구들과 함께 더치페이하기!</p>
+				</div>
+			</div>
+			<!-- end title -->
+
+			<hr class="invis">
+
+			
+
+			<hr class="hr3">
+
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
+						data-wow-delay="0.2s">
+						<i class="flaticon-cup global-radius effect-1 alignleft"></i>
+						<h3>Awards Winner Support</h3>
+						<p>
+							Our Landigoo responsive site template elements 100% compatible
+							with all mobile devices and modern browsers! <small
+								class="readmore"><a href="#">Read more</a></small>
+						</p>
+					</div>
+					<!-- end icon-wrapper -->
+				</div>
+				<!-- end col -->
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
+						data-wow-delay="0.4s">
+						<i
+							class="flaticon-cer-file-format global-radius effect-1 alignleft"></i>
+						<h3>Free SSL Certifica</h3>
+						<p>
+							We offer pixel perfect icons, graphic sources for high-resolution
+							devices! Landigoo compatible retina display! <small
+								class="readmore"><a href="#">Read more</a></small>
+						</p>
+					</div>
+					<!-- end icon-wrapper -->
+				</div>
+				<!-- end col -->
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
+						data-wow-delay="0.6s">
+						<i class="flaticon-locked global-radius effect-1 alignleft"></i>
+						<h3>High Security</h3>
+						<p>
+							When you need anything about for Landigoo template, just drop an
+							email or leave a feedback from TF!<small class="readmore"><a
+								href="#">Read more</a></small>
+						</p>
+					</div>
+					<!-- end icon-wrapper -->
+				</div>
+				<!-- end col -->
+			</div>
+			<!-- end row -->
+		</div>
+		<!-- end container -->
+	</div>
+	<!-- end section -->
+
+
+
+
+
+
+
+
 	<jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
 
 </body>
-
 
 
 
