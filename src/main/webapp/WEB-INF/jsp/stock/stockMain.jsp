@@ -4,7 +4,17 @@
  
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- script -->
 <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	function myFunction() {
+	var myWindow = window.open("http://localhost:9999/HN-Project/stock/playStock", "PlayStock-Hana", "width=800,height=600");
+	}
+</script>
+
+<!-- script end -->
+					
 
 <!-- HEAD -->
 <jsp:include page="/WEB-INF/include/head.jsp"/>
@@ -93,7 +103,7 @@
 								    <tr>
 								      <th scope="col">#</th>
 								      <th scope="col">이름</th>
-								      <th scope="col">검색비율</th>
+								   <!--    <th scope="col">검색비율</th> -->
 								      <th scope="col">현재가</th>
 								      <th scope="col">전일비</th>
 								      <th scope="col">등략률</th>
@@ -111,7 +121,7 @@
 										
 								      <th scope="row"><c:out value="${stockVO.no}"/></th>
 								      <td><c:out value="${stockVO.name}"/></td>
-								      <td><c:out value="${stockVO.search_per}"/></td>
+								     <%--  <td><c:out value="${stockVO.search_per}"/></td> --%>
 								      <td><c:out value="${stockVO.now_p}"/></td>
 								      <td><c:out value="${stockVO.ntob}"/></td>
 								      <td><c:out value="${stockVO.updown}"/></td>
@@ -202,6 +212,15 @@
 						원하는 종목 담아담아~ 친구들과 함께 결과 공유! 질문사항은 피드백으로 고고!
 					</p>
                     <a href="${pageContext.request.contextPath}/stock/resisterStock">주식계좌개설</a>
+                   
+
+					<p>이미 계정이 있다면? <br>
+					지금 바로 시작하기!</p>
+					
+					<button onclick="myFunction()">play 스톡하나</button>
+					
+					
+
                 </div>
             </div><!-- end title -->
 

@@ -40,6 +40,11 @@ public class StockMainController {
 		return "stock/resisterStock";
 	}
 	
+	@GetMapping("stock/playStock")
+	public String playStock() {
+		return "stock/playStock";
+	}
+	
 	
 
 }

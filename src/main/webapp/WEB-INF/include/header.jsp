@@ -31,7 +31,7 @@
 	                        	<ul class="dropdown-menu" role="menu">
 							       <li><a href="${pageContext.request.contextPath }/stock/stockMain">개설</a></li>
 							       <li><a href="${pageContext.request.contextPath }/">조회</a></li>
-							       <li><a href="#">투자시작</a></li>
+							       <li><a href="${pageContext.request.contextPath }/stock/playStock">투자시작</a></li>
 							    </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath }/member/rank">친구순위</a></li>
