@@ -22,4 +22,11 @@ public class StockMainDAOImpl implements StockMainDAO {
 	
 		return list;
 	}
+	
+	public List<StockMainVO> playStock01(){
+		List<StockMainVO> list = sqlsessionTemplate.selectList("crawl.stock.play01");
+		
+		System.out.println("playStock01: "+ list);
+		return list;
+	}
 }

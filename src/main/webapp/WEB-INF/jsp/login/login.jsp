@@ -8,10 +8,6 @@
 <!-- HEAD -->
 <jsp:include page="/WEB-INF/include/head.jsp" />
 
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/slicknav.css">
-<link rel="stylesheet" href="assets/css/nice-select.css">
-<link rel="stylesheet" href="assets/css/slick.css">
 <body class="host_version">
 
 	<!-- header -->
@@ -312,16 +308,7 @@ body{
 
 
 
-	<script
-		src="${ pageContext.request.contextPath }/assets/js/vendor/modernizr-3.5.0.min.js"></script>
-	<script
-		src="${ pageContext.request.contextPath }/assets/js/bootstrap.min.js"></script>
-	<script
-		src="${ pageContext.request.contextPath }/assets/js/popper.min.js"></script>
-	<script
-		src="${ pageContext.request.contextPath }/assets/js/jquery.slicknav.min.js"></script>
-	<script
-		src="${ pageContext.request.contextPath }/resources/js/vendor/jquery-1.12.4.min.js"></script>
+
 	<%--   
     <!-- JS here -->
     <!-- Jquery, Popper, Bootstrap -->
@@ -337,11 +324,6 @@ body{
 
     <!-- contact js -->
     <script src="${ pageContext.request.contextPath }/assets/js/jquery.magnific-popup.js"></script> --%>
-
-
-	<script src="${ pageContext.request.contextPath }/assets/js/plugins.js"></script>
-	<script src="${ pageContext.request.contextPath }/assets/js/main.js"></script>
-	
 	
 	
 	<%--     <!-- Jquery Plugins, main Jquery -->	

@@ -9,7 +9,7 @@
 <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 	function myFunction() {
-	var myWindow = window.open("http://localhost:9999/HN-Project/stock/playStock", "PlayStock-Hana", "width=800,height=600");
+	var myWindow = window.open("http://localhost:9999/HN-Project/stock/playStock", "PlayStock-Hana", "width=1500,height=800");
 	}
 </script>
 

@@ -15,7 +15,68 @@ public class StockMainVO {
 	private String per;
 	private String roe;
 	
+	private String ticker;
+	private String stock_name;
+	private String end_p;
+	private String compare;
+	private String stocks_totalprice;
 	
+	
+	
+	
+	
+	
+	
+	public String getTicker() {
+		return ticker;
+	}
+
+
+	public void setTicker(String ticker) {
+		this.ticker = ticker;
+	}
+
+
+	public String getStock_name() {
+		return stock_name;
+	}
+
+
+	public void setStock_name(String stock_name) {
+		this.stock_name = stock_name;
+	}
+
+
+	public String getEnd_p() {
+		return end_p;
+	}
+
+
+	public void setEnd_p(String end_p) {
+		this.end_p = end_p;
+	}
+
+
+	public String getCompare() {
+		return compare;
+	}
+
+
+	public void setCompare(String compare) {
+		this.compare = compare;
+	}
+
+
+	public String getStocks_totalprice() {
+		return stocks_totalprice;
+	}
+
+
+	public void setStocks_totalprice(String stocks_totalprice) {
+		this.stocks_totalprice = stocks_totalprice;
+	}
+
+
 	public StockMainVO() {
 		
 	}
@@ -103,8 +164,20 @@ public class StockMainVO {
 	public String toString() {
 		return "StockMainVO [no=" + no + ", name=" + name + ", search_per=" + search_per + ", now_p=" + now_p
 				+ ", ntob=" + ntob + ", updown=" + updown + ", howmany=" + howmany + ", start_p=" + start_p
-				+ ", high_p=" + high_p + ", low_p=" + low_p + ", per=" + per + ", roe=" + roe + "]";
+				+ ", high_p=" + high_p + ", low_p=" + low_p + ", per=" + per + ", roe=" + roe + ", ticker=" + ticker
+				+ ", stock_name=" + stock_name + ", end_p=" + end_p + ", compare=" + compare + ", stocks_totalprice="
+				+ stocks_totalprice + "]";
 	}
+
+
+	/*
+	 * @Override public String toString() { return "StockMainVO [no=" + no +
+	 * ", name=" + name + ", search_per=" + search_per + ", now_p=" + now_p +
+	 * ", ntob=" + ntob + ", updown=" + updown + ", howmany=" + howmany +
+	 * ", start_p=" + start_p + ", high_p=" + high_p + ", low_p=" + low_p + ", per="
+	 * + per + ", roe=" + roe + "]"; }
+	 */
+	
 	
 	
 }

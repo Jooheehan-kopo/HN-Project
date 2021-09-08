@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,12 +34,13 @@
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/style.css">
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/jquery.mCustomScrollbar.css">
   </head>
+  
 
   <body>
   <body>
 	  <div class="fixed-button">
-		<a href="https://codedthemes.com/item/gradient-able-admin-template" target="_blank" class="btn btn-md btn-primary">
-			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Upgrade To Pro
+		<a href="#">
+			<i class="fa fa-" aria-hidden="true"></i> 돌아가기
 		</a>
 	  </div>
        <!-- Pre-loader start -->
@@ -144,7 +146,7 @@
                            <li class="user-profile header-notification">
                                <a href="#!">
                                    <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                   <span>John Doe</span>
+                                   <c:out value="${userVO.name}"/>님
                                    <i class="ti-angle-down"></i>
                                </a>
                                <ul class="show-notification profile-notification">
@@ -164,17 +166,18 @@
                                            <i class="ti-lock"></i> Lock Screen
                                        </a>
                                    </li>
-                                   <li>
+                                   <!-- <li>
                                        <a href="auth-normal-sign-in.html">
                                        <i class="ti-layout-sidebar-left"></i> Logout
                                    </a>
-                                   </li>
+                                   </li> -->
                                </ul>
                            </li>
                        </ul>
                    </div>
                </div>
            </nav>
+           
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">
@@ -196,96 +199,15 @@
                                         <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">Components</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="accordion.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Accordion</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="breadcrumb.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Breadcrumbs</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="button.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Button</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="tabs.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Tabs</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="color.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Color</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="label-badge.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Label Badge</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="tooltip.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Tooltip</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="typography.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Typography</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="notification.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Notification</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="icon-themify.html">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Themify</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
+                                   
                                 </li>
                             </ul>
                             <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Forms &amp; Tables</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li>
-                                    <a href="form-elements-component.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Form Components</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
                                 </li>
+                                
                                 <li>
-                                    <a href="bs-basic-table.html">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Basic Table</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
                                 </li>
 
                             </ul>
@@ -391,8 +313,8 @@
 
                                     <div class="page-body">
                                       <div class="row">
-
-                                            <!-- order-card start -->
+                                      
+                                          <!-- order-card start -->
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-blue order-card">
                                                     <div class="card-block">
@@ -430,48 +352,71 @@
                                                 </div>
                                             </div>
                                             <!-- order-card end -->
+                                            
+                                            
+                                  <!-- Basic table card start -->
+                                  <div class="col-lg-7 col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>전체종목</h5>
+                                            <span>use class <code>table</code> inside table element</span>
+                                            <div class="card-header-right">
+												<ul class="list-unstyled card-option">
+													<li><i class="fa fa-chevron-left"></i></li>
+													<li><i class="fa fa-window-maximize full-card"></i></li>
+													<li><i class="fa fa-minus minimize-card"></i></li>
+													<li><i class="fa fa-refresh reload-card"></i></li>
+													<li><i class="fa fa-times close-card"></i></li>
+												</ul>
+											</div>
+
+                                        </div>
+                                        <div class="card-block table-border-style" style="width:100%; height:100%;">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            
+                                                            <th>종목코드</th>
+                                                            <th>종목명</th>
+                                                            <th>현재가</th>
+                                                            <th>대비</th>
+                                                            <th>시가총액</th>
+                                                            <th>거래하기</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+													  <c:forEach items="${list }" var="stockVO" varStatus="loop">
+													  	
+													  
+													    <tr>
+															
+													      <th scope="row">
+													      <c:out value="${stockVO.ticker}"/></th>
+													      <td><c:out value="${stockVO.stock_name}"/></td>
+													      <td><c:out value="${stockVO.end_p}"/></td>
+													      <td><c:out value="${stockVO.compare}"/></td>
+													      <td><c:out value="${stockVO.stocks_totalprice}"/></td>
+													      <td><button>매수</button>
+													      		<button>매도</button>
+													      
+													      </td>											      
+													    </tr>
+													   
+													   </c:forEach> 
+													  </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Basic table card end -->
+                                            
+                                            
+                                            
 
                                             <!-- statustic and process start -->
-                                            <div class="col-lg-8 col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Statistics</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa-chevron-left"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-times close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <canvas id="Statistics-chart" height="200"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-12">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Customer Feedback</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <span class="d-block text-c-blue f-24 f-w-600 text-center">365247</span>
-                                                        <canvas id="feedback-chart" height="100"></canvas>
-                                                        <div class="row justify-content-center m-t-15">
-                                                            <div class="col-auto b-r-default m-t-5 m-b-5">
-                                                                <h4>83%</h4>
-                                                                <p class="text-success m-b-0"><i class="ti-hand-point-up m-r-5"></i>Positive</p>
-                                                            </div>
-                                                            <div class="col-auto m-t-5 m-b-5">
-                                                                <h4>17%</h4>
-                                                                <p class="text-danger m-b-0"><i class="ti-hand-point-down m-r-5"></i>Negative</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                         
+                                       
                                             <!-- statustic and process end -->
 											<!-- tabs card start -->
                                             <div class="col-sm-12">
@@ -650,14 +595,7 @@
 
                                             <!-- social statustic start -->
                                             <div class="col-md-12 col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-block text-center">
-                                                        <i class="fa fa-envelope-open text-c-blue d-block f-40"></i>
-                                                        <h4 class="m-t-20"><span class="text-c-blue">8.62k</span> Subscribers</h4>
-                                                        <p class="m-b-20">Your main list is growing</p>
-                                                        <button class="btn btn-primary btn-sm btn-round">Manage List</button>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                             <div class="col-md-6 col-lg-4">
                                                 <div class="card">

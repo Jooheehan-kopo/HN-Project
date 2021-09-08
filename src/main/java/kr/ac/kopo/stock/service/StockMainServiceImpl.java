@@ -21,4 +21,9 @@ public class StockMainServiceImpl implements StockMainService {
 		return stockList;
 	}
 	
+	public List<StockMainVO> playStockOne(){
+		List<StockMainVO> psOneList = stockMDAO.playStock01();
+		return psOneList;
+	}
+	
 }

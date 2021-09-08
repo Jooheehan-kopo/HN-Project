@@ -7,4 +7,6 @@ import kr.ac.kopo.stock.vo.StockMainVO;
 public interface StockMainDAO {
 
 	List<StockMainVO> showTodayStock();
+	
+	List<StockMainVO> playStock01();
 }

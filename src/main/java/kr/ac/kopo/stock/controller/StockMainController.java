@@ -40,9 +40,17 @@ public class StockMainController {
 		return "stock/resisterStock";
 	}
 	
-	@GetMapping("stock/playStock")
-	public String playStock() {
-		return "stock/playStock";
+	
+	//모의투자화면상의 round1 주식 표
+	@RequestMapping("stock/playStock")
+	public ModelAndView playStock() {
+		
+		List<StockMainVO> psOneList = service.playStockOne();
+		
+		ModelAndView mav = new ModelAndView("stock/playStock");
+		mav.addObject("list", psOneList);
+		
+		return mav;
 	}
 	
 	
