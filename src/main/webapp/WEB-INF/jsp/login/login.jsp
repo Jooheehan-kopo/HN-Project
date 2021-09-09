@@ -283,6 +283,8 @@ body{
 				<li><button><img src="${pageContext.request.contextPath }/resources/images/kakao.png" id="kakao"><span>카카오 로그인</span></button></li>
 				<li><button><img src="${pageContext.request.contextPath }/resources/images/naver.png" id="naver"><span>네이버 로그인</span></button></li>
 				<li><button><i class="fas fa-qrcode"></i><span>QR 로그인</span></button></li>
+				
+				
 			</ul>
 			<p class="forget-msg">회원이 아니신가요? | 가입하러가기!</p>
 		</section>

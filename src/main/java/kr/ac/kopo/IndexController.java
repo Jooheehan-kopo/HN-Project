@@ -55,4 +55,10 @@ public class IndexController {
 		System.out.println("media/hanaTV");
 		return "media/hanaTV";
 	}
+	
+	@GetMapping("stock/playStockStart")
+	public String modal() {
+		System.out.println("modal");
+		return "stock/playStockStart";
+	}
 }

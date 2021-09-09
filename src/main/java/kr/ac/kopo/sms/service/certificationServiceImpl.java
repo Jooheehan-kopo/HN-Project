@@ -5,10 +5,12 @@ import java.util.HashMap;
 
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
+@CrossOrigin({"*"})
 @Service
 public class certificationServiceImpl implements certificationService{
 
@@ -26,7 +28,7 @@ public class certificationServiceImpl implements certificationService{
 		
 
 		HashMap<String, String> params = new HashMap<String, String>();
-		params.put("to", phoneNumber); // 수신전화번호
+		params.put("to", "01029950328"); // 수신전화번호
 		params.put("from", "01029950328");
 		params.put("text", "첫번째 보내는 테스트 문자 메시지!");
 		params.put("type", "SMS");
@@ -35,8 +37,9 @@ public class certificationServiceImpl implements certificationService{
 		System.out.println(params);
 		
 		try {
-			JSONObject obj = (JSONObject)coolsms.send(params);
-			System.out.println(obj.toString());
+			JSONObject result = (JSONObject)coolsms.send(params);
+			System.out.println(result);
+			
 		} catch (CoolsmsException e) {
 			System.out.println(e.getMessage());
 			System.out.println(e.getCode());

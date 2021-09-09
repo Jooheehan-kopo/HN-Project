@@ -36,6 +36,7 @@
                         </li>
                         <li><a href="${pageContext.request.contextPath }/member/rank">친구순위</a></li>
                         <li><a href="${pageContext.request.contextPath }/media/hanaTV">하나티비</a></li>
+                        <li><a href="${pageContext.request.contextPath }/stock/playStockStart">모달연습</a></li>
                         <li><a href="testimonials.html">머니뉴스</a></li>
                         
                     </ul>

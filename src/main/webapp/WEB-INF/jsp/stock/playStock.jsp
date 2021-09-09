@@ -35,6 +35,55 @@
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/css/jquery.mCustomScrollbar.css">
   </head>
   
+  
+  
+ <!-- 매수량 모달 -->
+	<script>
+		function plus() {
+			var td = document.getElementById("count");
+			var n = Number(td.innerHTML);
+			td.innerHTML = n + 1;
+			
+			$( "#model-price" ).attr( "title" );
+			
+			
+			var price = parseInt($("#modal-stockprice").attr('title').split(',').join(''));
+			var total = price* (n+1);
+			
+			console.log(total);
+			
+			$(document).ready(function() {
+		         $("#total").val(total)
+
+		});	
+			
+		}
+		function minus() {
+			var td = document.getElementById("count");
+			var n = Number(td.innerHTML);
+			td.innerHTML = n -1;
+			
+			var now = $("#total").val();
+			var minus = (now/n)*(n-1) 
+			console.log(minus);
+			
+			
+			$(document).ready(function() {
+		         $("#total").val(minus)
+
+		});	
+				
+		}
+		
+		$(document).on("click",".close",function(){
+			$()
+		})
+		function modalClose(){
+			
+		}
+		
+	</script>
+  
 
   <body>
   <body>
@@ -397,8 +446,8 @@
 													      <td><c:out value="${stockVO.end_p}"/></td>
 													      <td><c:out value="${stockVO.compare}"/></td>
 													      <td><c:out value="${stockVO.stocks_totalprice}"/></td>
-													      <td><button>매수</button>
-													      		<button>매도</button>
+													      <td><button data-toggle="modal" data-target="#buy"  onclick="test('${stockVO.stock_name}', '${stockVO.end_p}')">매수</button>
+													      <button>매도</button></td>
 													      
 													      </td>											      
 													    </tr>
@@ -410,7 +459,78 @@
                                         </div>
                                     </div>
                                     <!-- Basic table card end -->
-                                            
+                                    
+                                 
+                                    
+									   <!-- Modal -->
+										<div class="modal fade" id="buy" tabindex="-1" role="dialog"
+											aria-labelledby="myModalLabel">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header tit-up">
+														<button type="button" class="close" data-dismiss="modal"
+															aria-hidden="true" >&times;</button>
+														<h4 class="modal-title">거래하기</h4>
+													</div>
+													<div class="modal-body customer-box row">
+														<div class="col-md-12">
+									
+									
+									
+														
+															<div class="tab-content">
+																<div class="tab-pane active" id="buy">
+																	<form role="form" class="form-horizontal">
+																		<div class="form-group">
+																			<div class="col-sm-12">
+																			
+																				<table class="table table-bordered">
+																				<tr>
+																					<th><span>매수종목 </span></th>
+																					<th id="modal-stockname"><c:out value=""/></th>
+																				</tr>
+																				<tr>
+																					<th>수량: </th>
+																					<th><h4 id="count">1</h4><span>개</span><br>
+																					<input type="button" value="-" onclick="minus()" />
+																					<span><input type="button" value="+" onclick="plus()" /></span>
+																					</th>
+																				</tr>
+																				<tr>
+																					<th>현재가</th>
+																					<th title="" id="modal-stockprice"></th>
+																			
+																				</tr>
+																				<tr>
+																				 <th>총 금액</th>
+																			
+																				 <th><input type="text" name="total" id="total"> </th>
+																				
+																				
+																				</tr>
+																				</table>
+																				
+																			</div>
+																		</div>
+																			
+																		<div class="row">
+																			<div class="col-sm-10">
+																			<span>진행하시겠습니까? </span>
+																				<button type="submit"
+																					class="btn btn-light btn-radius btn-brd grd1" onclick="submit();">
+																					매수</button>
+									
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									                                            
                                             
                                             
 
@@ -812,6 +932,32 @@
 <script src="${pageContext.request.contextPath }/assets/js/pcoded.min.js"></script>
 <script src="${pageContext.request.contextPath }/assets/js/vartical-demo.js"></script>
 <script src="${pageContext.request.contextPath }/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+ function test(name, end){
+	 console.log(name, end)
+	 $("#modal-stockname").text(name)
+	 $("#modal-stockprice").text(end)
+	 $("#modal-stockprice").attr('title',end)
+ }
+ 
+ var notified="";
+ $(document).ready(function(){
+ 	$('#buy').on('show.bs.modal',function(event){
+ 		
+ 		notified = $(event.realtedTarget).data('notified');
+ 		console.log(notified)
+ 	});
+ 	
+ });
+ 
+ $('#buy').on('hidden.bs.modal', function (e) {
+	    console.log('modal close');
+	  $(this).find('form')[0].reset();
+	});
+ 
+
+</script>
 </body>
+
 
 </html>

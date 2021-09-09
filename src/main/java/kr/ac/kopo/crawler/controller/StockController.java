@@ -6,10 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jdk.internal.org.jline.utils.Log;
 import kr.ac.kopo.crawler.service.CrawlingService;
-import kr.ac.kopo.crawler.vo.StockVO;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Controller
@@ -27,7 +24,7 @@ public class StockController {
 		};
 		
 		for(int i = 0; i<url.length;i++) {
-			Log.info("@StockController, stockInfo url :" + url[i]);
+//			Log.info("@StockController, stockInfo url :" + url[i]);
 			service.insert(url[i]);
 		}
 		/*
