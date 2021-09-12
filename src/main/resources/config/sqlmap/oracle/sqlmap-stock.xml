@@ -4,8 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="crawl.stock">
 
-	
-
  	<select id="selectAll" resultType="stockmainVO">
 		select *
 		from stock
@@ -22,6 +20,11 @@
 		                    '롯데칠성', '하이트진로', '아모레퍼시픽', 'LG생활건강','셀트리온',
 		                    '삼성바이오로직스')
 	</select>
+	
+	<update id="stockBal01" parameterType="stockmainVO">
+		update member_stock set stock_bal = stock_bal- #{input_cost}
+		where stock_acc='11134986715674'
+	</update> 
 
 	
 	<insert id="insertInfo" parameterType="stockVO" >

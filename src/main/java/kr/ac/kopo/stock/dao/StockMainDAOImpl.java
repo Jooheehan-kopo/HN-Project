@@ -29,4 +29,11 @@ public class StockMainDAOImpl implements StockMainDAO {
 		System.out.println("playStock01: "+ list);
 		return list;
 	}
+	
+	public void updateBal(StockMainVO buycost) {
+		
+		sqlsessionTemplate.update("crawl.stock.stockBal01", buycost);
+		System.out.println("dao cost:"+ buycost.getInput_cost());
+		
+	}
 }

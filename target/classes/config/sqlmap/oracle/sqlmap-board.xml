@@ -10,7 +10,7 @@
 		<result column="reg_date" property="regDate"/>
 	</resultMap>
 
-	<select id="selectAll" resultMap="boardMap">
+	<select id="selectAll2" resultMap="boardMap">
 		select no, title, writer, content, to_char(reg_date, 'yyyy-mm-dd') as reg_date
 		from t_board
 		order by no desc
@@ -22,7 +22,7 @@
 		where no = #{no}
 	</select>
 	
-	<insert id="write" parameterType="BoardVO" >
+	<insert id="write" parameterType="boardVO" >
 		insert into t_board(no,title,writer,content)
 			values(seq_t_board_no.nextval, #{title}, #{writer}, #{content})
 	</insert> 

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.ac.kopo.board.vo.BoardVO;
 import kr.ac.kopo.crawler.dao.StockDAO;
 import kr.ac.kopo.crawler.service.CrawlingService;
+
 import kr.ac.kopo.sms.service.certificationService;
 import kr.ac.kopo.stock.dao.StockMainDAO;
 import kr.ac.kopo.stock.service.StockMainService;
@@ -25,23 +26,40 @@ import kr.ac.kopo.stock.vo.StockMainVO;
 @ContextConfiguration(locations = {"classpath:config/spring/spring-mvc.xml"})
 public class StockDAOTest {
 	
-	@Autowired
+	//@Autowired
 	private StockDAO stockDAO;
-	@Autowired
+	
+	
+	
+	//@Autowired
 	private CrawlingService service;
 		
 	private certificationService certiService;
 	
-	@Autowired
+	//@Autowired
 	private StockMainService sms;
 	
 	@Autowired
 	private StockMainDAO stockMDAO;
 	
 	@Autowired
+	private StockMainService smservice;
+	
+	@Autowired
 	private SqlSessionTemplate sessionTemplate;
 
+	@Ignore
+	@Test
+	public void 업데이트test() throws Exception {
+		smservice.stockBuy(null);
+
+			
+		}
+
 	
+
+	@Ignore
+	@Test
 	public void 전체게시글조회test() throws Exception {
 
 		List<StockMainVO> list = sessionTemplate.selectList("crawl.stock.selectAll");
@@ -59,7 +77,7 @@ public class StockDAOTest {
 		System.out.println("test list : " + list);
 	}
  	
-	
+	@Ignore
 	@Test
 	public void stockTest() throws Exception{
 		service.insert(null);
@@ -91,5 +109,12 @@ public class StockDAOTest {
 		
 	}
 	
+	@Test
+	public void 플레이스톡_테스트() throws Exception{
+		List<StockMainVO> list = stockMDAO.showTodayStock();
+		System.out.println(list);
+	}
+	
+
 	
 }

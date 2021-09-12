@@ -75,12 +75,7 @@
 				
 		}
 		
-		$(document).on("click",".close",function(){
-			$()
-		})
-		function modalClose(){
-			
-		}
+		
 		
 	</script>
   
@@ -376,7 +371,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-green order-card">
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Total Sales</h6>
+                                                        <h6 class="m-b-20">현재 나의잔액</h6>
                                                         <h2 class="text-right"><i class="ti-tag f-left"></i><span>1641</span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">213</span></p>
                                                     </div>
@@ -385,7 +380,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-yellow order-card">
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Revenue</h6>
+                                                        <h6 class="m-b-20">주문가능</h6>
                                                         <h2 class="text-right"><i class="ti-reload f-left"></i><span>$42,562</span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">$5,032</span></p>
                                                     </div>
@@ -394,7 +389,7 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-pink order-card">
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Total Profit</h6>
+                                                        <h6 class="m-b-20">시드머니</h6>
                                                         <h2 class="text-right"><i class="ti-wallet f-left"></i><span>$9,562</span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">$542</span></p>
                                                     </div>
@@ -448,8 +443,7 @@
 													      <td><c:out value="${stockVO.stocks_totalprice}"/></td>
 													      <td><button data-toggle="modal" data-target="#buy"  onclick="test('${stockVO.stock_name}', '${stockVO.end_p}')">매수</button>
 													      <button>매도</button></td>
-													      
-													      </td>											      
+													    													    										      
 													    </tr>
 													   
 													   </c:forEach> 
@@ -480,7 +474,7 @@
 														
 															<div class="tab-content">
 																<div class="tab-pane active" id="buy">
-																	<form role="form" class="form-horizontal">
+																	<form role="form" action="${pageContext.request.contextPath }/stock/playStock" class="form-horizontal" method="post" name="buyStock">
 																		<div class="form-group">
 																			<div class="col-sm-12">
 																			
@@ -504,7 +498,7 @@
 																				<tr>
 																				 <th>총 금액</th>
 																			
-																				 <th><input type="text" name="total" id="total"> </th>
+																				 <th><input type="text" name="input_cost" id="total"> </th>
 																				
 																				
 																				</tr>
@@ -517,7 +511,7 @@
 																			<div class="col-sm-10">
 																			<span>진행하시겠습니까? </span>
 																				<button type="submit"
-																					class="btn btn-light btn-radius btn-brd grd1" onclick="submit();">
+																					class="btn btn-light btn-radius btn-brd grd1">
 																					매수</button>
 									
 																			</div>

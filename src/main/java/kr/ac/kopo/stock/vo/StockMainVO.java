@@ -2,6 +2,7 @@ package kr.ac.kopo.stock.vo;
 
 public class StockMainVO {
 	
+	//크롤링한 주식 정보
 	private String no;
 	private String name;
 	private String search_per;
@@ -15,18 +16,32 @@ public class StockMainVO {
 	private String per;
 	private String roe;
 	
+	//모의주식할 주식정보
 	private String ticker;
 	private String stock_name;
 	private String end_p;
 	private String compare;
 	private String stocks_totalprice;
 	
+	//매수할 가격
+	private String input_cost; //사고 파는 주식가격
 	
 	
 	
 	
 	
 	
+	
+	public String getInput_cost() {
+		return input_cost;
+	}
+
+
+	public void setInput_cost(String input_cost) {
+		this.input_cost = input_cost;
+	}
+
+
 	public String getTicker() {
 		return ticker;
 	}
@@ -168,6 +183,8 @@ public class StockMainVO {
 				+ ", stock_name=" + stock_name + ", end_p=" + end_p + ", compare=" + compare + ", stocks_totalprice="
 				+ stocks_totalprice + "]";
 	}
+	
+	
 
 
 	/*

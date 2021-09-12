@@ -26,4 +26,11 @@ public class StockMainServiceImpl implements StockMainService {
 		return psOneList;
 	}
 	
+	
+	public void stockBuy(StockMainVO buy) {
+		buy.getInput_cost();
+		System.out.println("service:"+ buy.getInput_cost());
+		stockMDAO.updateBal(buy);
+	
+	}
 }

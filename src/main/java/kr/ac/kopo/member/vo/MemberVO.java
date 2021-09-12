@@ -7,6 +7,18 @@ public class MemberVO {
 	private String name;
 	private String type;
 	
+	
+	
+	private String stock_acc;
+	private String stock_pw;
+	private int stock_bal;
+	private String stock_acc_date;
+	private int input_cost; //사고 파는 주식 가격.
+	
+	
+	
+	
+	
 	public String getName() {
 		return name;
 	}

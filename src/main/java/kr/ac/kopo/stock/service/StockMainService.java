@@ -8,4 +8,5 @@ public interface StockMainService {
 
 	List<StockMainVO> showTodayStock();
 	List<StockMainVO> playStockOne();
+	void stockBuy(StockMainVO buy);
 }

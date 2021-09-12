@@ -9,4 +9,6 @@ public interface StockMainDAO {
 	List<StockMainVO> showTodayStock();
 	
 	List<StockMainVO> playStock01();
+	
+	void updateBal(StockMainVO buycost);
 }
