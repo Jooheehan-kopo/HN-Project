@@ -54,6 +54,8 @@
 			
 			$(document).ready(function() {
 		         $("#total").val(total)
+		         $("#stock").val(n+1).hide()
+		         
 
 		});	
 			
@@ -70,6 +72,7 @@
 			
 			$(document).ready(function() {
 		         $("#total").val(minus)
+		         $("#stock").val(n-1).hide()
 
 		});	
 				
@@ -481,24 +484,32 @@
 																				<table class="table table-bordered">
 																				<tr>
 																					<th><span>매수종목 </span></th>
-																					<th id="modal-stockname"><c:out value=""/></th>
+																					<th>
+																					<input type="text" name="stock_name" id="modal-stockname" readonly style="border:none" />
+																					</th>
 																				</tr>
 																				<tr>
 																					<th>수량: </th>
-																					<th><h4 id="count">1</h4><span>개</span><br>
+<!-- 																					<th><h4 name="count" id="count">1</h4><span>개</span><br> -->
+																					<th>
+																					<input type="text" name="count" id="stock" style="border:none"/>
+																					<h4 id="count">1</h4>																				
+																					<span>개</span><br>
 																					<input type="button" value="-" onclick="minus()" />
 																					<span><input type="button" value="+" onclick="plus()" /></span>
 																					</th>
 																				</tr>
 																				<tr>
 																					<th>현재가</th>
-																					<th title="" id="modal-stockprice"></th>
+																					<th>
+																					<input type="text" name="end_p" id="modal-stockprice" style="border:none; text-align:left" />
+																					</th>
 																			
 																				</tr>
 																				<tr>
 																				 <th>총 금액</th>
 																			
-																				 <th><input type="text" name="input_cost" id="total"> </th>
+																				 <th><input type="text" name="input_cost" id="total" style="border:none" > </th>
 																				
 																				
 																				</tr>
@@ -562,36 +573,36 @@
                                                                 <div class="table-responsive">
                                                                     <table class="table">
                                                                         <tr>
-                                                                            <th>Image</th>
-                                                                            <th>Product Code</th>
-                                                                            <th>Customer</th>
-                                                                            <th>Purchased On</th>
-                                                                            <th>Status</th>
-                                                                            <th>Transaction ID</th>
+                                                                            <th>거래번호</th>
+                                                                            <th>종목명</th>
+                                                                            <th>구분</th>
+                                                                            <th>가격</th>
+                                                                            <th>수량</th>
+                                                                            <th>상태</th>
                                                                         </tr>
                                                                         <tr>
                                                                             <td><img src="assets/images/product/prod2.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002344</td>
+                                                                            <td><c:out value="${stockVO.stock_name}"/></td>
                                                                             <td>John Deo</td>
                                                                             <td>05-01-2017</td>
-                                                                            <td><span class="label label-danger">Faild</span></td>
                                                                             <td>#7234486</td>
+                                                                            <td><span class="label label-danger">Faild</span></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td><img src="assets/images/product/prod3.jpg" alt="prod img" class="img-fluid"></td>
                                                                             <td>PNG002653</td>
                                                                             <td>Eugine Turner</td>
                                                                             <td>04-01-2017</td>
-                                                                            <td><span class="label label-success">Delivered</span></td>
                                                                             <td>#7234417</td>
+                                                                            <td><span class="label label-success">Delivered</span></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
                                                                             <td>PNG002156</td>
                                                                             <td>Jacqueline Howell</td>
                                                                             <td>03-01-2017</td>
-                                                                            <td><span class="label label-warning">Pending</span></td>
                                                                             <td>#7234454</td>
+                                                                            <td><span class="label label-warning">Pending</span></td>
                                                                         </tr>
                                                                     </table>
                                                                 </div>
@@ -930,8 +941,12 @@
  function test(name, end){
 	 console.log(name, end)
 	 $("#modal-stockname").text(name)
+	 $("#modal-stockname").val(name)
 	 $("#modal-stockprice").text(end)
+	 $("#modal-stockprice").val(end)
 	 $("#modal-stockprice").attr('title',end)
+	 $("#cost").text(cost)
+	 
  }
  
  var notified="";

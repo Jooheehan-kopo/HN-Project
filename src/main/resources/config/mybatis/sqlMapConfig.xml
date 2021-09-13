@@ -8,5 +8,7 @@
 		<typeAlias type="kr.ac.kopo.member.vo.MemberVO" alias="memberVO"/>
 		<typeAlias type="kr.ac.kopo.crawler.vo.StockVO" alias="stockVO"/>
 		<typeAlias type="kr.ac.kopo.stock.vo.StockMainVO" alias="stockmainVO"/>
+		<typeAlias type="kr.ac.kopo.stock.vo.MyStockVO" alias="mystockVO"/>
+	
 	</typeAliases>
 </configuration>

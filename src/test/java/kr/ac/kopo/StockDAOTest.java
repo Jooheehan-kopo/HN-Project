@@ -2,6 +2,7 @@ package kr.ac.kopo;
 
 import static org.junit.Assert.assertNull;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Ignore;
@@ -31,7 +32,7 @@ public class StockDAOTest {
 	
 	
 	
-	//@Autowired
+	@Autowired
 	private CrawlingService service;
 		
 	private certificationService certiService;
@@ -51,7 +52,7 @@ public class StockDAOTest {
 	@Ignore
 	@Test
 	public void 업데이트test() throws Exception {
-		smservice.stockBuy(null);
+		
 
 			
 		}
@@ -80,7 +81,7 @@ public class StockDAOTest {
 	@Ignore
 	@Test
 	public void stockTest() throws Exception{
-		service.insert(null);
+		service.insert("https://finance.naver.com/sise/lastsearch2.nhn");
 	
 	}
 	@Ignore
@@ -111,8 +112,10 @@ public class StockDAOTest {
 	
 	@Test
 	public void 플레이스톡_테스트() throws Exception{
-		List<StockMainVO> list = stockMDAO.showTodayStock();
-		System.out.println(list);
+	
+		HashMap<String, Object> map = stockMDAO.updateBal(map);
+		
+		System.out.println(map);
 	}
 	
 

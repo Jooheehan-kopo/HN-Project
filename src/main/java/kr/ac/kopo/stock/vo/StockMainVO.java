@@ -23,8 +23,11 @@ public class StockMainVO {
 	private String compare;
 	private String stocks_totalprice;
 	
+	
 	//매수할 가격
 	private String input_cost; //사고 파는 주식가격
+	//몇개 매수
+	private int count;
 	
 	
 	
@@ -32,6 +35,16 @@ public class StockMainVO {
 	
 	
 	
+	public int getCount() {
+		return count;
+	}
+
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+
 	public String getInput_cost() {
 		return input_cost;
 	}

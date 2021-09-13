@@ -4,11 +4,25 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="crawl.stock">
 
+
+<!-- 주식: 크롤링 정보 화면에 가져오기-->
  	<select id="selectAll" resultType="stockmainVO">
 		select *
 		from stock
 	</select>
+
+
+<!-- 주식 크롤링 데이터 insert -->
+	<insert id="insertInfo" parameterType="stockVO" >
+		<foreach collection="list" open="DECLARE BEGIN" close="; END;" separator=";" item="menu">
+			insert into stock( no, name, search_per, now_p, ntob, updown, howmany, start_p, high_p, low_p, per, roe )
+				values( seq_stock_no.nextval, #{menu.name},#{menu.search_per}, #{menu.now_p}, #{menu.ntob}, #{menu.updown}, #{menu.howmany}, #{menu.start_p}, #{menu.high_p}, #{menu.low_p},
+				 #{menu.per}, #{menu.roe})
+		</foreach>
+	</insert> 
 	
+	
+<!-- 플레이스톡(round 1): 주식표 화면에 가져오기 round 1 -->
 	<select id="play01" resultType="stockmainVO">
 		select to_char(stock_date,'yy/mm/dd')as stock_date, stock_code ticker,stock_name, TO_CHAR(end_p , '999,999,999,999,999')end_p , compare , TO_CHAR( stocks_totalprice , '999,999,999,999,999')stocks_totalprice
 		from play_stock
@@ -21,23 +35,29 @@
 		                    '삼성바이오로직스')
 	</select>
 	
-	<update id="stockBal01" parameterType="stockmainVO">
-		update member_stock set stock_bal = stock_bal- #{input_cost}
-		where stock_acc='11134986715674'
+	
+<!-- 플레이스톡: 매수 가격 아이디 찾아 업데이트 -->
+	<update id="stockBal01" parameterType="hashmap">
+		update member_stock set stock_bal = stock_bal- #{stockmainVO.input_cost}
+		where id=#{memberVO.id}
 	</update> 
 
+
+<!-- 플레이스톡: 매수정보 거래내역테이블 저장 -->
+	<insert id="stockBuy" parameterType="hashmap">
+		insert into mem_stock_buy(log_no, state, id, stock_name, count, end_p )
+			values( mem_stock_log_seq.nextval, 11||round(dbms_random.value(10000,99999)) , #{memberVO.id}, #{stockmainVO.stock_name}, #{stockmainVO.count}, #{stockmainVO.end_p})
+	</insert>
+
+
+<!-- 플레이스톡: 거래내역 출력-->
+	<select id="myStock" parameterType="mystockVO">
+		select b.id, s.stock_acc, s.stock_bal, b.stock_name, b.end_p, b.buy_date
+		from member_stock s, mem_stock_buy b
+		where s.id=b.id
+	</select> 
+
 	
-	<insert id="insertInfo" parameterType="stockVO" >
-		<foreach collection="list" open="DECLARE BEGIN" close="; END;" separator=";" item="menu">
-			insert into stock( no, name, search_per, now_p, ntob, updown, howmany, start_p, high_p, low_p, per, roe )
-				values( seq_stock_no.nextval, #{menu.name},#{menu.search_per}, #{menu.now_p}, #{menu.ntob}, #{menu.updown}, #{menu.howmany}, #{menu.start_p}, #{menu.high_p}, #{menu.low_p},
-				 #{menu.per}, #{menu.roe})
-		</foreach>
-	</insert> 
 	
-	<!-- <update id="viewCnt">
-		update t_board set view_cnt = view_cnt+1
-		where no = #{no}
-	</update> -->
 	
 </mapper>

@@ -2,13 +2,13 @@ package kr.ac.kopo.member.vo;
 
 public class MemberVO {
 
+	//회원가입
 	private String id;
 	private String password;
 	private String name;
 	private String type;
 	
-	
-	
+	//주식계좌개설
 	private String stock_acc;
 	private String stock_pw;
 	private int stock_bal;
@@ -17,8 +17,11 @@ public class MemberVO {
 	
 	
 	
-	
-	
+	//
+	public MemberVO() {
+		
+	}
+	//	
 	public String getName() {
 		return name;
 	}
@@ -47,6 +50,41 @@ public class MemberVO {
 	public String toString() {
 		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", type=" + type + "]";
 	}
+	
+	
+	//
+	public String getStock_acc() {
+		return stock_acc;
+	}
+	public void setStock_acc(String stock_acc) {
+		this.stock_acc = stock_acc;
+	}
+	public String getStock_pw() {
+		return stock_pw;
+	}
+	public void setStock_pw(String stock_pw) {
+		this.stock_pw = stock_pw;
+	}
+	public int getStock_bal() {
+		return stock_bal;
+	}
+	public void setStock_bal(int stock_bal) {
+		this.stock_bal = stock_bal;
+	}
+	public String getStock_acc_date() {
+		return stock_acc_date;
+	}
+	public void setStock_acc_date(String stock_acc_date) {
+		this.stock_acc_date = stock_acc_date;
+	}
+	public int getInput_cost() {
+		return input_cost;
+	}
+	public void setInput_cost(int input_cost) {
+		this.input_cost = input_cost;
+	}
+	
+	//
 	
 	
 	
