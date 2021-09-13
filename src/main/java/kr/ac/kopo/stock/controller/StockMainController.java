@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.member.vo.MemberVO;
 import kr.ac.kopo.stock.service.StockMainService;
+import kr.ac.kopo.stock.vo.MyStockVO;
 import kr.ac.kopo.stock.vo.StockMainVO;
 
 @SessionAttributes({"userVO"})
@@ -71,6 +72,17 @@ public class StockMainController {
 		
 		
 		return "redirect:/stock/playStock";
+		
+	}
+	
+	@RequestMapping("stock/playStock")
+	public ModelAndView getMyStock() {
+
+		List<MyStockVO> mystock = service.MyStock();
+		ModelAndView mav = new ModelAndView("stock/playStock");
+		mav.addObject("list", mystock);
+		
+		return mav;
 		
 	}
 	

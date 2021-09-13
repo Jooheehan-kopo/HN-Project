@@ -434,8 +434,7 @@
                                                     </thead>
                                                     <tbody>
 													  <c:forEach items="${list }" var="stockVO" varStatus="loop">
-													  	
-													  
+													 
 													    <tr>
 															
 													      <th scope="row">
@@ -582,7 +581,7 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <td><img src="assets/images/product/prod2.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td><c:out value="${stockVO.stock_name}"/></td>
+                                                                            <td><c:out value="${list.stock_name}"/></td>
                                                                             <td>John Deo</td>
                                                                             <td>05-01-2017</td>
                                                                             <td>#7234486</td>

@@ -57,7 +57,8 @@ public class StockMainServiceImpl implements StockMainService {
 	
 	}
 	public  List<MyStockVO> MyStock (){
-		List<MyStockVO> psOneList = stockMDAO.getMyStock();
+		List<MyStockVO> mystock = stockMDAO.getMyStock();
+		return mystock;
 		
 		
 	}
