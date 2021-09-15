@@ -3,10 +3,13 @@ package kr.ac.kopo.stock.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import kr.ac.kopo.member.vo.MemberVO;
 import kr.ac.kopo.stock.vo.MyStockVO;
 import kr.ac.kopo.stock.vo.StockMainVO;
 
@@ -50,6 +53,18 @@ public class StockMainDAOImpl implements StockMainDAO {
 		System.out.println("getMyStock:"+ list);
 		return list;
 	}
+	
+	public List<MyStockVO> getMyList ( @Param("id") MemberVO user){
+		
+		List<MyStockVO> list = sqlsessionTemplate.selectList("crawl.stock.myStock",user);
+		System.out.println("getmyList:"+ list);
+		System.out.println("아이디만 보여줘 DAO:"+ user.getId());
+		return list;
+	}
+	
+
+
+	
 	
 	
 }

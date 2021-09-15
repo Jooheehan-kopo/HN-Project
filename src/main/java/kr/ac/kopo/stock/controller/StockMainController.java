@@ -44,20 +44,28 @@ public class StockMainController {
 	
 	
 	//모의투자화면상의 round1 주식 표
-	@RequestMapping("stock/playStock")
-	public ModelAndView playStock() {
+	// 표2
+	
+	@RequestMapping("/stock/playStock")
+	public ModelAndView getmyList( @SessionAttribute("userVO") MemberVO user) {
+		
+		 //service에 내 로그인정보 전달
+		System.out.println("아이디내놔:"+ user);
+		
+		//리스트에 서비스에 있는 것 가져와서 저장 후 뷰에 전달
+		List<MyStockVO> mystockList = service.MyList(user);
 		
 		List<StockMainVO> psOneList = service.playStockOne();
 		
-		System.out.println();
-		
 		ModelAndView mav = new ModelAndView("stock/playStock");
+		mav.addObject("mystock", mystockList);
 		mav.addObject("list", psOneList);
 		
 		return mav;
+		
+		
 	}
-	
-	
+
 	//매수 값 전달 
 	@PostMapping("/stock/playStock")
 	public String stockBuy(StockMainVO buy, @SessionAttribute("userVO") MemberVO user) {
@@ -75,16 +83,6 @@ public class StockMainController {
 		
 	}
 	
-	@RequestMapping("stock/playStock")
-	public ModelAndView getMyStock() {
-
-		List<MyStockVO> mystock = service.MyStock();
-		ModelAndView mav = new ModelAndView("stock/playStock");
-		mav.addObject("list", mystock);
-		
-		return mav;
-		
-	}
 	
 	
 

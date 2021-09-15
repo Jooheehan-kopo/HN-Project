@@ -54,12 +54,20 @@ public class StockMainServiceImpl implements StockMainService {
 		System.out.println("service:"+ buy.getInput_cost());
 		System.out.println("service:"+ user.getId());
 		stockMDAO.updateBal(map);
-	
+		
 	}
 	public  List<MyStockVO> MyStock (){
 		List<MyStockVO> mystock = stockMDAO.getMyStock();
 		return mystock;
+	
+	}
+	
+	public List<MyStockVO> MyList( @SessionAttribute("userVO") MemberVO user) {
+		System.out.println("아이디만전달해 서비스:"+ user.getId());
+		//stockMDAO.getMyList(user);
 		
+		List<MyStockVO> mystock = stockMDAO.getMyList(user);
+		return mystock;
 		
 	}
 }

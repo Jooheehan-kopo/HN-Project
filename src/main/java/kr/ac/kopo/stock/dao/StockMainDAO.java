@@ -16,4 +16,7 @@ public interface StockMainDAO {
 	void updateBal(HashMap<String, Object> map);
 	
 	List<MyStockVO> getMyStock ();
+	
+	
+	List<MyStockVO> getMyList (MemberVO user);
 }

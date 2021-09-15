@@ -81,7 +81,32 @@
 		
 		
 	</script>
-  
+	  <style>
+	    .carousel-control-prev-icon,
+		.carousel-control-next-icon {
+		  height: 60px;
+		  width: 60px;
+		  /* outline: black; */
+		  background-size: 50%, 50%;
+		  border-radius: 50%;
+		 /*  border: 1px solid black; */
+		  background-image: none;
+		}
+		
+		.carousel-control-next-icon:after
+		{
+		  content: '>';
+		  font-size: 55px;
+		  color: red;
+		}
+		
+		.carousel-control-prev-icon:after {
+		  content: '<';
+		  font-size: 55px;
+		  color: red;
+		}
+	  
+	  </style>
 
   <body>
   <body>
@@ -361,7 +386,8 @@
                                     <div class="page-body">
                                       <div class="row">
                                       
-                                          <!-- order-card start -->
+                                      
+                    <!-- 상단 메뉴 (나의잔액 등등) -->
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-blue order-card">
                                                     <div class="card-block">
@@ -375,7 +401,7 @@
                                                 <div class="card bg-c-green order-card">
                                                     <div class="card-block">
                                                         <h6 class="m-b-20">현재 나의잔액</h6>
-                                                        <h2 class="text-right"><i class="ti-tag f-left"></i><span>1641</span></h2>
+                                                        <h2 class="text-right"><i class="ti-tag f-left"></i><span><c:out value="${mystock[0].stock_bal}"/>원</span></h2>
                                                         <p class="m-b-0">This Month<span class="f-right">213</span></p>
                                                     </div>
                                                 </div>
@@ -401,7 +427,8 @@
                                             <!-- order-card end -->
                                             
                                             
-                                  <!-- Basic table card start -->
+         		 <!-- 매수매도 거래 표 -->
+         		 	
                                   <div class="col-lg-7 col-md-12">
                                     <div class="card">
                                         <div class="card-header">
@@ -436,7 +463,7 @@
 													  <c:forEach items="${list }" var="stockVO" varStatus="loop">
 													 
 													    <tr>
-															
+															<%-- ${list[loop.index].stock_name } --%>
 													      <th scope="row">
 													      <c:out value="${stockVO.ticker}"/></th>
 													      <td><c:out value="${stockVO.stock_name}"/></td>
@@ -454,7 +481,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Basic table card end -->
+                                   </div>
+           <!-- 상단 내용 끝 -->
                                     
                                  
                                     
@@ -542,18 +570,21 @@
                                          
                                        
                                             <!-- statustic and process end -->
-											<!-- tabs card start -->
-                                            <div class="col-sm-12">
+					<!-- tabs card start -->
+					
+					<!-- 체결내역 기록 화면 -->
+					
+                                            <div class="col-lg-5 col-md-12">
                                                 <div class="card tabs-card">
                                                     <div class="card-block p-0">
                                                         <!-- Nav tabs -->
                                                         <ul class="nav nav-tabs md-tabs" role="tablist">
                                                             <li class="nav-item">
-                                                                <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-home"></i>Home</a>
+                                                                <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-home"></i>체결내역</a>
                                                                 <div class="slide"></div>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><i class="fa fa-key"></i>Security</a>
+                                                                <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><i class="fa fa-key"></i>잔고</a>
                                                                 <div class="slide"></div>
                                                             </li>
                                                             <li class="nav-item">
@@ -566,11 +597,13 @@
                                                             </li>
                                                         </ul>
                                                         <!-- Tab panes -->
+                                                       
                                                         <div class="tab-content card-block">
                                                             <div class="tab-pane active" id="home3" role="tabpanel">
 
                                                                 <div class="table-responsive">
                                                                     <table class="table">
+                                                                    	<thead>
                                                                         <tr>
                                                                             <th>거래번호</th>
                                                                             <th>종목명</th>
@@ -579,36 +612,35 @@
                                                                             <th>수량</th>
                                                                             <th>상태</th>
                                                                         </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        
+                                                                        <c:forEach items="${mystock }" var="mystockVO" varStatus="loop">
                                                                         <tr>
-                                                                            <td><img src="assets/images/product/prod2.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td><c:out value="${list.stock_name}"/></td>
-                                                                            <td>John Deo</td>
-                                                                            <td>05-01-2017</td>
-                                                                            <td>#7234486</td>
-                                                                            <td><span class="label label-danger">Faild</span></td>
+                                                                            
+                                                                            <td><c:out value="${mystockVO.log_no}"/></td>
+                                                                            <td><c:out value="${mystockVO.stock_name}"/></td>
+                                                                            <td><c:out value="${mystockVO.state}"/></td>
+                                                                            <td><c:out value="${mystockVO.end_p}"/></td>
+                                                                            <td><c:out value="${mystockVO.count}"/></td>
+                                                                            <td><span class="label label-success">체결</span></td>
+                                                                            
                                                                         </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod3.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002653</td>
-                                                                            <td>Eugine Turner</td>
-                                                                            <td>04-01-2017</td>
-                                                                            <td>#7234417</td>
-                                                                            <td><span class="label label-success">Delivered</span></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002156</td>
-                                                                            <td>Jacqueline Howell</td>
-                                                                            <td>03-01-2017</td>
-                                                                            <td>#7234454</td>
-                                                                            <td><span class="label label-warning">Pending</span></td>
-                                                                        </tr>
+                                                                        </c:forEach>
+                                                                        </tbody>
+                                                                        
                                                                     </table>
                                                                 </div>
                                                                 <div class="text-center">
                                                                     <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
                                                                 </div>
                                                             </div>
+                                                            
+                                      <!--  체결내역 끝 -->
+                                              
+                                              
+                                              
+                                      <!--  다른 항목 베너이동: 잔고페이지 ( 종목명, 수량, 매입단가 평가금액 평가손익-->
                                                             <div class="tab-pane" id="profile3" role="tabpanel">
 
                                                                 <div class="table-responsive">
@@ -626,7 +658,7 @@
                                                                             <td>PNG002653</td>
                                                                             <td>Eugine Turner</td>
                                                                             <td>04-01-2017</td>
-                                                                            <td><span class="label label-success">Delivered</span></td>
+                                                                            <td><span class="label label-danger">Delivered</span></td>
                                                                             <td>#7234417</td>
                                                                         </tr>
                                                                         <tr>
@@ -713,38 +745,200 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                   
                                                 </div>
+                                                
+                         						<div class="card tabs-card">
+                                                    <div class="card-block p-0">
+                                                        <!-- Nav tabs -->
+                                                        <ul class="nav nav-tabs md-tabs" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-home"></i>뉴스기사</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><i class="fa fa-key"></i>Security</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><i class="fa fa-play-circle"></i>Entertainment</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#settings3" role="tab"><i class="fa fa-database"></i>Big Data</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Tab panes -->
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                                       
+                                                        <div class="tab-content card-block">
+                                                        
+                                                        
+                                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+														  <ol class="carousel-indicators">
+														    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+														    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+														    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+														  </ol>
+														  <div class="carousel-inner">
+														    <div class="carousel-item active">
+														      <img class="d-block w-100" src="..." alt="First slide">
+														      <h3> 첫 번째 뉴스입니다.</h3>
+														      <br><br>
+														    </div>
+														    <div class="carousel-item">
+														      <img class="d-block w-100" src="..." alt="Second slide">
+														      <h3> 두 번째 뉴스입니다.</h3>
+														      <br><br>
+														    </div>
+														    <div class="carousel-item">
+														      <img class="d-block w-100" src="..." alt="Third slide">
+														      <h3> 세 번째 뉴스입니다.</h3>
+														      <br><br>
+														    </div>
+														  </div>
+														  <br><br><br><br><br><br><br><br>
+														  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+														    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+														    <span class="sr-only">Previous</span>
+														  </a>
+														  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+														    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+														    <span class="sr-only">Next</span>
+														  </a>
+														</div>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                          <!----------------------------------------------------->
+                                               
+                                              
+                                                            <div class="tab-pane" id="profile3" role="tabpanel">
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Image</th>
+                                                                            <th>Product Code</th>
+                                                                            <th>Customer</th>
+                                                                            <th>Purchased On</th>
+                                                                            <th>Status</th>
+                                                                            <th>Transaction ID</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod3.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002653</td>
+                                                                            <td>Eugine Turner</td>
+                                                                            <td>04-01-2017</td>
+                                                                            <td><span class="label label-danger">Delivered</span></td>
+                                                                            <td>#7234417</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002156</td>
+                                                                            <td>Jacqueline Howell</td>
+                                                                            <td>03-01-2017</td>
+                                                                            <td><span class="label label-warning">Pending</span></td>
+                                                                            <td>#7234454</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane" id="messages3" role="tabpanel">
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Image</th>
+                                                                            <th>Product Code</th>
+                                                                            <th>Customer</th>
+                                                                            <th>Purchased On</th>
+                                                                            <th>Status</th>
+                                                                            <th>Transaction ID</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002413</td>
+                                                                            <td>Jane Elliott</td>
+                                                                            <td>06-01-2017</td>
+                                                                            <td><span class="label label-primary">Shipping</span></td>
+                                                                            <td>#7234421</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002156</td>
+                                                                            <td>Jacqueline Howell</td>
+                                                                            <td>03-01-2017</td>
+                                                                            <td><span class="label label-warning">Pending</span></td>
+                                                                            <td>#7234454</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane" id="settings3" role="tabpanel">
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Image</th>
+                                                                            <th>Product Code</th>
+                                                                            <th>Customer</th>
+                                                                            <th>Purchased On</th>
+                                                                            <th>Status</th>
+                                                                            <th>Transaction ID</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002413</td>
+                                                                            <td>Jane Elliott</td>
+                                                                            <td>06-01-2017</td>
+                                                                            <td><span class="label label-primary">Shipping</span></td>
+                                                                            <td>#7234421</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod2.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002344</td>
+                                                                            <td>John Deo</td>
+                                                                            <td>05-01-2017</td>
+                                                                            <td><span class="label label-danger">Faild</span></td>
+                                                                            <td>#7234486</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                                
+                                                
+                                                
+                                                
+                                              
                                             </div>
+                                            
+                                       
                                             <!-- tabs card end -->
 
                                             <!-- social statustic start -->
                                             <div class="col-md-12 col-lg-4">
-                                                
-                                            </div>
-                                            <div class="col-md-6 col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-block text-center">
-                                                        <i class="fa fa-twitter text-c-green d-block f-40"></i>
-                                                        <h4 class="m-t-20"><span class="text-c-blgreenue">+40</span> Followers</h4>
-                                                        <p class="m-b-20">Your main list is growing</p>
-                                                        <button class="btn btn-success btn-sm btn-round">Check them out</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-4">
-                                                <div class="card">
-                                                    <div class="card-block text-center">
-                                                        <i class="fa fa-puzzle-piece text-c-pink d-block f-40"></i>
-                                                        <h4 class="m-t-20">Business Plan</h4>
-                                                        <p class="m-b-20">This is your current active plan</p>
-                                                        <button class="btn btn-danger btn-sm btn-round">Upgrade to VIP</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- social statustic end -->
-
-                                            <!-- users visite and profile start -->
-                                            <div class="col-md-4">
+                                              <div class="col-md-4">
                                                 <div class="card user-card">
                                                     <div class="card-header">
                                                         <h5>Profile</h5>
@@ -790,6 +984,33 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                               
+                                            </div>
+                                            <div class="col-md-6 col-lg-4">
+                                                <div class="card">
+                                                    <div class="card-block text-center">
+                                                        <i class="fa fa-twitter text-c-green d-block f-40"></i>
+                                                        <h4 class="m-t-20"><span class="text-c-blgreenue">+40</span> Followers</h4>
+                                                        <p class="m-b-20">Your main list is growing</p>
+                                                        <button class="btn btn-success btn-sm btn-round">Check them out</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-4">
+                                                <div class="card">
+                                                    <div class="card-block text-center">
+                                                        <i class="fa fa-puzzle-piece text-c-pink d-block f-40"></i>
+                                                        <h4 class="m-t-20">Business Plan</h4>
+                                                        <p class="m-b-20">This is your current active plan</p>
+                                                        <button class="btn btn-danger btn-sm btn-round">Upgrade to VIP</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- social statustic end -->
+
+                                            <!-- users visite and profile start -->
+                                           
+                                            
                                             <div class="col-md-8">
                                                 <div class="card">
                                                     <div class="card-header">
@@ -855,7 +1076,7 @@
                                             </div>
                                             <!-- users visite and profile end -->
 
-                                        </div>
+                                        <!-- </div> -->
                                     </div>
 
                                     <div id="styleSelector">
@@ -868,6 +1089,9 @@
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+      
 
         <!-- Warning Section Starts -->
         <!-- Older IE warning message -->

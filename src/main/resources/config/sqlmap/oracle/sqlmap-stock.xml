@@ -43,6 +43,8 @@
 	</update> 
 
 
+
+
 <!-- 플레이스톡: 매수정보 거래내역테이블 저장 -->
 	<insert id="stockBuy" parameterType="hashmap">
 		insert into mem_stock_buy(log_no, state, id, stock_name, count, end_p )
@@ -51,11 +53,14 @@
 
 
 <!-- 플레이스톡: 거래내역 출력-->
-	<select id="myStock" parameterType="mystockVO">
-		select b.id, s.stock_acc, s.stock_bal, b.stock_name, b.end_p, b.buy_date
-		from member_stock s, mem_stock_buy b
+	<select id="myStock" parameterType="String" resultType="mystockVO">
+		select b.log_no log_no, b.id id, s.stock_acc stock_acc, trim(to_char(s.stock_bal,'999,999,999')) stock_bal, b.stock_name stock_name, b.count count, b.end_p end_p, b.buy_date buy_date, b.state state
+		from(select log_no,id, stock_name, count, end_p,buy_date, case when state like '11%' then '매수' else '매도' end as state 
+		    from mem_stock_buy) b , member_stock s
 		where s.id=b.id
-	</select> 
+		and s.id=#{id}
+		order by b.log_no desc
+	</select>
 
 	
 	
