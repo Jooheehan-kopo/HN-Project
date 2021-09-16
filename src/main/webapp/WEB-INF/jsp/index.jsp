@@ -70,7 +70,7 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
-									<h2 data-animation="animated zoomInRight"><strong>	PLAY HANA</strong> 하나런</h2>
+									<h2 data-animation="animated zoomInRight">let's <strong>	PLAY HANA</strong> with us! </h2>
 									<p class="lead" data-animation="animated fadeInLeft"> </p>
 									 <a data-scroll href="${pageContext.request.contextPath }/member/resister" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

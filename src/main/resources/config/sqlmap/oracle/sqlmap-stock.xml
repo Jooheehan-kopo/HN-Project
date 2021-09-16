@@ -35,6 +35,18 @@
 		                    '삼성바이오로직스')
 	</select>
 	
+	<select id="play02" resultType="stockmainVO">
+		select to_char(stock_date,'yy/mm/dd')as stock_date, stock_code ticker,stock_name, TO_CHAR(end_p , '999,999,999,999,999')end_p , compare , TO_CHAR( stocks_totalprice , '999,999,999,999,999')stocks_totalprice
+		from play_stock
+		where stock_date = '21/01/06'
+		and stock_name in ('삼성전자','CJ ENM','SK하이닉스','카카오','NAVER',
+		                    '현대차','한국항공우주','LG화학', '삼성SDI','현대백화점',
+		                    '호텔신라','이마트','하나투어','NH투자증권','하나금융지주',
+		                    'KB금융','카카오게임즈','카카오뱅크','엔씨소프트', '골프존',
+		                    '롯데칠성', '하이트진로', '아모레퍼시픽', 'LG생활건강','셀트리온',
+		                    '삼성바이오로직스')
+	</select>
+	
 	
 <!-- 플레이스톡: 매수 가격 아이디 찾아 업데이트 -->
 	<update id="stockBal01" parameterType="hashmap">

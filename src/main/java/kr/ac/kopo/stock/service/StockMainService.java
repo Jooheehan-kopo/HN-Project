@@ -10,6 +10,8 @@ public interface StockMainService {
 
 	List<StockMainVO> showTodayStock();
 	List<StockMainVO> playStockOne();
+	List<StockMainVO> playStockTwo();
+	
 	void stockBuy(StockMainVO buy, MemberVO user);
 	List<MyStockVO> MyStock ();
 	

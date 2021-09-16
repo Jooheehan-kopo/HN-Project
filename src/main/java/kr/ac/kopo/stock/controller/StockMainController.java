@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,29 +46,41 @@ public class StockMainController {
 	
 	//모의투자화면상의 round1 주식 표
 	// 표2
-	
-	@RequestMapping("/stock/playStock")
+	@RequestMapping("stock/playStock")
 	public ModelAndView getmyList( @SessionAttribute("userVO") MemberVO user) {
 		
 		 //service에 내 로그인정보 전달
 		System.out.println("아이디내놔:"+ user);
 		
-		//리스트에 서비스에 있는 것 가져와서 저장 후 뷰에 전달
+		//리스트에 서비스에 있는 것 가져와서 저장 후 뷰에 전달(받기)
 		List<MyStockVO> mystockList = service.MyList(user);
 		
+		//playStock
 		List<StockMainVO> psOneList = service.playStockOne();
+		
 		
 		ModelAndView mav = new ModelAndView("stock/playStock");
 		mav.addObject("mystock", mystockList);
 		mav.addObject("list", psOneList);
 		
+		
 		return mav;
 		
 		
 	}
+	//주식종목 리스트 변경
+	@ResponseBody
+	@GetMapping("stock/changelist01")
+	public List<StockMainVO> changeList01(){
+		List<StockMainVO> psTwoList = service.playStockTwo();
+		System.out.println("con twoList: "+ psTwoList);
+		return psTwoList;
+	}
+	
+	
 
 	//매수 값 전달 
-	@PostMapping("/stock/playStock")
+	@PostMapping("stock/playStock")
 	public String stockBuy(StockMainVO buy, @SessionAttribute("userVO") MemberVO user) {
 		
 //		String id = (String)session.getAttribute("userVO");

@@ -36,6 +36,12 @@ public class StockMainDAOImpl implements StockMainDAO {
 		System.out.println("playStock01: "+ list);
 		return list;
 	}
+	public List<StockMainVO> playStock02(){
+		List<StockMainVO> list = sqlsessionTemplate.selectList("crawl.stock.play02");
+		
+		System.out.println("playStock02: "+ list);
+		return list;
+	}
 	
 	//매수 후 테이블 잔액 및 로그 저장
 	public void updateBal(HashMap<String, Object> map) {

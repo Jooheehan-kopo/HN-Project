@@ -12,6 +12,7 @@ public interface StockMainDAO {
 	List<StockMainVO> showTodayStock();
 	
 	List<StockMainVO> playStock01();
+	List<StockMainVO> playStock02();
 
 	void updateBal(HashMap<String, Object> map);
 	

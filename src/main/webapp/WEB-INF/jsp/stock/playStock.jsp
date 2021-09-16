@@ -391,9 +391,10 @@
                                             <div class="col-md-6 col-xl-3">
                                                 <div class="card bg-c-blue order-card">
                                                     <div class="card-block">
-                                                        <h6 class="m-b-20">Orders Received</h6>
-                                                        <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>486</span></h2>
-                                                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                                                        <h6 class="m-b-20">다음 단계이동</h6>
+                                                        <h2 class="text-right"><i class="fa fa-heartbeat" ></i>
+                                                        <span id="spanspan">Round 1<button id="nextLvl" style="background-color:transparent; outline:0; "><i class="fa fa-sign-in" aria-hidden="true"></i></button></span></h2>
+                                                        <p class="m-b-0">매수 완료시 버튼을 누르세요!<span class="f-right"></span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -402,7 +403,7 @@
                                                     <div class="card-block">
                                                         <h6 class="m-b-20">현재 나의잔액</h6>
                                                         <h2 class="text-right"><i class="ti-tag f-left"></i><span><c:out value="${mystock[0].stock_bal}"/>원</span></h2>
-                                                        <p class="m-b-0">This Month<span class="f-right">213</span></p>
+                                                        <p class="m-b-0">투자금액<span class="f-right"></span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -419,8 +420,12 @@
                                                 <div class="card bg-c-pink order-card">
                                                     <div class="card-block">
                                                         <h6 class="m-b-20">시드머니</h6>
-                                                        <h2 class="text-right"><i class="ti-wallet f-left"></i><span>$9,562</span></h2>
-                                                        <p class="m-b-0">This Month<span class="f-right">$542</span></p>
+                                                        <h2 class="text-right"><i class="ti-wallet f-left"></i><span>\10,000,000</span></h2>
+                                                        <p class="m-b-0">시작일<span class="f-right"><%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+
+															<jsp:useBean id="toDay" class="java.util.Date" />
+															
+															<fmt:formatDate value="${toDay}" pattern="yyyy-MM-dd" /></span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -459,7 +464,7 @@
                                                             <th>거래하기</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody id="getList">
 													  <c:forEach items="${list }" var="stockVO" varStatus="loop">
 													 
 													    <tr>
@@ -575,6 +580,189 @@
 					<!-- 체결내역 기록 화면 -->
 					
                                             <div class="col-lg-5 col-md-12">
+                                             
+                                            	<div class="card tabs-card">
+                                                    <div class="card-block p-0">
+                                                        <!-- Nav tabs -->
+                                                        <ul class="nav nav-tabs md-tabs" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-home"></i>뉴스기사</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><i class="fa fa-key"></i>Security</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><i class="fa fa-play-circle"></i>Entertainment</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#settings3" role="tab"><i class="fa fa-database"></i>Big Data</a>
+                                                                <div class="slide"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Tab panes -->
+                                                        
+                                                        
+                                                        
+                                                        
+                               <!-- newsssssssssssssss -->  
+                                                       
+                                                        <div class="tab-content card-block">
+                                                        
+                                                        
+                                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+														  <ol class="carousel-indicators">
+														    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+														    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+														    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+														  </ol>
+														  <div class="carousel-inner">
+														    <div class="carousel-item active">
+														      <img class="d-block w-100" src="${ pageContext.request.contextPath }/resources/images/news01.png" alt="First slide">
+														      <!-- <h3> 첫 번째 뉴스입니다.</h3> -->
+														      
+														    </div>
+														    <div class="carousel-item">
+														      <img class="d-block w-100" src="${ pageContext.request.contextPath }/resources/images/news02.png" alt="Second slide">
+														      <h3> </h3>
+														     
+														    </div>
+														    <div class="carousel-item">
+														      <img class="d-block w-100" src="${ pageContext.request.contextPath }/resources/images/news03.png" alt="Third slide">
+														      <h3> </h3>
+														      
+														    </div>
+														  </div>
+														  
+														  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+														    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
+														    <span class="sr-only">Previous</span>
+														  </a>
+														  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+														    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+														    <span class="sr-only">Next</span>
+														  </a>
+														</div>
+                                                        
+                                                        
+                                                        
+                                                        
+                                                        
+                                          					<!----------------->
+                                               
+                                              
+                                                            <div class="tab-pane" id="profile3" role="tabpanel">
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Image</th>
+                                                                            <th>Product Code</th>
+                                                                            <th>Customer</th>
+                                                                            <th>Purchased On</th>
+                                                                            <th>Status</th>
+                                                                            <th>Transaction ID</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod3.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002653</td>
+                                                                            <td>Eugine Turner</td>
+                                                                            <td>04-01-2017</td>
+                                                                            <td><span class="label label-danger">Delivered</span></td>
+                                                                            <td>#7234417</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002156</td>
+                                                                            <td>Jacqueline Howell</td>
+                                                                            <td>03-01-2017</td>
+                                                                            <td><span class="label label-warning">Pending</span></td>
+                                                                            <td>#7234454</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane" id="messages3" role="tabpanel">
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Image</th>
+                                                                            <th>Product Code</th>
+                                                                            <th>Customer</th>
+                                                                            <th>Purchased On</th>
+                                                                            <th>Status</th>
+                                                                            <th>Transaction ID</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002413</td>
+                                                                            <td>Jane Elliott</td>
+                                                                            <td>06-01-2017</td>
+                                                                            <td><span class="label label-primary">Shipping</span></td>
+                                                                            <td>#7234421</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002156</td>
+                                                                            <td>Jacqueline Howell</td>
+                                                                            <td>03-01-2017</td>
+                                                                            <td><span class="label label-warning">Pending</span></td>
+                                                                            <td>#7234454</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane" id="settings3" role="tabpanel">
+
+                                                                <div class="table-responsive">
+                                                                    <table class="table">
+                                                                        <tr>
+                                                                            <th>Image</th>
+                                                                            <th>Product Code</th>
+                                                                            <th>Customer</th>
+                                                                            <th>Purchased On</th>
+                                                                            <th>Status</th>
+                                                                            <th>Transaction ID</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002413</td>
+                                                                            <td>Jane Elliott</td>
+                                                                            <td>06-01-2017</td>
+                                                                            <td><span class="label label-primary">Shipping</span></td>
+                                                                            <td>#7234421</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td><img src="assets/images/product/prod2.jpg" alt="prod img" class="img-fluid"></td>
+                                                                            <td>PNG002344</td>
+                                                                            <td>John Deo</td>
+                                                                            <td>05-01-2017</td>
+                                                                            <td><span class="label label-danger">Faild</span></td>
+                                                                            <td>#7234486</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-center">
+                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                                
+                                                
+              <!-------------------------------------------------체결내역----------------------------------------------  -->
+              
                                                 <div class="card tabs-card">
                                                     <div class="card-block p-0">
                                                         <!-- Nav tabs -->
@@ -748,184 +936,7 @@
                                                    
                                                 </div>
                                                 
-                         						<div class="card tabs-card">
-                                                    <div class="card-block p-0">
-                                                        <!-- Nav tabs -->
-                                                        <ul class="nav nav-tabs md-tabs" role="tablist">
-                                                            <li class="nav-item">
-                                                                <a class="nav-link active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-home"></i>뉴스기사</a>
-                                                                <div class="slide"></div>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link" data-toggle="tab" href="#profile3" role="tab"><i class="fa fa-key"></i>Security</a>
-                                                                <div class="slide"></div>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link" data-toggle="tab" href="#messages3" role="tab"><i class="fa fa-play-circle"></i>Entertainment</a>
-                                                                <div class="slide"></div>
-                                                            </li>
-                                                            <li class="nav-item">
-                                                                <a class="nav-link" data-toggle="tab" href="#settings3" role="tab"><i class="fa fa-database"></i>Big Data</a>
-                                                                <div class="slide"></div>
-                                                            </li>
-                                                        </ul>
-                                                        <!-- Tab panes -->
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                       
-                                                        <div class="tab-content card-block">
-                                                        
-                                                        
-                                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-														  <ol class="carousel-indicators">
-														    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-														    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-														    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-														  </ol>
-														  <div class="carousel-inner">
-														    <div class="carousel-item active">
-														      <img class="d-block w-100" src="..." alt="First slide">
-														      <h3> 첫 번째 뉴스입니다.</h3>
-														      <br><br>
-														    </div>
-														    <div class="carousel-item">
-														      <img class="d-block w-100" src="..." alt="Second slide">
-														      <h3> 두 번째 뉴스입니다.</h3>
-														      <br><br>
-														    </div>
-														    <div class="carousel-item">
-														      <img class="d-block w-100" src="..." alt="Third slide">
-														      <h3> 세 번째 뉴스입니다.</h3>
-														      <br><br>
-														    </div>
-														  </div>
-														  <br><br><br><br><br><br><br><br>
-														  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-														    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
-														    <span class="sr-only">Previous</span>
-														  </a>
-														  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-														    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-														    <span class="sr-only">Next</span>
-														  </a>
-														</div>
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                          <!----------------------------------------------------->
-                                               
-                                              
-                                                            <div class="tab-pane" id="profile3" role="tabpanel">
-
-                                                                <div class="table-responsive">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Image</th>
-                                                                            <th>Product Code</th>
-                                                                            <th>Customer</th>
-                                                                            <th>Purchased On</th>
-                                                                            <th>Status</th>
-                                                                            <th>Transaction ID</th>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod3.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002653</td>
-                                                                            <td>Eugine Turner</td>
-                                                                            <td>04-01-2017</td>
-                                                                            <td><span class="label label-danger">Delivered</span></td>
-                                                                            <td>#7234417</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002156</td>
-                                                                            <td>Jacqueline Howell</td>
-                                                                            <td>03-01-2017</td>
-                                                                            <td><span class="label label-warning">Pending</span></td>
-                                                                            <td>#7234454</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </div>
-                                                                <div class="text-center">
-                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
-                                                                </div>
-                                                            </div>
-                                                            <div class="tab-pane" id="messages3" role="tabpanel">
-
-                                                                <div class="table-responsive">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Image</th>
-                                                                            <th>Product Code</th>
-                                                                            <th>Customer</th>
-                                                                            <th>Purchased On</th>
-                                                                            <th>Status</th>
-                                                                            <th>Transaction ID</th>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002413</td>
-                                                                            <td>Jane Elliott</td>
-                                                                            <td>06-01-2017</td>
-                                                                            <td><span class="label label-primary">Shipping</span></td>
-                                                                            <td>#7234421</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002156</td>
-                                                                            <td>Jacqueline Howell</td>
-                                                                            <td>03-01-2017</td>
-                                                                            <td><span class="label label-warning">Pending</span></td>
-                                                                            <td>#7234454</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </div>
-                                                                <div class="text-center">
-                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
-                                                                </div>
-                                                            </div>
-                                                            <div class="tab-pane" id="settings3" role="tabpanel">
-
-                                                                <div class="table-responsive">
-                                                                    <table class="table">
-                                                                        <tr>
-                                                                            <th>Image</th>
-                                                                            <th>Product Code</th>
-                                                                            <th>Customer</th>
-                                                                            <th>Purchased On</th>
-                                                                            <th>Status</th>
-                                                                            <th>Transaction ID</th>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002413</td>
-                                                                            <td>Jane Elliott</td>
-                                                                            <td>06-01-2017</td>
-                                                                            <td><span class="label label-primary">Shipping</span></td>
-                                                                            <td>#7234421</td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td><img src="assets/images/product/prod2.jpg" alt="prod img" class="img-fluid"></td>
-                                                                            <td>PNG002344</td>
-                                                                            <td>John Deo</td>
-                                                                            <td>05-01-2017</td>
-                                                                            <td><span class="label label-danger">Faild</span></td>
-                                                                            <td>#7234486</td>
-                                                                        </tr>
-                                                                    </table>
-                                                                </div>
-                                                                <div class="text-center">
-                                                                    <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                   
-                                                </div>
+                         					
                                                 
                                                 
                                                 
@@ -1154,6 +1165,10 @@
 <!-- Todo js -->
 <script type="text/javascript " src="${pageContext.request.contextPath }/assets/pages/todo/todo.js "></script>
 <!-- Custom js -->
+
+<script type="text/javascript" src="${pageContext.request.contextPath }/resources/js/next-stage.js"></script>
+
+
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/pages/dashboard/custom-dashboard.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/script.js"></script>
 <script type="text/javascript " src="${pageContext.request.contextPath }/assets/js/SmoothScroll.js"></script>

@@ -31,6 +31,14 @@ public class StockMainServiceImpl implements StockMainService {
 		List<StockMainVO> psOneList = stockMDAO.playStock01();
 		return psOneList;
 	}
+	public List<StockMainVO> playStockTwo(){
+		List<StockMainVO> psTwoList = stockMDAO.playStock02();
+		
+		System.out.println("service: "+ psTwoList);
+		return psTwoList;
+		
+	}
+	
 	
 	//매수가격 넘기기
 	public void stockBuy(StockMainVO buy,@SessionAttribute("userVO") MemberVO user) {
@@ -56,6 +64,8 @@ public class StockMainServiceImpl implements StockMainService {
 		stockMDAO.updateBal(map);
 		
 	}
+	
+	//안씀
 	public  List<MyStockVO> MyStock (){
 		List<MyStockVO> mystock = stockMDAO.getMyStock();
 		return mystock;
