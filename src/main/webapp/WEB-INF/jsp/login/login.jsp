@@ -251,8 +251,8 @@ body{
 		<header>
 			<div class="sel-lang-wrap">
 				<select class="lang-select">
-					<option>한국어</option>
-					<option>English</option>
+					<option>일반회원</option>
+					<option>관리자</option>
 				</select>
 			</div>
 			<div class="logo-wrap">

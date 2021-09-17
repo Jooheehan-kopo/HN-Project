@@ -38,11 +38,7 @@ public class IndexController {
 	 */
 
 	
-	@GetMapping("admin/index")
-	public String adminIndex() {
-		System.out.println("admin/index");
-		return "admin/index";
-	}
+	
 	
 	@GetMapping("member/rank")
 	public String rank() {

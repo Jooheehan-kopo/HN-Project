@@ -12,7 +12,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/logo-hosting.png" ></a>
+                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" style="width:100px;"></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -34,7 +34,7 @@
                     </ul>
                     <c:if test="${empty userVO }">
 	                    <ul class="nav navbar-nav navbar-right">
-	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/adminLogin" ><i class="flaticon-padlock"></i>본인인증</a></li>
+	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/admin/login" ><i class="flaticon-padlock"></i>본인인증</a></li>
 	                    </ul>
                     </c:if>
                      <c:if test ="${not empty userVO }">

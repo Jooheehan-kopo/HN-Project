@@ -433,36 +433,48 @@ $(document).ready(function() {
   <div class="container">
     <div class="input-form-backgroud row">
     	<div class="input-form forms">
-        <h4 class="mb-3">반갑습니다!</h4>
-        <form method ="post" action="${pageContext.request.contextPath}/account/accountMain" class="validation-form" novalidate>
+        <h4 class="mb-3">두번째 단계@@@@</h4>
+        <form method ="post" action="${pageContext.request.contextPath}/account/accountTwo" class="validation-form" novalidate>
           <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="name">이름</label>
-              <input type="text" class="form-control" name ="bank_username" id="name" placeholder="이름을 입력해주세요." value="" required>
-              
-            </div>
+            <div class="mb-3">
+            <label for="password">비밀번호</label>
            
-            <div class="col-md-6 mb-3">
-              <label for="nickname">주민번호</label>
-              <input type="text" class="form-control" name="bank_res_no" id="res_no" placeholder="(-)를 제외하고 입력." value="" required>
-             
-            </div>
-			<br>
-  
-          <div class="col-md-6 mb-3">
-          <br>
-            <label for="phone">본인인증</label>
-            <input placeholder="전화번호를 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control" style="width:100%"></input>
-						<input type="button" id="phoneckBtn" value="확인" style="display: flex">
-			<input placeholder="인증번호 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control"  ></input>	
-			<br>	
-           
+            <input type="password" class="form-control" name = "bank_password" id="pw" onchange="pwCheck()" placeholder="문자와 숫자를 혼합하세요." style="width:80%"  required>
+            
           </div>
+          <div class="mb-3">
+            <label for="password">비밀번호 확인</label>
+            <input type="password" class="form-control" name = "" id="pw2" onchange="pwCheck()" placeholder="설정한 비밀번호를 한번 더 입력해주세요." style="width:80%" required>&nbsp;<span id="check"></span>
+            
+          </div>
+          <div class="mb-3">
+            <label for="email">이메일</label>
+            <input type="email" class="form-control" name="bank_email" id="email" style="width:80%" placeholder="you@example.com" required>
+          
+          </div>
+          <div class="mb-3">
+          <br>
+            <label for="address" style="float:left;">주소</label>
+           
+            
+            <input type="text" class="form-control" name ="post" id="sample4_postcode" placeholder="우편번호" style="width:50% ;display:flex;  float:left; margin-right:10px;">
+			<input type="button" class="btn btn-primary btn-lg btn-block" onclick="sample4_execDaumPostcode()" value="검색" style= "background-color:#008485; float:left; width:10%;height:35px; font-size:small; text-align: center"><br>
+			<input type="text" class="form-control" name ="bank_addr1" id="sample4_roadAddress" placeholder="도로명주소">
+			<input type="text" class="form-control" name= "bank_addr2" id="sample4_jibunAddress" placeholder="지번주소">
+			<span id="guide" style="color:#999;display:none"></span>
+	
+
+          <div class="mb-3">
+          <br>
+            <label for="address2">상세주소<span class="text-muted">&nbsp;</span></label>
+            <input type="text" class="form-control" name= "bank_addr3" id="address2" style="width:80%"  placeholder="상세주소를 입력해주세요." required>
+          </div>
+            
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "complete()"  style="width:50%">다음</button>
           </div>
 
        
-          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/two'"  style="width:50%">다음</button>
-          <button type="button" class="navyBtn" onClick="location.href='PAGENAME.html'">
         </form>
       </div>
     	

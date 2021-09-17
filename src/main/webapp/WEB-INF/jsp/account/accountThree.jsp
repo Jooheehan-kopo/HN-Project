@@ -236,13 +236,12 @@ $(document).ready(function() {
 
 	 <div id="overviews" class="section wb">
 		
-		<div class="container d-flex justify-content-center align-items-center">
-		    <div class="progresses">
-		        <div class="steps"> <span>1</span> </div> <span class="line"></span>
-		        <div class="steps"> <span>2</i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span><i class="fa fa-check"></i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span><i class="fa fa-check"></i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span class="font-weight-bold">5</span> </div>
+		<div class="container d-flex justify-content-center align-items-center" >
+		    <div class="progresses" style="justify-content: center;">
+		        <div class="steps"> <span><i class="fa fa-check"></i></span>  </div> <span class="line"></span>
+		        <div class="steps"> <span><i class="fa fa-check"></i></span>  </div> <span class="line"></span>
+		        <div class="steps"> <span><i class="fa fa-check"></i></span>  </div> 
+		     
 		    </div>
 		</div>
 			 
@@ -421,7 +420,7 @@ $(document).ready(function() {
 </script>
 <script>
 	function complete(){
-		alert(${userVO.id}'님, 환영합니다! 회원가입이 완료되었습니다.')
+		alert($'{userVO.id}'님, 환영합니다! 회원가입이 완료되었습니다.')
 	}
 
 </script>
@@ -433,36 +432,18 @@ $(document).ready(function() {
   <div class="container">
     <div class="input-form-backgroud row">
     	<div class="input-form forms">
-        <h4 class="mb-3">반갑습니다!</h4>
-        <form method ="post" action="${pageContext.request.contextPath}/account/accountMain" class="validation-form" novalidate>
+        <h4 class="mb-3"><c:out value="${userVO.name }"></c:out>님,<br>
+        신청절차가 성공적으로 완료되었습니다.</h4>
+        
           <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="name">이름</label>
-              <input type="text" class="form-control" name ="bank_username" id="name" placeholder="이름을 입력해주세요." value="" required>
-              
-            </div>
+            <div class="mb-3">
+            <label for="password">계좌번호</label>
            
-            <div class="col-md-6 mb-3">
-              <label for="nickname">주민번호</label>
-              <input type="text" class="form-control" name="bank_res_no" id="res_no" placeholder="(-)를 제외하고 입력." value="" required>
-             
-            </div>
-			<br>
-  
-          <div class="col-md-6 mb-3">
-          <br>
-            <label for="phone">본인인증</label>
-            <input placeholder="전화번호를 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control" style="width:100%"></input>
-						<input type="button" id="phoneckBtn" value="확인" style="display: flex">
-			<input placeholder="인증번호 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control"  ></input>	
-			<br>	
-           
+            <c:out value="${bankVO.bank_id }"></c:out>
+            
           </div>
-          </div>
-
+         
        
-          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/two'"  style="width:50%">다음</button>
-          <button type="button" class="navyBtn" onClick="location.href='PAGENAME.html'">
         </form>
       </div>
     	

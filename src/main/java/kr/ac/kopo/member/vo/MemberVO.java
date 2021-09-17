@@ -15,13 +15,25 @@ public class MemberVO {
 	private String stock_acc_date;
 	private int input_cost; //사고 파는 주식 가격.
 	
+
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	//
 	public MemberVO() {
 		
 	}
-	//	
+	
+	
+	
+	//회원가입
+	
 	public String getName() {
 		return name;
 	}
