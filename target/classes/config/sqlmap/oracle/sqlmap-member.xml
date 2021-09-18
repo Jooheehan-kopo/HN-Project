@@ -29,4 +29,13 @@
 		where user_id = #{id}
 	</select>
 	
+	<!-- 계좌이체 -->
+	<insert id="transMoney" statementType="CALLABLE" parameterType="transVO">
+		 {call trans(
+		 		#{bank_id}, #{trans_money}, #{your_bank_id})
+         }
+		
+	
+	</insert>
+	
 </mapper>

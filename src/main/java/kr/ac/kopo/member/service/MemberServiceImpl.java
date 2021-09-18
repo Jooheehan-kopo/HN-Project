@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.ac.kopo.member.dao.MemberDAO;
 import kr.ac.kopo.member.vo.BankAccountVO;
+import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
 
 @Service
@@ -55,5 +56,19 @@ public class MemberServiceImpl implements MemberServicce {
 		List<BankAccountVO> bankVO = memberDAO.myAcc(user);
 		return bankVO;
 		}
+	
+	
+	//이체 프로시저 insert
+	public void trans(BankTransVO transVO) {
+		
+		BankTransVO trans = new BankTransVO();
+		trans.setBank_id(transVO.getBank_id());
+		trans.setTrans_money(transVO.getTrans_money());
+		trans.setYour_bank_id(transVO.getYour_bank_id());
+		
+		System.out.println("trans:" +trans);
+		memberDAO.trans(trans);
+		
+	}
 
 }

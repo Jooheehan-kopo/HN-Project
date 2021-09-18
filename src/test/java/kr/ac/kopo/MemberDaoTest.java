@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import kr.ac.kopo.member.dao.MemberDAO;
 import kr.ac.kopo.member.service.MemberServiceImpl;
 import kr.ac.kopo.member.vo.BankAccountVO;
+import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -29,7 +30,7 @@ public class MemberDaoTest {
 	private MemberServiceImpl service;
 
 
-	
+	@Ignore
 	@Test
 	public void 전체게시글조회test() throws Exception {
 		MemberVO user = new MemberVO();
@@ -38,6 +39,29 @@ public class MemberDaoTest {
 		for(BankAccountVO bank:list) {
 			System.out.println();
 		}
+		
+	}
+	
+	@Test
+	public void 이체프로시저test() throws Exception {
+		BankTransVO trans = new BankTransVO();
+		trans.setBank_id("11114309628");
+		trans.setTrans_money(10000);
+		trans.setYour_bank_id("11122797153");
+		
+		System.out.println("trans:" +trans);
+		memberDAO.trans(trans);
+	
+	}
+	@Test
+	public void 이체프로시저DAOtest() throws Exception {
+		BankTransVO trans = new BankTransVO();
+		trans.setBank_id("11114309628");
+		trans.setTrans_money(10000);
+		trans.setYour_bank_id("11122797153");
+		
+		System.out.println("trans:" +trans);
+		sessionTemplate.insert("member.MemberDAO.myAccounts",trans);
 		
 	}
 

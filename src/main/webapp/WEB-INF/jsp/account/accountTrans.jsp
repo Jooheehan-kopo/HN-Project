@@ -108,13 +108,15 @@
 
 									<div class="col-md-9 mb-3">
 									<label for="nickname" style="float:left"><h5>하나은행 출금계좌</h5></label>
-										<select class="" style="width: 80%; height: 45px; ">
+									<input type="text" class="form-control" name="bank_id" id="text"
+											placeholder="출금 계좌번호를 입력하세요" " value="" required>
+										<!-- <select class="" style="width: 80%; height: 45px; ">
 											<option selected>선택하세요</option>
 											<option value="1">
 											</option>
 											<option value="2">Two</option>
 											<option value="3">Three</option>
-										</select>
+										</select> -->
 
 									</div>
 
@@ -127,13 +129,11 @@
 									<br>
 
 									<div class="col-md-9 mb-3">
-										<br> <label for="phone">이체금액</label> <input
-											id="phoneNumber" name="trans_money" type="text"
-											class="form-control" style="width: 100%"></input> <input
+										<br> <label for="phone">이체금액</label> <input id="phoneNumber" name="trans_money" type="text" class="form-control" style="width: 100%"></input> <input
 											type="button" id="phoneckBtn" value="이체한도 조회"
-											style="display: flex"> <br> <label for="phone">내
-											통장 표시</label> <input id="phoneNumber" name="trans_money" type="text"
-											class="form-control" style="width: 100%"></input>
+											style="display: flex"> <br> 
+										<label for="phone">내통장 표시</label> 
+										<input id="phoneNumber" name="" type="text"class="form-control" style="width: 100%"></input>
 									</div>
 								</div>
 						<!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ  -->
@@ -159,8 +159,8 @@
 									</div>
 
 									<div class="col-md-9 mb-3">
-										<label for="nickname">입금 계좌번호</label> <input type="password"
-											class="form-control" name="bank_password" id="password"
+										<label for="nickname">입금 계좌번호</label> 
+										<input type="password" class="form-control" name="your_bank_id" id="your_bank_id"
 											placeholder="- 없이 계좌번호를 입력하세요" value="" required>
 
 									</div>
@@ -168,11 +168,7 @@
 
 									
 								</div>
-<br>
-
-
-
-						
+							<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/'"  style="width:50%">이체</button>
 							</form>
 						</div>
 

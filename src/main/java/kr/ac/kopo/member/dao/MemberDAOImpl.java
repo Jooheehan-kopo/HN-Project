@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.member.vo.BankAccountVO;
+import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
 
 @Repository
@@ -46,6 +47,13 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println("myACC: "+ bankVO);
 		return bankVO;
 	
+	}
+	
+	//이체 -프로시저 입력
+	public void trans (BankTransVO transVO) {
+		sqlsessionTemplate.insert("member.MemberDAO.transMoney",transVO);
+		System.out.println("transVO:" +transVO);
+		
 	}
 
 }

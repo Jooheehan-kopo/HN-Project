@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.member.service.MemberServiceImpl;
 import kr.ac.kopo.member.vo.BankAccountVO;
+import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
 
 @SessionAttributes({"userVO"})
@@ -104,6 +105,16 @@ public class MemberController {
 	public String accTrans() {
 		return "account/accountTrans";
 	}
+	
+	@PostMapping("account/accountTrans")
+	public String transMoney(BankTransVO transVO) {
+		
+		service.trans(transVO);
+		
+		return "account/accountTrans";
+		
+	}
+	
 	
 	
 	
