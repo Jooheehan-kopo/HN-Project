@@ -26,11 +26,7 @@ public class IndexController {
 	  return "account/accountMain";
 	  }
 	
-	@GetMapping("account/accountSearch")
-	public String acSearch() {
-		System.out.println("account/accountSearch");
-		return "account/accountSearch";
-	}
+	
 	
 	/*
 	 * @GetMapping("stock/stockMain") public String stock() {

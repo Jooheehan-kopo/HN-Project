@@ -1,7 +1,9 @@
 package kr.ac.kopo.member.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,6 +23,7 @@ public class MemberDAOImpl implements MemberDAO {
 		return userVO;
 	}
 	
+	//계좌개설 정보 입력
 	public void createAccOne (HashMap<String, Object> map) {
 		
 		sqlsessionTemplate.insert("member.MemberDAO.account", map);
@@ -32,6 +35,17 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlsessionTemplate.update("member.MemberDAO.accountTwo", map);
 		System.out.println("member acc: " + map);
 		
+	}
+	
+	//생성한 계좌 정보 가져오기
+	public List<BankAccountVO> myAcc(@Param("id") MemberVO user){
+		String id = user.getId();
+		System.out.println("*****dao id"+ id);
+		
+		List<BankAccountVO> bankVO = sqlsessionTemplate.selectList("member.MemberDAO.myAccounts",id);
+		System.out.println("myACC: "+ bankVO);
+		return bankVO;
+	
 	}
 
 }

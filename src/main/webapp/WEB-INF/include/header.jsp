@@ -23,7 +23,7 @@
 						    <ul class="dropdown-menu" role="menu">
 						       <li><a href="${pageContext.request.contextPath }/account/accountMain">개설</a></li>
 						       <li><a href="${pageContext.request.contextPath }/account/accountSearch">조회</a></li>
-						       <li><a href="#">이체</a></li>
+						       <li><a href="${pageContext.request.contextPath }/account/accountTrans">이체</a></li>
 						    </ul>
 						</li>
                         <li class="dropdown">

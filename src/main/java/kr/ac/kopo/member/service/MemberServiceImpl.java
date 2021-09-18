@@ -1,6 +1,7 @@
 package kr.ac.kopo.member.service;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,5 +45,15 @@ public class MemberServiceImpl implements MemberServicce {
 		memberDAO.createAccTwo(map);
 		
 	}
+	
+	public List<BankAccountVO> myAccount(@SessionAttribute("userVO") MemberVO user){
+		
+		System.out.println("계좌 아이디 전달:"+ user);
+		String id = user.getId();
+		System.out.println("id: "+ id);
+		
+		List<BankAccountVO> bankVO = memberDAO.myAcc(user);
+		return bankVO;
+		}
 
 }

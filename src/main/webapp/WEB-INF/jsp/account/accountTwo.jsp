@@ -236,14 +236,16 @@ $(document).ready(function() {
 
 	 <div id="overviews" class="section wb">
 		
+		
 		<div class="container d-flex justify-content-center align-items-center">
-		    <div class="progresses">
-		        <div class="steps"> <span>1</span> </div> <span class="line"></span>
-		        <div class="steps"> <span>2</i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span><i class="fa fa-check"></i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span><i class="fa fa-check"></i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span class="font-weight-bold">5</span> </div>
-		    </div>
+			<div class="progresses" style="justify-content: center;">
+				 <div class="steps"> <span><i class="fa fa-check"></i></span></div> <span class="line"></span>
+		        <div class="steps"> <span>2</span> </div> <span class="line"></span>
+		        <div class="steps"> <span>3</span> 
+				
+				</div>
+
+			</div>
 		</div>
 			 
 			<!-- end title -->

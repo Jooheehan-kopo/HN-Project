@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -237,13 +240,14 @@ $(document).ready(function() {
 	 <div id="overviews" class="section wb">
 		
 		<div class="container d-flex justify-content-center align-items-center">
-		    <div class="progresses">
-		        <div class="steps"> <span>1</span> </div> <span class="line"></span>
+			<div class="progresses" style="justify-content: center;">
+				 <div class="steps"> <span>1</span> </div> <span class="line"></span>
 		        <div class="steps"> <span>2</i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span><i class="fa fa-check"></i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span><i class="fa fa-check"></i></span> </div> <span class="line"></span>
-		        <div class="steps"> <span class="font-weight-bold">5</span> </div>
-		    </div>
+		        <div class="steps"> <span>3</i></span> 
+				
+				</div>
+
+			</div>
 		</div>
 			 
 			<!-- end title -->
@@ -462,7 +466,7 @@ $(document).ready(function() {
 
        
           <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/two'"  style="width:50%">다음</button>
-          <button type="button" class="navyBtn" onClick="location.href='PAGENAME.html'">
+       
         </form>
       </div>
     	

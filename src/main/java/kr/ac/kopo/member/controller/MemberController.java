@@ -1,5 +1,7 @@
 package kr.ac.kopo.member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.member.service.MemberServiceImpl;
 import kr.ac.kopo.member.vo.BankAccountVO;
@@ -78,13 +82,31 @@ public class MemberController {
 		
 		System.out.println("account two"+bank);
 		service.newAccTwo(bank,user);
+	
 		return "account/accountThree";
 	}
 	
-	@PostMapping("account/accountThree")
-	public String accFin() {
-		return "account/accountThree";
+
+
+	@RequestMapping("account/accountSearch")
+	public ModelAndView searchAcc(@SessionAttribute("userVO") MemberVO user) {
+		System.out.println("아이디내놔:"+ user);
+		
+		List<BankAccountVO> showAcc = service.myAccount(user);
+		ModelAndView mav = new ModelAndView("account/accountSearch");
+		
+		mav.addObject("bankVO", showAcc);
+		return mav;
+		
 	}
+	
+	@GetMapping("account/accountTrans")
+	public String accTrans() {
+		return "account/accountTrans";
+	}
+	
+	
+	
 	
 	
 	@GetMapping("/logout")

@@ -60,6 +60,7 @@ public class StockMainDAOImpl implements StockMainDAO {
 		return list;
 	}
 	
+	//id가져와서 매수종목 리스트 출력
 	public List<MyStockVO> getMyList ( @Param("id") MemberVO user){
 		
 		List<MyStockVO> list = sqlsessionTemplate.selectList("crawl.stock.myStock",user);

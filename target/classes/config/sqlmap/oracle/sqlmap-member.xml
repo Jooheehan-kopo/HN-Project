@@ -11,16 +11,22 @@
 		where id= #{id} and password= #{password}
 	</select>
 	
+	<!-- 계좌개설1 -->
 	<insert id="account" parameterType="hashmap">
 		insert into member_bank(user_id, bank_username, bank_res_no, bank_type, bank_aim,  bank_email, bank_addr1, bank_addr2, bank_addr3, bank_phone, bank_password, bank_identi, bank_id)
-		    values(#{memberVO.id},#{memberVO.name},#{bankVO.bank_res_no},'각종 금융수수료가 면제되는 급여통장','','', '','','','','','Y',111||round(dbms_random.value(10000000,99999999)) )
-	
-	
-	
+		    values(#{memberVO.id},#{memberVO.name},#{bankVO.bank_res_no},'영하나플러스 통장','','', '','','','','','Y',111||round(dbms_random.value(10000000,99999999)) )
 	</insert>
+	
+	<!-- 계좌개설2 -->
 	<update id="accountTwo" parameterType="hashmap">
-
-	update member_bank SET bank_email= #{bankVO.bank_email}, bank_addr1= #{bankVO.bank_addr1}, bank_addr2= #{bankVO.bank_addr2}, bank_addr3= #{bankVO.bank_addr3}, bank_password= #{bankVO.bank_password}
-	 where user_id=#{memberVO.id} and bank_email is null
+		update member_bank SET bank_email= #{bankVO.bank_email}, bank_addr1= #{bankVO.bank_addr1}, bank_addr2= #{bankVO.bank_addr2}, bank_addr3= #{bankVO.bank_addr3}, bank_password= #{bankVO.bank_password}
+	 	where user_id=#{memberVO.id} and bank_email is null
 	</update>
+	
+	<!-- 개설된 계좌 정보 보여주기 -->
+	<select id="myAccounts" parameterType="String" resultType="bankVO">
+		select bank_username, bank_type, bank_id_bal, bank_aim, bank_id, to_char(bank_id_date,'yyyy-mm-dd') bank_id_date from member_bank
+		where user_id = #{id}
+	</select>
+	
 </mapper>

@@ -78,6 +78,7 @@ public class StockDAOTest {
 		System.out.println("test list : " + list);
 	}
  	
+	//크롤링
 	@Ignore
 	@Test
 	public void stockTest() throws Exception{
@@ -110,14 +111,7 @@ public class StockDAOTest {
 		
 	}
 	
-	@Test
-	public void 플레이스톡_테스트() throws Exception{
-	
-		HashMap<String, Object> map = stockMDAO.updateBal(map);
-		
-		System.out.println(map);
-	}
-	
+
 
 	
 }

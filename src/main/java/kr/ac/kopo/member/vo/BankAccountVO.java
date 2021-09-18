@@ -19,6 +19,8 @@ public class BankAccountVO {
 	private String bank_id; //계좌번호
 	private String bank_identi; //학생증
 	private String user_id;
+	private String bank_id_date; //계좌 개설 날짜
+	private int bank_id_bal; // 계좌잔액
 	
 	
 	
@@ -29,8 +31,32 @@ public class BankAccountVO {
 		public BankAccountVO() {
 		super();
 	}
-
 		
+		
+		
+		
+		public int getBank_id_bal() {
+			return bank_id_bal;
+		}
+
+
+
+
+		public void setBank_id_bal(int bank_id_bal) {
+			this.bank_id_bal = bank_id_bal;
+		}
+
+
+
+
+		public String getBank_id_date() {
+			return bank_id_date;
+		}
+		
+		public void setBank_id_date(String bank_id_date) {
+			this.bank_id_date = bank_id_date;
+		}
+
 		public String getUser_id() {
 			return user_id;
 		}
@@ -147,15 +173,23 @@ public class BankAccountVO {
 		}
 
 
+
+
 		@Override
 		public String toString() {
 			return "BankAccountVO [bank_username=" + bank_username + ", bank_res_no=" + bank_res_no + ", bank_type="
 					+ bank_type + ", bank_aim=" + bank_aim + ", bank_check=" + bank_check + ", bank_email=" + bank_email
 					+ ", bank_addr1=" + bank_addr1 + ", bank_addr2=" + bank_addr2 + ", bank_addr3=" + bank_addr3
 					+ ", bank_phone=" + bank_phone + ", bank_password=" + bank_password + ", bank_id=" + bank_id
-					+ ", bank_identi=" + bank_identi + ", user_id=" + user_id + "]";
+					+ ", bank_identi=" + bank_identi + ", user_id=" + user_id + ", bank_id_date=" + bank_id_date
+					+ ", bank_id_bal=" + bank_id_bal + "]";
 		}
 
+
+
+
+
+		
 	
 
 		
