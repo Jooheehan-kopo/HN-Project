@@ -3,6 +3,8 @@ package kr.ac.kopo.member.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import kr.ac.kopo.member.vo.BankAccountVO;
 import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
@@ -18,4 +20,6 @@ public interface MemberDAO {
 	List<BankAccountVO> myAcc( MemberVO user);
 	
 	void trans(BankTransVO transVO);
+	
+	List<BankTransVO> transAcc(MemberVO user);
 }

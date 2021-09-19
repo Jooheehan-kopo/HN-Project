@@ -123,88 +123,24 @@
 
 		
 				<!-- end col -->
-			</div>
-			<!-- end row -->
-
-			<hr class="hr3">
-
-			<div class="row">
-				<div class="col-md-4 col-sm-6 col-xs-12">
-					<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-						data-wow-delay="0.2s">
-						<i class="flaticon-cup global-radius effect-1 alignleft"></i>
-						<hr>
-						<h2 style="text:center">이체내역조회</h2>
-						
-					</div>
-					<!-- end icon-wrapper -->
-				</div>
-				<!-- end col -->
-
-				
-				<!-- end col -->
-			</div>
-			<!-- end row -->
-		</div>
-		<!-- end container -->
-	</div>
+		
 	<!-- end section -->
 
 	<div id="hosting" class="section wb"
 		style="background: rgb(248, 248, 248)">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>Hosting Packages</h3>
+				<h3>이체내역 조회</h3>
 				<p class="lead">
-					All the Lorem Ipsum generators on the Internet tend to repeat
-					predefined chunks as necessary, true generator<br> on the
-					Internet. It uses a dictionary of over..
+					<c:out value="${userVO.name }"></c:out>님의<br>
+					최근 이체내역입니다.
 				</p>
 			</div>
 			<!-- end title -->
 
 			<div class="row dev-list text-center">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn"
-					data-wow-duration="1s" data-wow-delay="0.2s">
-					<div class="widget clearfix">
-						<img src="uploads/hosting_01.jpg" alt="" class="img-responsive">
-						<div class="widget-title">
-							<h3>Shared Hosting</h3>
-							<small>Starting from $40/month</small>
-						</div>
-						<!-- end title -->
-						<p>Lorem Ipsum generators on the Internet tend to repeat
-							predefined chunks as necessary, true dont miss this one!</p>
 
-						<hr>
-
-						<div class="footer-social">
-							<a href="#" class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="Free Page Builder"><i
-								class="flaticon-coding"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="WordPress Support"><i
-								class="flaticon-wordpress-logo"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="1 Domain Free"><i
-								class="flaticon-world-wide-web"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="50MB Bandwdith"><i
-								class="flaticon-cloud-computing-1"></i></a>
-						</div>
-
-						<hr>
-
-						<a href="#pricing" data-scroll
-							class="btn btn-light grd1 effect-1 btn-radius btn-brd">Order
-							Now</a>
-
-					</div>
-					<!--widget -->
-				</div>
-				<!-- end col -->
-
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn"
+				<div class=""
 					data-wow-duration="1s" data-wow-delay="0.4s">
 					<div class="widget clearfix">
 						<img src="uploads/hosting_02.jpg" alt="" class="img-responsive">
@@ -219,21 +155,33 @@
 						<hr>
 
 						<div class="footer-social">
-							<a href="#" class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="Free Page Builder"><i
-								class="flaticon-coding"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="WordPress Support"><i
-								class="flaticon-wordpress-logo"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="1 Domain Free"><i
-								class="flaticon-world-wide-web"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="150MB Bandwdith"><i
-								class="flaticon-cloud-computing-1"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="Money Back Guarentee"><i
-								class="flaticon-money"></i></a>
+							<table class="table">
+							  <thead style="text-align: center">
+							    <tr>
+							      <th scope="col">통장명</th>
+							      <th scope="col">내계좌</th>
+							      <th scope="col">이체금액</th>
+							      <th scope="col">상대계좌</th>
+							      <th scope="col">입출금여부</th>
+							      <th scope="col">잔액</th>
+							      <th scope="col">일시</th>
+							    </tr>
+							  </thead>
+							  <c:forEach items="${transVO}" var="trans" varStatus="loop">
+							  <tbody>
+							    <tr>
+							      
+							      <td><c:out value="${trans.bank_type}" /></td>
+							      <td><c:out value="${trans.bank_id}" /></td>
+							      <td><c:out value="${trans.trans_money}" /></td>
+							      <td><c:out value="${trans.your_bank_id}" /></td>
+							      <td><c:out value="${trans.trans_info}" /></td>
+							      <td><c:out value="${trans.bank_id_bal}" /></td>
+							      <td><c:out value="${trans.trans_date}" /></td>
+							    </tr>
+							 </tbody>
+							 </c:forEach>
+							</table>
 						</div>
 						<hr>
 

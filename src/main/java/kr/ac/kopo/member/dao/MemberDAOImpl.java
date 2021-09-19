@@ -55,5 +55,14 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println("transVO:" +transVO);
 		
 	}
+	
+	public List<BankTransVO> transAcc(@Param("id") MemberVO user){
+		String id = user.getId();
+		System.out.println("*****dao id"+ id);
+		
+		List<BankTransVO> transVO = sqlsessionTemplate.selectList("member.MemberDAO.transList",id);
+		System.out.println("transList: "+ transVO);
+		return transVO;
+	}
 
 }

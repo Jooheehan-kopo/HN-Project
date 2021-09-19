@@ -2,6 +2,7 @@ package kr.ac.kopo;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,7 +42,7 @@ public class MemberDaoTest {
 		}
 		
 	}
-	
+	@Ignore
 	@Test
 	public void 이체프로시저test() throws Exception {
 		BankTransVO trans = new BankTransVO();
@@ -53,6 +54,7 @@ public class MemberDaoTest {
 		memberDAO.trans(trans);
 	
 	}
+	@Ignore
 	@Test
 	public void 이체프로시저DAOtest() throws Exception {
 		BankTransVO trans = new BankTransVO();
@@ -65,7 +67,16 @@ public class MemberDaoTest {
 		
 	}
 
- 
+	@Test
+	public void 계좌내역조회() throws Exception{
+		MemberVO user = new MemberVO();
+		user.setId("user");
+		
+		List<BankTransVO> list = sessionTemplate.selectList("member.MemberDAO.transList",user);
+		for(BankTransVO bank:list) {
+			System.out.println();
+		}
+	}
 	
 	@Ignore
 	@Test

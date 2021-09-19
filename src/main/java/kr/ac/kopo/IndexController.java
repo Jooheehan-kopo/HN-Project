@@ -25,6 +25,12 @@ public class IndexController {
 	  System.out.println("account/accountMain");
 	  return "account/accountMain";
 	  }
+	  
+	  
+	  @GetMapping("member/quiz")
+	  public String quiz() {
+		  return "member/quiz";
+	  }
 	
 	
 	

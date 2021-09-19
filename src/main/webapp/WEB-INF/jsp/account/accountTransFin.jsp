@@ -60,7 +60,7 @@
 	<div class="all-title-box">
 		<div class="container text-center">
 			<h1 style="font-size: 500%">
-				계좌이체<span class="m_1"></span>
+				이체가 완료되었습니다!<span class="m_1"></span>
 			</h1>
 		</div>
 	</div>
@@ -72,197 +72,17 @@
 
 
 
-	<div id="overviews" class="section wb">
-		<div class="container">
-			<div class="section-title row text-center">
-				<div class="col-md-8 col-md-offset-2">
-					<h3>
-						<c:out value="${userVO.name}" />
-						님 보유계좌
-					</h3>
-
-					<p class="lead">계좌목록</p>
-
-
-				</div>
-			</div>
-			<!-- end title -->
-			<div>
-				<div class="container">
-					<div class="input-form-backgroud row">
-						<div class="input-form forms">
-							<h2 class="mb-3" style="font-weight: blod">이체진행</h2>
-							<input type="button" class="btn btn-info"
-								style="float: right; width: 120px; height: 25px; display: relative; font-size: small; padding: 2px"
-								value="다른은행계좌 이체" />
-
-							<hr>
-
-							<form method="post" action="${pageContext.request.contextPath}/account/accountTrans" class="validation-form" novalidate>
-								<div class="row">
-									<div class="col-md-6 mb-3">
-										<label for="name"><h3>출금정보</h3></label>
-
-									</div>
-
-
-									<div class="col-md-9 mb-3">
-									<label for="nickname" style="float:left"><h5>하나은행 출금계좌</h5></label>
-									<input type="text" class="form-control" name="bank_id" id="text"
-											placeholder="출금 계좌번호를 입력하세요" " value="" required>
-										<!-- <select class="" style="width: 80%; height: 45px; ">
-											<option selected>선택하세요</option>
-											<option value="1">
-											</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select> -->
-
-									</div>
-
-									<div class="col-md-9 mb-3">
-										<label for="nickname">계좌비밀번호</label> 
-										<input type="password" class="form-control" name="bank_password" id="password"
-											placeholder="비밀번호 4자리를 입력하세요" value="" required>
-
-									</div>
-									<br>
-
-									<div class="col-md-9 mb-3">
-										<br> <label for="phone">이체금액</label> <input id="phoneNumber" name="trans_money" type="text" class="form-control" style="width: 100%"></input> <input
-											type="button" id="phoneckBtn" value="이체한도 조회"
-											style="display: flex"> <br> 
-										<label for="phone">내통장 표시</label> 
-										<input id="phoneNumber" name="" type="text"class="form-control" style="width: 100%"></input>
-									</div>
-								</div>
-						<!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ  -->
-						
-						<br><br><br>
-						<hr>
-								<div class="row">
-									<div class="col-md-6 mb-3">
-										<label for="name"><h3>입금은행</h3></label>
-
-									</div>
-
-
-
-									<div class="col-md-9 mb-3">
-										<select class="" style="width: 80%; height: 45px">
-											<option selected>하나은행</option>
-											<option value="1">하나은행</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
-										</select>
-
-									</div>
-
-									<div class="col-md-9 mb-3">
-										<label for="nickname">입금 계좌번호</label> 
-										<input type="password" class="form-control" name="your_bank_id" id="your_bank_id"
-											placeholder="- 없이 계좌번호를 입력하세요" value="" required>
-
-									</div>
-									<br>
-
-									
-								</div>
-							<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/accountTransFin'"  style="width:50%">이체</button>
-							</form>
-						</div>
-
-
-					</div>
-
-				</div>
-
-
-
-
-			</div>
-
-			<hr class="invis">
-
-			
-		</div>
-		<!-- end icon-wrapper -->
-
-		<!-- end col -->
-
-
-
-
-
-		<!-- end icon-wrapper -->
-	</div>
+	
 	<!-- end col -->
 
-	<div class="col-md-4 col-sm-6 col-xs-12">
-		<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-			data-wow-delay="0.4s">
-			<i class="flaticon-world-wide-web global-radius effect-1 alignleft"></i>
-			<h3>1 Domain Free</h3>
-			<p>
-				We offer pixel perfect icons, graphic sources for high-resolution
-				devices! Landigoo compatible retina display! <small class="readmore"><a
-					href="#">Read more</a></small>
-			</p>
-		</div>
-		<!-- end icon-wrapper -->
-	</div>
+	
 	<!-- end col -->
 	</div>
 	<!-- end row -->
 
 	<hr class="hr3">
 
-	<div class="row">
-		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-				data-wow-delay="0.2s">
-				<i class="flaticon-cup global-radius effect-1 alignleft"></i>
-				<h3>Awards Winner Support</h3>
-				<p>
-					Our Landigoo responsive site template elements 100% compatible with
-					all mobile devices and modern browsers! <small class="readmore"><a
-						href="#">Read more</a></small>
-				</p>
-			</div>
-			<!-- end icon-wrapper -->
-		</div>
-		<!-- end col -->
-
-		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-				data-wow-delay="0.4s">
-				<i class="flaticon-cer-file-format global-radius effect-1 alignleft"></i>
-				<h3>Free SSL Certifica</h3>
-				<p>
-					We offer pixel perfect icons, graphic sources for high-resolution
-					devices! Landigoo compatible retina display! <small
-						class="readmore"><a href="#">Read more</a></small>
-				</p>
-			</div>
-			<!-- end icon-wrapper -->
-		</div>
-		<!-- end col -->
-
-		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-				data-wow-delay="0.6s">
-				<i class="flaticon-locked global-radius effect-1 alignleft"></i>
-				<h3>High Security</h3>
-				<p>
-					When you need anything about for Landigoo template, just drop an
-					email or leave a feedback from TF!<small class="readmore"><a
-						href="#">Read more</a></small>
-				</p>
-			</div>
-			<!-- end icon-wrapper -->
-		</div>
-		<!-- end col -->
-	</div>
+	
 	<!-- end row -->
 	</div>
 	<!-- end container -->
@@ -273,11 +93,11 @@
 		style="background: rgb(248, 248, 248)">
 		<div class="container">
 			<div class="section-title text-center">
-				<h3>Hosting Packages</h3>
+				<h3>이체 완료<h3>
 				<p class="lead">
-					All the Lorem Ipsum generators on the Internet tend to repeat
-					predefined chunks as necessary, true generator<br> on the
-					Internet. It uses a dictionary of over..
+				<c:out value="${userVO.name} "></c:out>님의 <br>이체가 성공적으로 완료되었습니다.
+				<br><br><br><br>
+					<button >이체내역 보러가기</button>
 				</p>
 			</div>
 			<!-- end title -->

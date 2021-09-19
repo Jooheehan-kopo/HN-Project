@@ -64,7 +64,7 @@ public class MemberController {
 		return "member/resister";
 	}
 	
-	
+	//계좌개설
 	@PostMapping("account/accountMain")
 	public String AccStepOne(BankAccountVO bank,@SessionAttribute("userVO") MemberVO user) {
 		System.out.println(bank.getBank_username());
@@ -88,19 +88,26 @@ public class MemberController {
 	}
 	
 
-
+	//계좌조회
+	//이체내역조회
 	@RequestMapping("account/accountSearch")
 	public ModelAndView searchAcc(@SessionAttribute("userVO") MemberVO user) {
 		System.out.println("아이디내놔:"+ user);
 		
 		List<BankAccountVO> showAcc = service.myAccount(user);
+		
+		List<BankTransVO> transVO = service.transList(user);
+		
 		ModelAndView mav = new ModelAndView("account/accountSearch");
 		
 		mav.addObject("bankVO", showAcc);
+		mav.addObject("transVO", transVO);
+		
 		return mav;
 		
 	}
 	
+	//이체진행화면
 	@GetMapping("account/accountTrans")
 	public String accTrans() {
 		return "account/accountTrans";
@@ -111,9 +118,17 @@ public class MemberController {
 		
 		service.trans(transVO);
 		
-		return "account/accountTrans";
+		return "account/accountTransFin";
 		
 	}
+	
+	//이체완료화면
+	@GetMapping("account/accountTransFin")
+	public String transFin() {
+		return "account/accountTransFin";
+	}
+	
+	
 	
 	
 	
@@ -128,11 +143,7 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("member/mbti")
-	public String doMbti() {
-		System.out.println("mbti page");
-		return "member/mbti";
-	}
+	
 	
 
 }

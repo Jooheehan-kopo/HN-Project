@@ -15,4 +15,6 @@ public interface MemberServicce {
 	List<BankAccountVO> myAccount(MemberVO user);
 	
 	void trans(BankTransVO transVO);
+	
+	List<BankTransVO> transList(MemberVO user);
 }

@@ -70,5 +70,15 @@ public class MemberServiceImpl implements MemberServicce {
 		memberDAO.trans(trans);
 		
 	}
+	
+	//이체내역조회
+	public List<BankTransVO> transList(@SessionAttribute("userVO") MemberVO user){
+		System.out.println("계좌 아이디 전달:"+ user);
+		String id = user.getId();
+		System.out.println("id: "+ id);
+		
+		List<BankTransVO> transVO = memberDAO.transAcc(user);
+		return transVO;
+	}
 
 }
