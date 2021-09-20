@@ -1,8 +1,8 @@
 package kr.ac.kopo;
 
+import java.util.HashMap;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.ac.kopo.mbti.dao.MbtiDAOImpl;
+import kr.ac.kopo.mbti.vo.MbtiVO;
 import kr.ac.kopo.member.dao.MemberDAO;
 import kr.ac.kopo.member.service.MemberServiceImpl;
 import kr.ac.kopo.member.vo.BankAccountVO;
@@ -29,6 +31,9 @@ public class MemberDaoTest {
 	
 	@Autowired
 	private MemberServiceImpl service;
+	
+	@Autowired
+	private MbtiDAOImpl mbtiDAO;
 
 
 	@Ignore
@@ -67,6 +72,7 @@ public class MemberDaoTest {
 		
 	}
 
+	@Ignore
 	@Test
 	public void 계좌내역조회() throws Exception{
 		MemberVO user = new MemberVO();
@@ -78,23 +84,19 @@ public class MemberDaoTest {
 		}
 	}
 	
-	@Ignore
+	
 	@Test
-	public void testtest() throws Exception{
+	public void mbti결과저장() throws Exception{
+		MbtiVO mbti = new MbtiVO();
+		mbti.setScore(5);
+		MemberVO mem = new MemberVO();
+		mem.setId("user");
 		
-		String temp = "\"aa";
-		System.out.println(temp);
+		HashMap<String, Object> map = new HashMap<String,Object>();
+		map.put("mbtiVO", mbti);
+		map.put("memberVO", mem);
 		
-		temp.replaceAll("\"", "");
-		System.out.println(temp);
-		
-		String str = "Hello \"World\"";
-		System.out.println("따옴표 포함 : " + str);
-		// 따옴표 제거
-		str = str.replaceAll("\"", "");
-		System.out.println("따옴표 제거 : " + str);
-
-		
+		mbtiDAO.insertResult(map);
 	}
 	
 

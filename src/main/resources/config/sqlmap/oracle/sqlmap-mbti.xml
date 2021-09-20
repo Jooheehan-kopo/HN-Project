@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mbti.MbtiDAO">
+
+	<insert id="result" parameterType="hashmap">
+		insert into mbti(test_count, id, score)
+		values(seq_mbti_test.nextval,#{memberVO.id}, #{mbtiVO.score})
+		
+	</insert>
+	
+	<!-- 계좌개설2 -->
+	<update id="" parameterType="hashmap">
+		
+	</update>
+	
+
+	
+	
+	
+</mapper>

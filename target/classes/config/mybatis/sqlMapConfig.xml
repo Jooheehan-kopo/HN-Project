@@ -11,6 +11,7 @@
 		<typeAlias type="kr.ac.kopo.stock.vo.MyStockVO" alias="mystockVO"/>
 		<typeAlias type="kr.ac.kopo.member.vo.BankAccountVO" alias="bankVO"/>
 		<typeAlias type="kr.ac.kopo.member.vo.BankTransVO" alias="transVO"/>
+		<typeAlias type="kr.ac.kopo.mbti.vo.MbtiVO" alias="mbtiVO"/>
 		
 	
 	</typeAliases>

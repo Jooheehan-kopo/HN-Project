@@ -16,18 +16,19 @@ const timeCount = document.querySelector(".timer .timer_sec");
 $(document).ready(function(){
 	
 	$('.quit').click(function(){
-		
+		alert('!!')
 		
 		
 		$.ajax({
 			url:'/HN-Project/member/quizResult',
 			method:'get',
-			data:{score: userScore
+			data:{score: userScore,
+			myAnswer: userAns,
+			realAnswer:correcAns
 			},
 			
 			dataType:'json',
 			success : function(data){
-				alert('!!');
 				console.log("ajax sending:"+data);
 				
 			}
@@ -36,25 +37,16 @@ $(document).ready(function(){
 	
 })
 
-
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
 }
 
-
-
-
 // if exitQuiz button clicked
 // 여기에 값보내는 함수 있어야함.
 exit_btn.onclick = ()=>{
-	
-	
-
     info_box.classList.remove("activeInfo"); //hide info box
 }
-
-
 
 // if continueQuiz button clicked
 continue_btn.onclick = ()=>{
@@ -163,7 +155,7 @@ function optionSelected(answer){
         answer.classList.add("correct"); //adding green color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
         console.log("Correct Answer");
-        console.log("userAns"+userAns);
+		console.log("userAns"+userAns);
 		console.log("correcAns"+correcAns);
 		
         console.log("Your correct answers = " + userScore);
@@ -200,15 +192,11 @@ function showResult(){
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if(userScore > 6){ // if user scored more than 1
-        let scoreTag = '<span>아주 훌륭해요 😎 <p>'+ questions.length  +'</p> 문제 중<p>'+ userScore +'</p>를 맞췄어요!</span>';
-        scoreText.innerHTML = scoreTag;
-    }
-    else if(userScore > 3){ //3개보다 높으면
-        let scoreTag = '<span>잘했어요! 😎 <p>'+ questions.length  +'</p> 문제 중<p>'+ userScore +'</p>를 맞췄어요!</span>';
+        let scoreTag = '<span>아주 잘했어요 😎 <p>'+ questions.length  +'</p> 문제 중<p>'+ userScore +'</p>를 맞췄어요!</span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>아쉽네요! 😐 <p>'+ questions.length  +'</p> 문제 중<p>'+ userScore +'</p>를 맞췄어요! </span>';
+        let scoreTag = '<span>이런! 😐 <p>'+ questions.length  +'</p> 문제 중<p>'+ userScore +'</p>를 맞췄어요! 우리 다시 한번 더 해볼까요?</span>';
         scoreText.innerHTML = scoreTag;
     }
 }

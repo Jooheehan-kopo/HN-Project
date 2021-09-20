@@ -1,3 +1,6 @@
+/**
+ * 질문 등록
+ */
 
 
 // creating an array and passing the number, questions, options, and answers
@@ -134,6 +137,7 @@ let questions = [
       "중개형 ISA 계좌는 고객이 직접 주식 및 금융 상품 거래를 할 수 없다."
     ]
   },
+   
   // you can uncomment the below codes and make duplicate as more as you want to add question
   // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
 

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>play하나 나의금융성향테스트</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery.min.js"></script>
     <!-- FontAweome CDN Link for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
@@ -43,17 +44,18 @@
         </header>
         <section>
             <div class="que_text">
-                <!-- Here I've inserted question from JavaScript -->
+                <!-- 질문들어감 -->
+            
             </div>
             <div class="option_list">
-                <!-- Here I've inserted options from JavaScript -->
+                <!-- 보기들어감 -->
             </div>
         </section>
 
         <!-- footer of Quiz Box -->
         <footer>
             <div class="total_que">
-                <!-- Here I've inserted Question Count Number from JavaScript -->
+                <!-- 문제번호 -->
             </div>
             <button class="next_btn">다음문제</button>
         </footer>
@@ -66,7 +68,7 @@
         </div>
         <div class="complete_text">성향테스트 완료!</div>
         <div class="score_text">
-            <!-- Here I've inserted Score Result from JavaScript -->
+            <!-- 점수-->
         </div>
         <div class="buttons">
             <button class="restart">다시하러가기</button>
