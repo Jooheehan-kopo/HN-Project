@@ -97,7 +97,7 @@
 				<p class="lead">
 				<c:out value="${userVO.name} "></c:out>님의 <br>이체가 성공적으로 완료되었습니다.
 				<br><br><br><br>
-					<button >이체내역 보러가기</button>
+					<button type="button" onclick="location.href='${pageContext.request.contextPath}/account/accountSearch'">이체내역 보러가기</button>
 				</p>
 			</div>
 			<!-- end title -->

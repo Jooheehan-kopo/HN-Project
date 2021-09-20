@@ -61,14 +61,15 @@
 	
     <div id="pricing-box" class="section wb">
         <div class="container">
-			<div class="col-md-4 col-sm-6 col-xs-12">
+			<div class="">
 				<div class="grid1">
-					<span>$15/<small>month</small></span>
+					<span>제<small>1회</small></span>
 					<div class="price-tit text-center">
-						<h2>BASIC PLAN</h2>
-						<p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet.</p>
+						<h2><c:out value="${userVO.name}"/>님의</h2>
+						<p>금융성향테스트 결과입니다</p>
 					</div>
 					<div class="para">
+					<div>
 						<p>1 Domain</p>
 						<p>10 GB Disk Space</p>
 						<p>50 GB Bandwidth</p>
@@ -80,43 +81,7 @@
 				</div>
 			</div>
 			
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="grid2">
-					<span>$25/<small>month</small></span>
-					<div class="price-tit text-center">
-						<h2>PREMIUM PLAN</h2>
-						<p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet.</p>
-					</div>
-					<div class="para">
-						<p>5 Domains</p>
-						<p>50 GB Disk Space</p>
-						<p>250 GB Bandwidth</p>
-						<p>2 Free Domains</p>
-					</div>
-					<div class="sign text-center pricing-table-sign-up">
-						<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1">BUY</a>
-					</div>
-				</div>
-			</div>
 			
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				<div class="grid3">
-					<span>$35/<small>month</small></span>
-					<div class="price-tit text-center">
-						<h2>ULTIMATE PLAN</h2>
-						<p>Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet.</p>
-					</div>
-					<div class="para">
-						<p>10 Domains</p>
-						<p>250 GB Disk Space</p>
-						<p>500 GB Bandwidth</p>
-						<p>3 Free Domains</p>
-					</div>
-					<div class="sign text-center pricing-table-sign-up">
-						<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1">BUY</a>
-					</div>
-				</div>
-			</div>
 			<div class="clear"> </div>
 		</div>
     </div><!-- end section -->
