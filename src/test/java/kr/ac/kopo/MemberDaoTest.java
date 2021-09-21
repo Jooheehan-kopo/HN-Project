@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import kr.ac.kopo.admin.dao.AdminDAO;
+import kr.ac.kopo.admin.vo.AdminVO;
 import kr.ac.kopo.admin.vo.InfoVO;
 import kr.ac.kopo.mbti.dao.MbtiDAOImpl;
 import kr.ac.kopo.mbti.vo.MbtiVO;
@@ -36,6 +37,9 @@ public class MemberDaoTest {
 	
 	@Autowired
 	private MbtiDAOImpl mbtiDAO;
+	
+	@Autowired
+	private AdminDAO adminDAO; //의존성 자동주입
 
 
 	@Ignore
@@ -100,7 +104,7 @@ public class MemberDaoTest {
 		
 		mbtiDAO.insertResult(map);
 	}
-	
+	@Ignore
 	@Test
 	public void adminInfo() throws Exception{
 		List<InfoVO> infolist = sessionTemplate.selectList("admin.AdminDAO.infoList");
@@ -109,6 +113,12 @@ public class MemberDaoTest {
 		}
 				
 	
+	}
+	
+	@Test
+	public void countMember() throws Exception{
+		AdminVO count = sessionTemplate.selectOne("admin.AdminDAO.mainThree");
+		System.out.println("총회원수:"+ count.getCountMbti());
 	}
 
 

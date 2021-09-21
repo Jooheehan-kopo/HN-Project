@@ -32,4 +32,23 @@ public class AdminDAOImpl implements AdminDAO {
 	
 	}
 	
+	//총회원수뽑기
+	public AdminVO countMember() {
+		AdminVO count = sqlsessionTemplate.selectOne("admin.AdminDAO.mainOne");
+		System.out.println("총회원수: "+ count);
+		return count;
+	}
+	//총학교수
+	public AdminVO countSchool() {
+		AdminVO count = sqlsessionTemplate.selectOne("admin.AdminDAO.mainTwo");
+		System.out.println("총학교수: "+ count);
+		return count;
+	}
+	//mbti 참여횟수
+	public AdminVO countMbti() {
+		AdminVO count = sqlsessionTemplate.selectOne("admin.AdminDAO.mainThree");
+		System.out.println("mbti: "+ count);
+		return count;
+	}
+	
 }

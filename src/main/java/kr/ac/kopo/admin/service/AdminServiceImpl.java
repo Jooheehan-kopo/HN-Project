@@ -29,5 +29,23 @@ public class AdminServiceImpl implements AdminService {
 		
 		return infolist;
 	}
+	
+	//총회원수보여주기
+	public AdminVO countMemer() {
+		AdminVO count = adminDAO.countMember();
+		
+		return count;
+	}
+	
+	//총학교수보여주기
+	public AdminVO countSchool() {
+		AdminVO count = adminDAO.countSchool();
+		return count;
+	}
+	//mbti보여주기
+	public AdminVO countMbti() {
+		AdminVO count = adminDAO.countMbti();
+		return count;
+	}
 }
 

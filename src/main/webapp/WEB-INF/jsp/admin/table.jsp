@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -69,14 +70,8 @@
         <nav class="vertnav navbar navbar-light">
           <!-- nav bar -->
           <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-              <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
-                <g>
-                  <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
-                  <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
-                  <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
-                </g>
-              </svg>
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="${pageContext.request.contextPath}/admin/main ">
+             <img src="${ pageContext.request.contextPath }/resources/images/logos/hanaek.png" style="width:140px; " >
             </a>
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -365,21 +360,22 @@
                     <div class="card-body">
                       <!-- table -->
                       <table class="table datatables" id="dataTable-1">
-                        <thead>
-                          <tr>
+                        <thead >
+                          <tr style="color:black">
                             <th></th>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Department</th>
-                            <th>Company</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th>ID</th>
+                            <th>이름</th>
+                            <th>분류</th>
+                            <th>학교</th>
+                            <th>학번</th>
+                            <th>주민번호</th>
+                            <th>전화번호</th>
+                            <th>이메일</th>
+                            <th>가입일</th>
                           </tr>
                         </thead>
-                         <c:forEach items="${info}" var="school" varStatus="loop">
+                         
+                        <c:forEach items="${info}" var="school" varStatus="loop">
                         <tbody>
                           <tr>
                             <td>
@@ -388,14 +384,15 @@
                                 <label class="custom-control-label"></label>
                               </div>
                             </td>
-                            <td>368</td>
-                            <td>Imani Lara</td>
-                            <td>(478) 446-9234</td>
-                            <td>Asset Management</td>
-                            <td>Borland</td>
-                            <td>9022 Suspendisse Rd.</td>
-                            <td>High Wycombe</td>
-                            <td>Jun 8, 2019</td>
+                            <td><c:out value="${school.id}"></c:out></td>
+                            <td><c:out value="${school.name}"></c:out></td>
+                            <td><c:out value="${school.type}"></c:out></td>
+                            <td><c:out value="${school.stu_id}"></c:out></td>
+                            <td><c:out value="${school.res_no}"></c:out></td>
+                            <td><c:out value="${school.phone}"></c:out></td>
+                            <td><c:out value="${school.phone}"></c:out></td>
+                            <td><c:out value="${school.email}"></c:out></td>
+                            <td><c:out value="${school.join_date}"></c:out></td>
                             <td><button class="btn btn-sm dropdown-toggle more-horizontal" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="text-muted sr-only">Action</span>
                               </button>
@@ -406,8 +403,9 @@
                               </div>
                             </td>
                           </tr>
-          				 </tbody>
-                        </c:forEach>
+                       </tbody>
+                        </c:forEach> 
+                       
                       </table>
                     </div>
                   </div>

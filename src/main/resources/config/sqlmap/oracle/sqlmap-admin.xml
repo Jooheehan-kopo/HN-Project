@@ -11,11 +11,27 @@
 		where id= #{id} and password= #{password}
 	</select>
 	
+	<!-- 회원목록조회 -->
 	<select id="infoList" resultType="infoVO">
 		select * from member
-	
 	</select>
 	
+	<!-- 총회원수 -->
+	<select id="mainOne" resultType="adminVO">
+		select count (*) countMember from member
+	</select>
+	
+	<!-- 협약학교수 -->
+	<select id="mainTwo" resultType="adminVO">
+		select count(*) countSchool
+		from
+		(select school, count(school) from member group by school order by school)
+	</select>
+	
+	<!-- 협약학교수 -->
+	<select id="mainThree" resultType="adminVO">
+		select count(*) countMbti from mbti
+	</select>
 	
 	
 <!-- 	 개설된 계좌 정보 보여주기 

@@ -1,5 +1,7 @@
 package kr.ac.kopo.admin.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -29,7 +31,8 @@ public class AdminController {
 	public String admin() {
 		return "admin/index";
 	}
-
+	
+	//로그인페이지
 	@GetMapping("/admin/login")
 	public String adminLogin() {
 		return "login/adminLogin";
@@ -50,13 +53,29 @@ public class AdminController {
 		
 		session.setAttribute("userVO", userVO);
 		
-		return "admin/main"; //로그인성공시 홈화면으로 이동
+		return "redirect:/admin/main"; //로그인성공시 홈화면으로 이동**이부분 redirect 해줘야 페이지로 돌아옴!!
 	}
 
-	//admin
-	@GetMapping("admin/main")
-	public String main() {
-		return "admin/main";
+	//총회원수 출력
+	@RequestMapping("admin/main")
+	public ModelAndView main() {
+		AdminVO count = service.countMemer();
+		AdminVO countS = service.countSchool();
+		 AdminVO countM = service.countMbti();
+		
+		SimpleDateFormat date = new SimpleDateFormat ( "yyyy년 MM월dd일");
+		Date time = new Date();
+		
+		String time1 = date.format(time);
+		
+		ModelAndView mav = new ModelAndView("admin/main");
+		mav.addObject("count",count);
+		mav.addObject("date", time1);//날짜출력
+		mav.addObject("school",countS);
+		mav.addObject("mbti",countM);
+		
+		System.out.println("count:"+count.getCountMember());
+		return mav;
 	}
 	
 	@RequestMapping("admin/table")

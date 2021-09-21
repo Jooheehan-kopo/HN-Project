@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
+    <script src="https://use.fontawesome.com/73d95e52a3.js"></script>
     <title>PlayHana Admin | 플레이하나 관리자페이지</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/adminpage/css/simplebar.css">
@@ -75,14 +76,8 @@
         <nav class="vertnav navbar navbar-light">
           <!-- nav bar -->
           <div class="w-100 mb-4 d-flex">
-            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-              <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
-                <g>
-                  <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
-                  <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
-                  <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
-                </g>
-              </svg>
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="${pageContext.request.contextPath}/admin/main ">
+               <img src="${ pageContext.request.contextPath }/resources/images/logos/hanaek.png" style="width:140px; " >
             </a>
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
@@ -379,39 +374,41 @@
                     </div>
                   </form>
                 </div>
+  
               </div>
               <div class="mb-2 align-items-center">
                 <div class="card shadow mb-4">
                   <div class="card-body">
                     <div class="row mt-1 align-items-center">
-                      <div class="col-12 col-lg-4 text-left pl-4">
-                        <p class="mb-1 small text-muted">Balance</p>
-                        <span class="h3">$12,600</span>
-                        <span class="small text-muted">+20%</span>
+                      <div class="col-12 col-lg-4 text-center pl-4">
+                      
+                        <p class="mb-1 small text-muted">총 회원수</p>
+                        <span class="h3"><i class="fa fa-user" aria-hidden="true" style="color: #008485"></i>  <c:out value="${count.countMember}"/>명</span><br>
+                        <span class="small text-muted">현재 <c:out value="${date}"/> 기준</span>
                         <span class="fe fe-arrow-up text-success fe-12"></span>
-                        <p class="text-muted mt-2"> Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui </p>
+                        
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4">
-                        <p class="mb-1 small text-muted">Today</p>
-                        <span class="h3">$2600</span><br />
-                        <span class="small text-muted">+20%</span>
+                        <p class="mb-1 small text-muted">협약 학교 수</p>
+                        <span class="h3">총 <c:out value="${school.countSchool}"/>개</span><br />
+                        <span class="small text-muted">일반회원 포함</span>
                         <span class="fe fe-arrow-up text-success fe-12"></span>
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4 mb-2">
-                        <p class="mb-1 small text-muted">Goal Value</p>
+                        <p class="mb-1 small text-muted">은행계좌 참여수</p>
                         <span class="h3">$260</span><br />
                         <span class="small text-muted">+6%</span>
                         <span class="fe fe-arrow-up text-success fe-12"></span>
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4">
-                        <p class="mb-1 small text-muted">Completions</p>
+                        <p class="mb-1 small text-muted">주식참여도</p>
                         <span class="h3">26</span><br />
                         <span class="small text-muted">+20%</span>
                         <span class="fe fe-arrow-up text-success fe-12"></span>
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4">
-                        <p class="mb-1 small text-muted">Conversion</p>
-                        <span class="h3">6%</span><br />
+                        <p class="mb-1 small text-muted">금융 MBTI 참여횟수</p>
+                        <span class="h3"><c:out value="${mbti.countMbti}"/>번</span><br />
                         <span class="small text-muted">-2%</span>
                         <span class="fe fe-arrow-down text-danger fe-12"></span>
                       </div>
@@ -425,16 +422,12 @@
                   <div class="card shadow eq-card mb-4">
                     <div class="card-body mb-n3">
                       <div class="row items-align-baseline h-100">
-                        <div class="col-md-6 my-3">
-                          <p class="mb-0"><strong class="mb-0 text-uppercase text-muted">Earning</strong></p>
-                          <h3>$2,562</h3>
+                        <div class="" style="padding:10px">
+                          <p class="mb-0"><strong class="mb-0 text-uppercase text-muted">초,중,고</strong></p>
+                          <h3>학교별 리포트발송</h3>
                           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
-                        <div class="col-md-6 my-4 text-center">
-                          <div lass="chart-box mx-4">
-                            <div id="radialbarWidget"></div>
-                          </div>
-                        </div>
+                       
                         <div class="col-md-6 border-top py-3">
                           <p class="mb-1"><strong class="text-muted">Cost</strong></p>
                           <h4 class="mb-0">108</h4>
