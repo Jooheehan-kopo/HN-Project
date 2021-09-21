@@ -45,7 +45,7 @@
 	                     </li>
 	                 	</c:if> --%>
 	 
-	  						<li><c:out value="${userVO.id}"/>관리자님</li>
+	  						<li><c:out value="${userVO.name}"/>관리자님</li>
 	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/logout" ><i class="flaticon-padlock"></i>로그아웃</a></li>
 	  					 </ul>
   					 </c:if>

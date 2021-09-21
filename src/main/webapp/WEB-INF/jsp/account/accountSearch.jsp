@@ -5,10 +5,33 @@
 
 
 <!DOCTYPE html>
-
+<head>
 <link ="stylesheet" type="text/css" href="path/to/font-awesome/css/font-awesome.min.css">
-<!-- HEAD -->
+<!-- MDBootstrap Datatables  -->
+<link href="css/addons/datatables.min.css" rel="stylesheet">
+<!-- MDBootstrap Datatables  -->
+<script type="text/javascript" src="js/addons/datatables.min.js"></script>
+
+<!--테이블관련  -->
+ <!-- DATA TABLE CSS -->
+    <link href="${pageContext.request.contextPath}/chart/css/table.css" rel="stylesheet">
+
+<!-- 필요함 -->
+    <script type="text/javascript" src="${pageContext.request.contextPath}/chart/footable/js/footable.js"></script>    
+   
+    <script type="text/javascript" src="${pageContext.request.contextPath}/chart/footable/js/footable.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/chart/footable/css/footable.bootstrap.css"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/chart/footable/css/footable.bootstrap.css"></script>
+  			<script type="text/javascript" charset="utf-8">
+  			    $(document).ready(function () {
+  			        $('#dt1').dataTable();
+  			    });
+	</script>
+	
+	
+	<!-- 다안됨 -->
 <jsp:include page="/WEB-INF/include/head.jsp" />
+</head>
 
 
 
@@ -62,13 +85,7 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="mb-3">
-		
-			
-
-		</div>
-	</div>
+	
 
 
 	
@@ -140,7 +157,7 @@
 
 			<div class="row dev-list text-center">
 
-				<div class=""
+				<div class="display"
 					data-wow-duration="1s" data-wow-delay="0.4s">
 					<div class="widget clearfix">
 						<img src="uploads/hosting_02.jpg" alt="" class="img-responsive">
@@ -155,7 +172,8 @@
 						<hr>
 
 						<div class="footer-social">
-							<table class="table">
+						
+							<table class="table" id="dt1">
 							  <thead style="text-align: center">
 							    <tr>
 							      <th scope="col">통장명</th>
@@ -186,57 +204,14 @@
 						<hr>
 
 						<a href="#pricing" data-scroll
-							class="btn btn-light grd1 effect-1 btn-radius btn-brd">Order
-							Now</a>
+							class="btn btn-light grd1 effect-1 btn-radius btn-brd">이체바로가기</a>
 
 					</div>
 					<!--widget -->
 				</div>
 				<!-- end col -->
 
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn"
-					data-wow-duration="1s" data-wow-delay="0.6s">
-					<div class="widget clearfix">
-						<img src="uploads/hosting_03.jpg" alt="" class="img-responsive">
-						<div class="widget-title">
-							<h3>Dedicated Server</h3>
-							<small>Starting from $120/month</small>
-						</div>
-						<!-- end title -->
-						<p>Predefined internet lorem Ipsum generators on the tend to
-							repeat chunks as necessary, true and more..</p>
-
-						<hr>
-
-						<div class="footer-social">
-							<a href="#" class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="Free Page Builder"><i
-								class="flaticon-coding"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="WordPress Support"><i
-								class="flaticon-wordpress-logo"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="1 Domain Free"><i
-								class="flaticon-world-wide-web"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="Unlimited Bandwdith"><i
-								class="flaticon-cloud-computing-1"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="Money Back Guarentee"><i
-								class="flaticon-money"></i></a> <a href="#"
-								class="btn global-radius" data-toggle="tooltip"
-								data-placement="top" title="24/7 Support"><i
-								class="flaticon-lifesaver-security-sportive-tool"></i></a>
-						</div>
-						<hr>
-
-						<a href="#pricing" data-scroll
-							class="btn btn-light grd1 effect-1 btn-radius btn-brd">Order
-							Now</a>
-
-					</div>
-					<!--widget -->
-				</div>
+				
 				<!-- end col -->
 			</div>
 			<!-- end row -->
@@ -248,76 +223,16 @@
 	
 
 	
-	<div id="pricing" class="section lb">
-		<div class="container">
-			<div class="section-title text-center">
-				<h3>Ready to get started?</h3>
-				<p class="lead">
-					Get the red carpet treatment <strong>just $39 per month!</strong>
-					It is estimated that 3.5 million established by personal blogs.<br>
-					From each other, we share paid WordPress themes WP Service...
-				</p>
-			</div>
-			<!-- end title -->
-		</div>
-		<!-- end container -->
-	</div>
-	<!-- end section -->
-
 	
-						
-					</div>
-					<!-- end carousel -->
-				</div>
-				<!-- end col -->
-			</div>
-			<!-- end row -->
-		</div>
+		
+
+      <!-- CONTENT -->
+	 </div> <!-- /container -->
 		<!-- end container -->
-	</div>
-	<!-- end section -->
 
 
 
-	<div class="parallax section db parallax-off"
-		style="background-image: url('uploads/parallax_02.jpg');">
-		<div class="container">
-			<div class="row logos">
-				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-					<a href="#"><img src="uploads/logo_01.png" alt=""
-						class="img-repsonsive"></a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-					<a href="#"><img src="uploads/logo_02.png" alt=""
-						class="img-repsonsive"></a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-					<a href="#"><img src="uploads/logo_03.png" alt=""
-						class="img-repsonsive"></a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-					<a href="#"><img src="uploads/logo_04.png" alt=""
-						class="img-repsonsive"></a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-					<a href="#"><img src="uploads/logo_05.png" alt=""
-						class="img-repsonsive"></a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-					<a href="#"><img src="uploads/logo_06.png" alt=""
-						class="img-repsonsive"></a>
-				</div>
-			</div>
-			<!-- end row -->
-		</div>
-		<!-- end container -->
-	</div>
-	<!-- end section -->
 
-	<section class="section nopad cac text-center">
-		<a href="#"><h3>Interesting our awesome web design services?
-				Just drop an email to us and get quote for free!</h3></a>
-	</section>
 
 	<jsp:include page="/WEB-INF/include/footer.jsp"></jsp:include>
 

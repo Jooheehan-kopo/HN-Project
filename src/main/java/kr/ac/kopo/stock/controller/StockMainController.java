@@ -24,6 +24,7 @@ public class StockMainController {
 	@Autowired
 	private StockMainService service;
 	
+	//크롤링한 주식정보내역 (스캐쥴러 써야함)
 	@RequestMapping("stock/stockMain")
 	public ModelAndView showTodayStock() {
 		

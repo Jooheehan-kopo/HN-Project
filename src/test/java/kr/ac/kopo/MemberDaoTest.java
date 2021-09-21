@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import kr.ac.kopo.admin.dao.AdminDAO;
+import kr.ac.kopo.admin.vo.InfoVO;
 import kr.ac.kopo.mbti.dao.MbtiDAOImpl;
 import kr.ac.kopo.mbti.vo.MbtiVO;
 import kr.ac.kopo.member.dao.MemberDAO;
@@ -84,7 +86,7 @@ public class MemberDaoTest {
 		}
 	}
 	
-	
+	@Ignore
 	@Test
 	public void mbti결과저장() throws Exception{
 		MbtiVO mbti = new MbtiVO();
@@ -99,6 +101,15 @@ public class MemberDaoTest {
 		mbtiDAO.insertResult(map);
 	}
 	
+	@Test
+	public void adminInfo() throws Exception{
+		List<InfoVO> infolist = sessionTemplate.selectList("admin.AdminDAO.infoList");
+		for(InfoVO info :infolist) {
+			System.out.println(infolist);
+		}
+				
+	
+	}
 
 
 	

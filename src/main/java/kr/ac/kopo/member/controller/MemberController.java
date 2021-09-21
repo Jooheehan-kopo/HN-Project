@@ -48,7 +48,7 @@ public class MemberController {
 		
 		//관리자페이지로 이동//?
 		if(userVO.getType().equals("A")||userVO.getType().equals("T") ) {
-			return "admin/index";
+			return "login/adminLogin";
 		}
 	
 		
