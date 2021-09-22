@@ -51,4 +51,12 @@ public class AdminDAOImpl implements AdminDAO {
 		return count;
 	}
 	
+	
+	public List<InfoVO> getInfo(InfoVO info){
+		
+		List<InfoVO> getInfo = sqlsessionTemplate.selectList("admin.AdminDAO.report", info);
+		return getInfo;
+		
+	}
+	
 }

@@ -114,11 +114,22 @@ public class MemberDaoTest {
 				
 	
 	}
-	
+	@Ignore
 	@Test
 	public void countMember() throws Exception{
 		AdminVO count = sessionTemplate.selectOne("admin.AdminDAO.mainThree");
 		System.out.println("총회원수:"+ count.getCountMbti());
+	}
+	@Test
+	public void 개인정보출력() throws Exception{
+		InfoVO list = new InfoVO();
+		list.setSchool("백신중");
+		list.setStu_id("10102");
+	
+		
+		List<InfoVO> infolist = adminDAO.getInfo(list);
+		System.out.println("infolist"+infolist);
+		
 	}
 
 

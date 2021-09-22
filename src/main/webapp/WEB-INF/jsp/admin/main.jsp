@@ -141,7 +141,7 @@
             <li class="nav-item dropdown">
               <a href="#forms" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-credit-card fe-16"></i>
-                <span class="ml-3 item-text">Forms</span>
+                <span class="ml-3 item-text">Reports</span>
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="forms">
                 <li class="nav-item">
@@ -424,18 +424,21 @@
                       <div class="row items-align-baseline h-100">
                         <div class="" style="padding:10px">
                           <p class="mb-0"><strong class="mb-0 text-uppercase text-muted">초,중,고</strong></p>
-                          <h3>학교별 리포트발송</h3>
-                          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                          <h3><i class="fa fa-envelope-o" aria-hidden="true" style="color:#008485"></i>     학교별 리포트발송</h3>
+                          <p class="text-muted">PlayHana를 모두 수료한 학생들의 리포트를 부모님, 선생님께 보내주세요</p>
                         </div>
                        
                         <div class="col-md-6 border-top py-3">
-                          <p class="mb-1"><strong class="text-muted">Cost</strong></p>
+                          <p class="mb-1"><strong class="text-muted">발송건수</strong></p>
                           <h4 class="mb-0">108</h4>
                           <p class="small text-muted mb-0"><span>37.7% Last week</span></p>
                         </div> <!-- .col -->
                         <div class="col-md-6 border-top py-3">
-                          <p class="mb-1"><strong class="text-muted">Revenue</strong></p>
-                          <h4 class="mb-0">1168</h4>
+                          <p class="mb-1"><strong class="text-muted"></strong></p>
+                          <h4 class="mb-0"><i class="fa fa-share" aria-hidden="true" style="color:#008485">
+	                          </i><button style="background-color: #008485; border: 1px solid white; border-radius: 10px;">
+	                          <a href="${pageContext.request.contextPath}/admin/report" class="btn-gradient white small" style="color:white; padding:2px">리포트 생성</a></button>
+                          </h4>
                           <p class="small text-muted mb-0"><span>-18.9% Last week</span></p>
                         </div> <!-- .col -->
                       </div>

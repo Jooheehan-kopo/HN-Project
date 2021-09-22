@@ -47,5 +47,14 @@ public class AdminServiceImpl implements AdminService {
 		AdminVO count = adminDAO.countMbti();
 		return count;
 	}
+	
+	//리포트에 필요한 정보입력(가져오기)
+	public List<InfoVO> getinfo(InfoVO info){
+		List<InfoVO> infolist = adminDAO.getInfo(info);
+		System.out.println("info: "+ infolist);
+		return infolist;
+	}
+	
+	
 }
 

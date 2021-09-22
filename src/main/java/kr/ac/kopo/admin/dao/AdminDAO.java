@@ -15,4 +15,6 @@ public interface AdminDAO {
 	
 	AdminVO countSchool();
 	AdminVO countMbti() ;
+
+	List<InfoVO> getInfo(InfoVO info);
 }

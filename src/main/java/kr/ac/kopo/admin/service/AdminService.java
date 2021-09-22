@@ -12,4 +12,6 @@ public interface AdminService {
 	AdminVO countMemer();
 	AdminVO countSchool();
 	AdminVO countMbti();
+	
+	List<InfoVO> getinfo(InfoVO info);
 }

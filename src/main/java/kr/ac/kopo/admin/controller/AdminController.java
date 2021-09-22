@@ -12,12 +12,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.ac.kopo.admin.service.AdminServiceImpl;
 import kr.ac.kopo.admin.vo.AdminVO;
 import kr.ac.kopo.admin.vo.InfoVO;
+import kr.ac.kopo.member.vo.MemberVO;
 
 @SessionAttributes({"userVO"})
 @Controller
@@ -78,6 +80,7 @@ public class AdminController {
 		return mav;
 	}
 	
+	//회원정보조회
 	@RequestMapping("admin/table")
 	public ModelAndView searchSchool() {
 		List<InfoVO> meminfo = service.membinfo();
@@ -85,6 +88,23 @@ public class AdminController {
 		ModelAndView mav = new ModelAndView("admin/table");
 		mav.addObject("info", meminfo);
 
+		return mav;
+	}
+	
+	//리포트 생성
+	@GetMapping("admin/report")
+	public String report() {
+		return "admin/report";
+	}
+	@ResponseBody
+	@RequestMapping("admin/report")
+	public ModelAndView getInfo(InfoVO member) {
+		List<InfoVO> info = service.getinfo(member);
+		
+		ModelAndView mav = new ModelAndView("admin/report");
+		mav.addObject("info", info);
+		System.out.println("info:"+info);
+		
 		return mav;
 	}
 
