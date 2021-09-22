@@ -96,16 +96,25 @@ public class AdminController {
 	public String report() {
 		return "admin/report";
 	}
-	@ResponseBody
+	/*
 	@PostMapping("admin/report")
 	public ModelAndView getInfo(InfoVO member) {
-		List<InfoVO> info = service.getinfo(member);
+		List<InfoVO> report = service.getinfo(member);
 		
 		ModelAndView mav = new ModelAndView("admin/report");
-		mav.addObject("info", info);
-		System.out.println("info con:"+info);
+		mav.addObject("report", report);
+		System.out.println("info con:"+report);
 		
 		return mav;
+	}
+	*/
+	
+	@ResponseBody
+	@PostMapping("admin/report")
+	public List<InfoVO> report(InfoVO member) {
+		List<InfoVO> report = service.getinfo(member);
+		System.out.println("report: "+ report);
+		return report;
 	}
 
 }

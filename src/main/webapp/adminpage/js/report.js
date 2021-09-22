@@ -70,6 +70,21 @@ $(document).ready(function(){
 					alert('dd');
 					console.log("ajax sending:"+data);
 					
+					var html=""
+					
+						data.forEach(function(d){
+					console.log(d.addr1)
+					
+					html += d.addr1;
+					html += d.addr2;
+					html += d.addr3;
+					
+					
+					})
+					
+					
+					
+				$('#add').append(html);
 				}
 			})
 	})

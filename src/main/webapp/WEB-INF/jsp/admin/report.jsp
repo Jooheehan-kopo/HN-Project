@@ -420,12 +420,12 @@
                       </p>
                     
          				</form>            
-                      <p>
+                      <p >
                         <span class="small text-muted text-uppercase">주소</span><br />
                         
-                        <c:forEach items="${info}" var="info" varStatus="loop">
-                        <strong><c:out value="${info.addr1}"/></strong>
-                        </c:forEach>
+                        
+                        <p id="add"><strong></strong></p>
+                        
                       </p>
                     </div>
                      
