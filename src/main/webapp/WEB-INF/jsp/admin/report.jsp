@@ -412,17 +412,19 @@
                     <div class="col-md-7">
                       <p class="small text-muted text-uppercase mb-2">Invoice from</p>
                       
-                      <form id="getInfo">
+                      <form method="post" action="${pageContext.request.contextPath }/admin/report" id="getInfo">
                       <p class="mb-4">
                        <strong><input type="text" id="name" name="name" style="border:none; font-weight:bold"></strong><br />
                          학교: <input type="text" id="school" name="school" style="border:none"><br />
                          학번: <input type="text" id="stu_id" name="stu_id" style="border:none"><br /> High Wycombe<br /> (478) 446-9234<br />
                       </p>
+                    
          				</form>            
                       <p>
                         <span class="small text-muted text-uppercase">주소</span><br />
-                        <c:forEach items="${info }" var="info" varStatus="loop">
-                        <strong><c:out value="${info.phone}"/></strong>
+                        
+                        <c:forEach items="${info}" var="info" varStatus="loop">
+                        <strong><c:out value="${info.addr1}"/></strong>
                         </c:forEach>
                       </p>
                     </div>
@@ -635,7 +637,7 @@
       </main> <!-- main -->
       
     </div> <!-- .wrapper -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/report.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/popper.min.js"></script>

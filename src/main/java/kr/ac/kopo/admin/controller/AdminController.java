@@ -97,13 +97,13 @@ public class AdminController {
 		return "admin/report";
 	}
 	@ResponseBody
-	@RequestMapping("admin/report")
+	@PostMapping("admin/report")
 	public ModelAndView getInfo(InfoVO member) {
 		List<InfoVO> info = service.getinfo(member);
 		
 		ModelAndView mav = new ModelAndView("admin/report");
 		mav.addObject("info", info);
-		System.out.println("info:"+info);
+		System.out.println("info con:"+info);
 		
 		return mav;
 	}

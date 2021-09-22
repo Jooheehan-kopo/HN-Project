@@ -43,21 +43,7 @@ function modal(id) {
             bg.remove();
             modal.hide();
             
-            $.ajax({
-			url:'admin/report',
-			method:'post',
-			data: $('#getInfo').serialize(),
-			
-			dataType:'json',
-			success : function(data){
-				
-				console.log("ajax sending:"+data);
-				
-			}
-		})
-            
-            
-            
+         
         });
 }
 
@@ -67,5 +53,28 @@ $('#search').on('click', function() {
     modal('my_modal');
 });
 
+
+ 
+$(document).ready(function(){
+
+	$('.modal_close_btn').on('click',function(){
+	
+	
+	       $.ajax({
+				url:'/HN-Project/admin/report',
+				method:'post',
+				data: $("#getInfo").serialize(),
+				
+				dataType:'json',
+				success : function(data){
+					alert('dd');
+					console.log("ajax sending:"+data);
+					
+				}
+			})
+	})
+
+
+});
 
 
