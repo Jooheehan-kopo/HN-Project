@@ -71,6 +71,8 @@ $(document).ready(function(){
 					console.log("ajax sending:"+data);
 					
 					var html=""
+					var date=""
+					var phone=""
 					
 						data.forEach(function(d){
 					console.log(d.addr1)
@@ -79,17 +81,24 @@ $(document).ready(function(){
 					html += d.addr2;
 					html += d.addr3;
 					
+					date += d.join_date;
 					
+					phone += d.phone;
 					})
 					
 					
 					
 				$('#add').append(html);
+				$('#date').append(date);
+				$('#phone').append(phone);
 				}
 			})
 	})
 
 
 });
+
+/*pdf save*/
+
 
 

@@ -380,6 +380,8 @@
     <a class="modal_close_btn"><i class="fa fa-times-circle-o fa-lg" aria-hidden="true" style="color:#008485"></i></a>
 </div>
  
+
+ 
  
     
  <!--report start  -->
@@ -397,7 +399,7 @@
                 
                 <input type = "submit" value="확인" class="btn btn-secondary" id="search">
                   
-                  <button type="button" class="btn btn-primary">PDF저장</button>
+                  <button type="button" class="btn btn-primary" id="save" onclick="window.print()">PDF저장</button>
                 </div>
               </div>
               <div class="card shadow">
@@ -415,9 +417,11 @@
                       <form method="post" action="${pageContext.request.contextPath }/admin/report" id="getInfo">
                       <p class="mb-4">
                        <strong><input type="text" id="name" name="name" style="border:none; font-weight:bold"></strong><br />
-                         학교: <input type="text" id="school" name="school" style="border:none"><br />
-                         학번: <input type="text" id="stu_id" name="stu_id" style="border:none"><br /> High Wycombe<br /> (478) 446-9234<br />
+                         학교 <input type="text" id="school" name="school" style="border:none"><br />
+                         학번 <input type="text" id="stu_id" name="stu_id" style="border:none"><br />
                       </p>
+                         <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <p id="date"></p><br /> 
+                         <i class="fa fa-mobile" aria-hidden="true"></i> <p id="phone"></p><br />
                     
          				</form>            
                       <p >
@@ -661,7 +665,9 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
     </script>
+    <script>
     
+</script>
  
  
   </body>

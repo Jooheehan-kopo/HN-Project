@@ -592,18 +592,18 @@
                 <div class="col-md-12 col-lg-8">
                   <div class="card shadow">
                     <div class="card-header">
-                      <strong class="card-title">Recent Data</strong>
-                      <a class="float-right small text-muted" href="#!">View all</a>
+                      <strong class="card-title">협약 학교조회 및 신청</strong>
+                      <a class="float-right small text-muted" href="#!">더보기</a>
                     </div>
                     <div class="card-body my-n2">
                       <table class="table table-striped table-hover table-borderless">
                         <thead>
                           <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Address</th>
-                            <th>Date</th>
-                            <th>Action</th>
+                            <th>번호</th>
+                            <th>학교명</th>
+                            <th>주소</th>
+                            <th>학생수</th>
+                            <th>협약일</th>
                           </tr>
                         </thead>
                         <tbody>
