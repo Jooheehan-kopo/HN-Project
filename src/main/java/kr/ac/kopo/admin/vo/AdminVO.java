@@ -13,8 +13,49 @@ public class AdminVO {
 	private int countSchool; //총학교수 + 일반회원
 	private int countMbti;
 	
+	//협약학교 목록 현황
+	private int no;
+	private String school;
+	private String address;
+	private int stu;
+	private String add_date;
 	
 	
+	
+	
+	
+	
+	
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public String getSchool() {
+		return school;
+	}
+	public void setSchool(String school) {
+		this.school = school;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getStu() {
+		return stu;
+	}
+	public void setStu(int stu) {
+		this.stu = stu;
+	}
+	public String getAdd_date() {
+		return add_date;
+	}
+	public void setAdd_date(String add_date) {
+		this.add_date = add_date;
+	}
 	public int getCountMbti() {
 		return countMbti;
 	}
@@ -62,12 +103,13 @@ public class AdminVO {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
 	@Override
 	public String toString() {
 		return "AdminVO [id=" + id + ", password=" + password + ", name=" + name + ", type=" + type + ", countMember="
-				+ countMember + ", countSchool=" + countSchool + "]";
+				+ countMember + ", countSchool=" + countSchool + ", countMbti=" + countMbti + ", no=" + no + ", school="
+				+ school + ", address=" + address + ", stu=" + stu + ", add_date=" + add_date + "]";
 	}
+	
 	
 	
 	

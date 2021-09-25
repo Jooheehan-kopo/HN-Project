@@ -23,36 +23,36 @@ import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:config/spring/spring-mvc.xml"})
+@ContextConfiguration(locations = { "classpath:config/spring/spring-mvc.xml" })
 public class MemberDaoTest {
-	
+
 	@Autowired
 	private MemberDAO memberDAO;
-	
+
 	@Autowired
 	private SqlSessionTemplate sessionTemplate;
-	
+
 	@Autowired
 	private MemberServiceImpl service;
-	
+
 	@Autowired
 	private MbtiDAOImpl mbtiDAO;
-	
-	@Autowired
-	private AdminDAO adminDAO; //의존성 자동주입
 
+	@Autowired
+	private AdminDAO adminDAO; // 의존성 자동주입
 
 	@Ignore
 	@Test
 	public void 전체게시글조회test() throws Exception {
 		MemberVO user = new MemberVO();
 		user.setId("student");
-		List<BankAccountVO> list = sessionTemplate.selectList("member.MemberDAO.myAccounts",user);
-		for(BankAccountVO bank:list) {
+		List<BankAccountVO> list = sessionTemplate.selectList("member.MemberDAO.myAccounts", user);
+		for (BankAccountVO bank : list) {
 			System.out.println();
 		}
-		
+
 	}
+
 	@Ignore
 	@Test
 	public void 이체프로시저test() throws Exception {
@@ -60,11 +60,12 @@ public class MemberDaoTest {
 		trans.setBank_id("11114309628");
 		trans.setTrans_money(10000);
 		trans.setYour_bank_id("11122797153");
-		
-		System.out.println("trans:" +trans);
+
+		System.out.println("trans:" + trans);
 		memberDAO.trans(trans);
-	
+
 	}
+
 	@Ignore
 	@Test
 	public void 이체프로시저DAOtest() throws Exception {
@@ -72,66 +73,73 @@ public class MemberDaoTest {
 		trans.setBank_id("11114309628");
 		trans.setTrans_money(10000);
 		trans.setYour_bank_id("11122797153");
-		
-		System.out.println("trans:" +trans);
-		sessionTemplate.insert("member.MemberDAO.myAccounts",trans);
-		
+
+		System.out.println("trans:" + trans);
+		sessionTemplate.insert("member.MemberDAO.myAccounts", trans);
+
 	}
 
 	@Ignore
 	@Test
-	public void 계좌내역조회() throws Exception{
+	public void 계좌내역조회() throws Exception {
 		MemberVO user = new MemberVO();
 		user.setId("user");
-		
-		List<BankTransVO> list = sessionTemplate.selectList("member.MemberDAO.transList",user);
-		for(BankTransVO bank:list) {
+
+		List<BankTransVO> list = sessionTemplate.selectList("member.MemberDAO.transList", user);
+		for (BankTransVO bank : list) {
 			System.out.println();
 		}
 	}
-	
+
 	@Ignore
 	@Test
-	public void mbti결과저장() throws Exception{
+	public void mbti결과저장() throws Exception {
 		MbtiVO mbti = new MbtiVO();
 		mbti.setScore(5);
 		MemberVO mem = new MemberVO();
 		mem.setId("user");
-		
-		HashMap<String, Object> map = new HashMap<String,Object>();
+
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("mbtiVO", mbti);
 		map.put("memberVO", mem);
-		
+
 		mbtiDAO.insertResult(map);
 	}
+
 	@Ignore
 	@Test
-	public void adminInfo() throws Exception{
+	public void adminInfo() throws Exception {
 		List<InfoVO> infolist = sessionTemplate.selectList("admin.AdminDAO.infoList");
-		for(InfoVO info :infolist) {
+		for (InfoVO info : infolist) {
 			System.out.println(infolist);
 		}
-				
-	
+
 	}
+
 	@Ignore
 	@Test
-	public void countMember() throws Exception{
+	public void countMember() throws Exception {
 		AdminVO count = sessionTemplate.selectOne("admin.AdminDAO.mainThree");
-		System.out.println("총회원수:"+ count.getCountMbti());
+		System.out.println("총회원수:" + count.getCountMbti());
 	}
+
+	@Ignore
 	@Test
-	public void 개인정보출력() throws Exception{
+	public void 개인정보출력() throws Exception {
 		InfoVO list = new InfoVO();
 		list.setSchool("백신중");
 		list.setStu_id("10102");
-	
-		
+
 		List<InfoVO> infolist = adminDAO.getInfo(list);
-		System.out.println("infolist"+infolist);
-		
+		System.out.println("infolist" + infolist);
+
 	}
 
+	@Test
+	public void 학교목록조회() throws Exception {
 
-	
+		List<AdminVO> avo = sessionTemplate.selectList("admin.AdminDAO.schoolList");
+		System.out.println(avo);
+
+	}
 }

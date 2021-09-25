@@ -51,12 +51,17 @@ public class AdminDAOImpl implements AdminDAO {
 		return count;
 	}
 	
-	
+	//리포트 회원조회하여 작성
 	public List<InfoVO> getInfo(InfoVO info){
 		
 		List<InfoVO> getInfo = sqlsessionTemplate.selectList("admin.AdminDAO.report", info);
 		return getInfo;
-		
+	}
+	
+	public List<AdminVO> schoolList() {
+		List<AdminVO> avo = sqlsessionTemplate.selectList("admin.AdminDAO.schoolList");
+		System.out.println("schoolList: "+ avo);
+		return avo;
 	}
 	
 }

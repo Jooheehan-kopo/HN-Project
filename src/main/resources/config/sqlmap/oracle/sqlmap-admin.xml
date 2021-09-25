@@ -33,6 +33,15 @@
 		select count(*) countMbti from mbti
 	</select>
 	
+	<!-- 협약학교 목록 -->
+	<select id="schoolList" resultType="adminVO">
+		select s.no, s.school, s.address, a.stu , s.add_date
+		from 
+		(select school, count(*) as stu from member group by school) a, school s
+		where a.school=s.school
+		order by no
+	</select>
+	
 	<!-- report info: 개인 -->
 	<select id="report" parameterType="infoVO" resultType="infoVO">
 		select * from member

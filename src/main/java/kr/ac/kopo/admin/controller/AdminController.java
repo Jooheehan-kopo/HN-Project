@@ -63,7 +63,8 @@ public class AdminController {
 	public ModelAndView main() {
 		AdminVO count = service.countMemer();
 		AdminVO countS = service.countSchool();
-		 AdminVO countM = service.countMbti();
+		AdminVO countM = service.countMbti();
+		List<AdminVO>schoolList = service.schoolList();
 		
 		SimpleDateFormat date = new SimpleDateFormat ( "yyyy년 MM월dd일");
 		Date time = new Date();
@@ -75,8 +76,9 @@ public class AdminController {
 		mav.addObject("date", time1);//날짜출력
 		mav.addObject("school",countS);
 		mav.addObject("mbti",countM);
+		mav.addObject("sList", schoolList);//학교목록출력
 		
-		System.out.println("count:"+count.getCountMember());
+		System.out.println("sList:"+schoolList);
 		return mav;
 	}
 	
@@ -90,6 +92,10 @@ public class AdminController {
 
 		return mav;
 	}
+	
+	
+	
+	
 	
 	//리포트 생성
 	@GetMapping("admin/report")

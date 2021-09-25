@@ -160,7 +160,7 @@
 
 		
 <script>
-
+/* coolsms 문자인증 보내기 */
 
 $(document).ready(function() {
 
@@ -456,7 +456,7 @@ $(document).ready(function() {
           <div class="col-md-6 mb-3">
           <br>
             <label for="phone">본인인증</label>
-            <input placeholder="전화번호를 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control" style="width:100%"></input>
+            <input placeholder="전화번호를 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control" style="width:100%; display: flex"></input>
 						<input type="button" id="phoneckBtn" value="확인" style="display: flex">
 			<input placeholder="인증번호 입력하세요" id="phoneNumber" name="phoneNumber" type="text" class="form-control"  ></input>	
 			<br>	

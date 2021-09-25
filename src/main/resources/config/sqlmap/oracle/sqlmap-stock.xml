@@ -7,8 +7,7 @@
 
 <!-- 주식: 크롤링 정보 화면에 가져오기-->
  	<select id="selectAll" resultType="stockmainVO">
-		select *
-		from stock
+		select* from ( select * from stock order by crawl_date desc)where rownum <![CDATA[ <= ]]> 30 order by no
 	</select>
 
 

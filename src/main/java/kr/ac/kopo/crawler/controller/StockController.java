@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.ac.kopo.crawler.service.CrawlingService;
 import lombok.extern.log4j.Log4j;
 
-@Component //스케쥴러
+//@Component //스케쥴러
 @Controller
 @Log4j
 @RequestMapping
@@ -20,7 +20,7 @@ public class StockController {
 	@Autowired
 	private CrawlingService service;
 	
-	@Scheduled(fixedDelay=900000) //15분 :1000(1초)*60*15
+	//@Scheduled(fixedDelay=900000) //15분 :1000(1초)*60*15 900000
 	@GetMapping("/stock")
 	public void stockInfo() {
 		

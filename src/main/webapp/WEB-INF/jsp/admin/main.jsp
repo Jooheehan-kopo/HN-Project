@@ -610,24 +610,16 @@
                           </tr>
                         </thead>
                         <tbody>
+                         <c:forEach items="${sList}" var="list" varStatus="loop">
                           <tr>
-                            <td>2474</td>
-                            <th scope="col">Brown, Asher D.</th>
-                            <td>Ap #331-7123 Lobortis Avenue</td>
-                            <td>13/09/2020</td>
-                            <td>
-                              <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="text-muted sr-only">Action</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr1">
-                                  <a class="dropdown-item" href="#">Edit</a>
-                                  <a class="dropdown-item" href="#">Remove</a>
-                                  <a class="dropdown-item" href="#">Assign</a>
-                                </div>
-                              </div>
-                            </td>
+                            <td><c:out value="${list.no}"></c:out></td>
+                            <th scope="col"><c:out value="${list.school}"></c:out></th>
+                            <td><c:out value="${list.address}"></c:out></td>
+                            <td><c:out value="${list.stu}"></c:out></td>
+                            <td><c:out value="${list.add_date}"></c:out></td>
+                            
                           </tr>
+                          </c:forEach>
                       
                         </tbody>
                       </table>

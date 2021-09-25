@@ -66,7 +66,7 @@
 	
 	<div class="all-title-box">
 		<div class="container text-center">
-			<h1>Hosting<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+			<h1>주식체험<span class="m_1">나도 이제 투자자! 주식체험으로 자유롭게, 확실하게!</span></h1>
 		</div>
 	</div>
 	
@@ -74,15 +74,15 @@
         <div class="container">
             <div class="section-title text-center">
                 <h3>인기순위 30개 종목</h3>
-                <p class="lead">Get the red carpet treatment <strong>just $39 per month!</strong> It is estimated that 3.5 million established by personal blogs.<br> From each other, we share paid WordPress themes WP Service...</p>
+                <p class="lead">출처: 네이버증권 <strong>15분 지연</strong> <br> 15분 마다 실시간 정보를 제공합니다.</p>
             </div><!-- end title -->
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="message-box">
                         <ul class="nav nav-pills nav-stacked" id="myTabs">
-                            <li class="active"><a href="#tab1" data-toggle="pill">Monthly Subscription</a></li>
-                            <li><a href="#tab2" data-toggle="pill">Yearly Subscription</a></li>
+                            <li class="active"><a href="#tab1" data-toggle="pill">현재 인기종목순위</a></li>
+                            <li><a href="#tab2" data-toggle="pill">과거 인기종목순위</a></li>
                         </ul>
                     </div>
                 </div><!-- end col -->
@@ -100,7 +100,7 @@
                                <!-- 현재 주식 인기 검색 순위(30개) -->
                                <table class="table table-striped table-hover table-bordered">
 								  <thead>
-								    <tr>
+								    <tr style="color: #008485">
 								      <th scope="col">#</th>
 								      <th scope="col">이름</th>
 								   <!--    <th scope="col">검색비율</th> -->
@@ -204,20 +204,30 @@
         <div class="container">
             <div class="section-title row text-center">
                 <div class="col-md-8 col-md-offset-2">
-                    <h3>나도 시작하러가기!</h3>
+                    <h3 style="font-weight: bold">나도 시작하러가기!</h3>
                     <p class="lead">
 						주식체험으로 주린이도 손쉽게!<br>
 						해보고 싶었던 주식! 모의체험으로 금융 상식도 쑥쑥!<br>
 						내 돈으로 투자하기, 복잡하고 어렵지 않아요~!<br>
 						원하는 종목 담아담아~ 친구들과 함께 결과 공유! 질문사항은 피드백으로 고고!
 					</p>
-                    <a href="${pageContext.request.contextPath}/stock/resisterStock">주식계좌개설</a>
+					<br><br><br>
+					
+			
+					
+					<button type="button"><img src="${pageContext.request.contextPath }/resources/images/stock1.png" alt="">
+					<a href="${pageContext.request.contextPath}/stock/resisterStock"></a>주식계좌개설</button>
+					<button type="button"><img src="${pageContext.request.contextPath }/resources/images/stock2.png" alt="">버튼명</button>
+
+					
+					
+                    <button style="background-color: #008485; color:white; font-size:20px; padding:2px"><a href="${pageContext.request.contextPath}/stock/resisterStock">주식계좌개설</a></button>
                    
 
 					<p>이미 계정이 있다면? <br>
 					지금 바로 시작하기!</p>
-					
-					<button onclick="myFunction()">play 스톡하나</button>
+					<br><br><br>
+					<button style="background-color: #008485; color:white; font-size:20px; padding:2px" onclick="myFunction()">play 스톡하나</button>
 					
 					
 

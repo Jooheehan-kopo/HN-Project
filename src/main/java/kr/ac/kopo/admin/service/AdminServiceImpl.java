@@ -55,6 +55,13 @@ public class AdminServiceImpl implements AdminService {
 		return infolist;
 	}
 	
+	//메인화면 협약학교리스트 
+	public List<AdminVO> schoolList(){
+		List<AdminVO> adminVO = adminDAO.schoolList();
+		System.out.println("schoolList ser: "+ adminVO);
+		return adminVO;
+	}
+	
 	
 }
 
