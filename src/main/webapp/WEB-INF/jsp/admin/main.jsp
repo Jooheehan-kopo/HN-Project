@@ -507,7 +507,7 @@
                       <a class="float-right small text-muted" href="#!">View all</a>
                     </div>
                     <div class="card-body" data-simplebar style="height:355px; overflow-y: auto; overflow-x: hidden;">
-                      <h6 class="text-uppercase text-muted mb-4">Today</h6>
+                      <h6 class="text-uppercase text-muted mb-4">학교 승인</h6>
                       <div class="pb-3 timeline-item item-primary">
                         <div class="pl-5">
                           <div class="mb-1"><strong>@Brown Asher</strong><span class="text-muted small mx-2">Just create new layout Index, form, table</span><strong>Tiny Admin</strong></div>

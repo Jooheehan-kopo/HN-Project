@@ -77,9 +77,49 @@
 		});	
 				
 		}
-		
-		
-		
+	
+	</script>
+	<!-- 매도 모달 -->
+	<script>
+		function plus2() {
+			var td = document.getElementById("count_s");
+			var n = Number(td.innerHTML);
+			td.innerHTML = n + 1;
+			
+			$( "#model-price_s" ).attr( "title" );
+			
+			
+			var price = parseInt($("#modal-stockprice_s").attr('title').split(',').join(''));
+			var total = price* (n+1);
+			
+			console.log(total);
+			
+			$(document).ready(function() {
+		         $("#total_s").val(total)
+		         $("#stock_s").val(n+1).hide()
+		         
+
+		});	
+			
+		}
+		function minus2() {
+			var td = document.getElementById("count_s");
+			var n = Number(td.innerHTML);
+			td.innerHTML = n -1;
+			
+			var now = $("#total_s").val();
+			var minus = (now/n)*(n-1) 
+			console.log(minus);
+			
+			
+			$(document).ready(function() {
+		         $("#total_s").val(minus)
+		         $("#stock_s").val(n-1).hide()
+
+		});	
+				
+		}
+	
 	</script>
 	  <style>
 	    .carousel-control-prev-icon,
@@ -476,7 +516,7 @@
 													      <td><c:out value="${stockVO.compare}"/></td>
 													      <td><c:out value="${stockVO.stocks_totalprice}"/></td>
 													      <td><button data-toggle="modal" data-target="#buy"  onclick="test('${stockVO.stock_name}', '${stockVO.end_p}')">매수</button>
-													      <button>매도</button></td>
+													      <button data-toggle="modal" data-target="#sell"  onclick="test2('${stockVO.stock_name}', '${stockVO.end_p}')">매도</button></td>
 													    													    										      
 													    </tr>
 													   
@@ -503,10 +543,6 @@
 													</div>
 													<div class="modal-body customer-box row">
 														<div class="col-md-12">
-									
-									
-									
-														
 															<div class="tab-content">
 																<div class="tab-pane active" id="buy">
 																	<form role="form" action="${pageContext.request.contextPath }/stock/playStock" class="form-horizontal" method="post" name="buyStock">
@@ -556,6 +592,78 @@
 																				<button type="submit"
 																					class="btn btn-light btn-radius btn-brd grd1">
 																					매수</button>
+									
+																			</div>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									   <!-- Modal -->
+										<div class="modal fade" id="sell" tabindex="-1" role="dialog"
+											aria-labelledby="myModalLabel">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header tit-up">
+														<button type="button" class="close" data-dismiss="modal"
+															aria-hidden="true" >&times;</button>
+														<h4 class="modal-title">거래하기</h4>
+													</div>
+													<div class="modal-body customer-box row">
+														<div class="col-md-12">
+															<div class="tab-content">
+																<div class="tab-pane active" id="sell">
+																	<form role="form" action="${pageContext.request.contextPath }/stock/playStock2" class="form-horizontal" method="post" name="sellStock">
+																		<div class="form-group">
+																			<div class="col-sm-12">
+																			
+																				<table class="table table-bordered">
+																				<tr>
+																					<th><span>매도종목 </span></th>
+																					<th>
+																					<input type="text" name="stock_name" id="modal-stockname_s" readonly style="border:none" />
+																					</th>
+																				</tr>
+																				<tr>
+																					<th>수량: </th>
+<!-- 																					<th><h4 name="count" id="count">1</h4><span>개</span><br> -->
+																					<th>
+																					<input type="text" name="count" id="stock_s" style="border:none"/>
+																					<h4 id="count_s">1</h4>																				
+																					<span>개</span><br>
+																					<input type="button" value="-" onclick="minus2()" />
+																					<span><input type="button" value="+" onclick="plus2()" /></span>
+																					</th>
+																				</tr>
+																				<tr>
+																					<th>현재가</th>
+																					<th>
+																					<input type="text" name="end_p" id="modal-stockprice_s" style="border:none; text-align:left" />
+																					</th>
+																			
+																				</tr>
+																				<tr>
+																				 <th>총 금액</th>
+																			
+																				 <th><input type="text" name="input_cost" id="total_s" style="border:none" > </th>
+																				
+																				
+																				</tr>
+																				</table>
+																				
+																			</div>
+																		</div>
+																			
+																		<div class="row">
+																			<div class="col-sm-10">
+																			<span>진행하시겠습니까? </span>
+																				<button type="submit"
+																					class="btn btn-light btn-radius btn-brd grd1">
+																					매도</button>
 									
 																			</div>
 																		</div>
@@ -1202,6 +1310,35 @@
 	  $(this).find('form')[0].reset();
 	});
  
+
+</script>
+
+<script type="text/javascript">
+function test2(name, end){
+	 console.log(name, end)
+	 $("#modal-stockname_s").text(name)
+	 $("#modal-stockname_s").val(name)
+	 $("#modal-stockprice_s").text(end)
+	 $("#modal-stockprice_s").val(end)
+	 $("#modal-stockprice_s").attr('title',end)
+	 $("#cost_s").text(cost)
+	 
+}
+
+var notified="";
+$(document).ready(function(){
+	$('#sell').on('show.bs.modal',function(event){
+		
+		notified = $(event.realtedTarget).data('notified');
+		console.log(notified)
+	});
+	
+});
+
+$('#sell').on('hidden.bs.modal', function (e) {
+	    console.log('modal close');
+	  $(this).find('form')[0].reset();
+	});
 
 </script>
 </body>

@@ -97,6 +97,8 @@ public class AdminController {
 	
 	
 	
+	
+	
 	//리포트 생성
 	@GetMapping("admin/report")
 	public String report() {

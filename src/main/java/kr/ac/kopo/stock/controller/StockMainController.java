@@ -26,7 +26,7 @@ public class StockMainController {
 	@Autowired
 	private StockMainService service;
 	
-	//크롤링한 주식정보내역 (스캐쥴러 써야함)
+	//크롤링한 주식정보내역 (스캐쥴러 사용)
 	
 	@RequestMapping("stock/stockMain")
 	public ModelAndView showTodayStock() {
@@ -87,14 +87,29 @@ public class StockMainController {
 	@PostMapping("stock/playStock")
 	public String stockBuy(StockMainVO buy, @SessionAttribute("userVO") MemberVO user) {
 		
-//		String id = (String)session.getAttribute("userVO");
-//		System.out.println(id);
 		System.out.println(buy.getStock_name());
+
 		
 		buy.getInput_cost();
 		System.out.println("input cost: "+ buy.getInput_cost());
 		service.stockBuy(buy,user);
 		
+		return "redirect:/stock/playStock";
+		
+	}
+	
+	//매도값 전달
+	@PostMapping("stock/playStock2")
+	public String stockSell(StockMainVO sell, @SessionAttribute("userVO") MemberVO user) {
+		
+//		String id = (String)session.getAttribute("userVO");
+//		System.out.println(id);
+		System.out.println("파는종목 매도!:" +sell.getStock_name());
+		
+		
+		sell.getInput_cost();
+		System.out.println("input cost sell: "+ sell.getInput_cost());
+		service.stockSell(sell,user);
 		
 		return "redirect:/stock/playStock";
 		

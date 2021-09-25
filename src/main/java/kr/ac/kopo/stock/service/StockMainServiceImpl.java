@@ -65,18 +65,52 @@ public class StockMainServiceImpl implements StockMainService {
 		
 	}
 	
+	//매도가격
+	public void stockSell(StockMainVO sell,@SessionAttribute("userVO") MemberVO user) {
+		//user.getId();
+		//buy.getInput_cost();
+		
+		//현재가 trim 처리
+		String end_p = sell.getEnd_p();
+		String new_p =end_p.trim();
+		System.out.println("new_p: "+ new_p);
+		sell.setEnd_p(new_p);
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("memberVO", user);
+		map.put("stockmainVO", sell);
+		
+		System.out.println("service sell 몇개: "+ sell.getCount());
+		System.out.println("service sell 현재가: "+ sell.getEnd_p());
+		System.out.println("service sell 종목: "+ sell.getStock_name());
+		System.out.println("==================================");
+		System.out.println("service sell:"+ sell.getInput_cost());
+		System.out.println("service sell:"+ user.getId());
+		stockMDAO.updateBal2(map);
+		
+	}
+	
 	//안씀
 	public  List<MyStockVO> MyStock (){
 		List<MyStockVO> mystock = stockMDAO.getMyStock();
 		return mystock;
 	
 	}
-	
+	//매수목록
 	public List<MyStockVO> MyList( @SessionAttribute("userVO") MemberVO user) {
 		System.out.println("아이디만전달해 서비스:"+ user.getId());
 		//stockMDAO.getMyList(user);
 		
 		List<MyStockVO> mystock = stockMDAO.getMyList(user);
+		return mystock;
+		
+	}
+	//매도목록
+	public List<MyStockVO> MyList2( @SessionAttribute("userVO") MemberVO user) {
+		System.out.println("아이디만전달해 서비스:"+ user.getId());
+		//stockMDAO.getMyList(user);
+		
+		List<MyStockVO> mystock = stockMDAO.getMyList2(user);
 		return mystock;
 		
 	}

@@ -2,6 +2,8 @@ package kr.ac.kopo.stock.service;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.SessionAttribute;
+
 import kr.ac.kopo.member.vo.MemberVO;
 import kr.ac.kopo.stock.vo.MyStockVO;
 import kr.ac.kopo.stock.vo.StockMainVO;
@@ -16,4 +18,8 @@ public interface StockMainService {
 	List<MyStockVO> MyStock ();
 	
 	List<MyStockVO> MyList(MemberVO user);
+
+	//매도
+	void stockSell(StockMainVO sell,MemberVO user);
+	
 }

@@ -3,6 +3,8 @@ package kr.ac.kopo.stock.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import kr.ac.kopo.member.vo.MemberVO;
 import kr.ac.kopo.stock.vo.MyStockVO;
 import kr.ac.kopo.stock.vo.StockMainVO;
@@ -20,4 +22,7 @@ public interface StockMainDAO {
 	
 	
 	List<MyStockVO> getMyList (MemberVO user);
+	void updateBal2(HashMap<String, Object> map);
+	
+	List<MyStockVO> getMyList2 (MemberVO user);
 }

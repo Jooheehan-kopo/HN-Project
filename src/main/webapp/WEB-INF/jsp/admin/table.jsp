@@ -359,6 +359,17 @@
                   <div class="card shadow">
                     <div class="card-body">
                       <!-- table -->
+                      <div>
+                   
+                      <input type = "submit" value="확인" class="btn btn-secondary" id="search" style="float:right; margin:5px">
+                      <input type = "text" placeholder="검색어를 입력하세요" id="keyword" name="name" style="float:right;margin:10px ">
+                      <select style="float:right; margin:5px;height:30px;margin-top:9px;font-size: 14px ">
+						<option selected>선택</option>
+						<option>이름</option>
+						<option>학교</option>
+						<option>아이디</option>
+					  </select>
+                      </div>
                       <table class="table datatables" id="dataTable-1">
                         <thead >
                           <tr style="color:black">
@@ -375,8 +386,8 @@
                           </tr>
                         </thead>
                          
+                        <tbody id="schoolinfos">
                         <c:forEach items="${info}" var="school" varStatus="loop">
-                        <tbody>
                           <tr>
                             <td>
                               <div class="custom-control custom-checkbox">
@@ -403,8 +414,8 @@
                               </div>
                             </td>
                           </tr>
-                       </tbody>
                         </c:forEach> 
+                       </tbody>
                        
                       </table>
                     </div>
@@ -539,6 +550,7 @@
         </div>
       </main> <!-- main -->
     </div> <!-- .wrapper -->
+<%--     <script src="${pageContext.request.contextPath }/adminpage/js/searchName.js"></script> --%>
     <script src="${pageContext.request.contextPath }/adminpage/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/popper.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/moment.min.js"></script>
