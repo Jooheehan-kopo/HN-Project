@@ -3,6 +3,8 @@ package kr.ac.kopo.stock.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ public class StockMainController {
 	private StockMainService service;
 	
 	//크롤링한 주식정보내역 (스캐쥴러 써야함)
+	
 	@RequestMapping("stock/stockMain")
 	public ModelAndView showTodayStock() {
 		

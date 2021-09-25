@@ -79,7 +79,7 @@ public class StockDAOTest {
 	}
  	
 	//크롤링
-	@Ignore
+	
 	@Test
 	public void stockTest() throws Exception{
 		service.insert("https://finance.naver.com/sise/lastsearch2.nhn");

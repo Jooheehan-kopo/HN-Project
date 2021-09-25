@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,26 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-    <script src="https://use.fontawesome.com/73d95e52a3.js"></script>
-    <title>PlayHana Admin | 플레이하나 관리자페이지</title>
-    <style>
-    #my_modal {
-        display: none;
-        width: 300px;
-        padding: 20px 60px;
-        background-color: #fefefe;
-        border: 1px solid #888;
-        border-radius: 3px;
-    }
-
-    #my_modal .modal_close_btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-	</style>
-	
+    <link rel="icon" href="${pageContext.request.contextPath }/adminpage/favicon.ico">
+    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
     <!-- Simple bar CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath }/adminpage/css/simplebar.css">
     <!-- Fonts CSS -->
@@ -49,7 +29,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/adminpage/css/app-dark.css" id="darkTheme" disabled>
   </head>
   <body class="vertical  light  ">
-   <div class="wrapper">
+    <div class="wrapper">
       <nav class="topnav navbar navbar-light">
         <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
           <i class="fe fe-menu navbar-toggler-icon"></i>
@@ -77,7 +57,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-muted pr-0" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="avatar avatar-sm mt-2">
-                <c:out value="${userVO.name}"></c:out>
+                <img src="./assets/avatars/face-1.jpg" alt="..." class="avatar-img rounded-circle">
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -368,153 +348,109 @@
           </div>
         </nav>
       </aside>
-
-
-<!-- 모달창 -->
-
-
- 
-<div id="my_modal">
-   입력하신 정보로 리포트를 구성합니다.
-   
-    <a class="modal_close_btn"><i class="fa fa-times-circle-o fa-lg" aria-hidden="true" style="color:#008485"></i></a>
-</div>
- 
-
- 
- 
-    
- <!--report start  -->
+      
       <main role="main" class="main-content">
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 col-xl-8">
-            
-              <div class="row align-items-center mb-4">
-                <div class="col">
-                  <h2 class="h5 page-title"><small class="text-muted text-uppercase">PlayHana</small><br />#1806</h2>
-                </div>
+            <div class="col-12">
+              <h2 class="page-title">PlayHana Report</h2>
+              <p class="text-muted">선생님, 학부모님께 리포트를 발송해주세요.</p>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card shadow mb-4">
+                    <div class="card-header">
+                      <strong class="card-title">메일 보내기</strong>
+                    </div>
+                    <div class="card-body">
+                      <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                          <div class="col-md-8 mb-3">
+                            <label for="exampleInputEmail1">Email 주소</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <div class="invalid-feedback"> 메일주소 형식에 맞게 작성해주세요 </div>
+                            <small id="emailHelp" class="form-text text-muted"><a href="${pageContext.request.contextPath }/admin/table" >메일주소 확인하기</a></small>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationCustomUsername">받는이</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                              <div class="invalid-feedback"> Please choose a username. </div>
+                            </div>
+                          </div>
+                         
+                        </div>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationCustom03">학교</label>
+                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <div class="invalid-feedback">  </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom04">주소</label>
+                            <select class="custom-select" id="validationCustom04" required>
+                              <option selected disabled value="">Choose...</option>
+                              <option>...</option>
+                            </select>
+                            <div class="invalid-feedback"> 학교 주소를 입력해주세요 </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationCustom05">우편번호</label>
+                            <input type="text" class="form-control" id="validationCustom05" required>
+                            <div class="invalid-feedback"> Please provide a valid zip. </div>
+                          </div>
+                        </div>
+                        <div class="form-group mb-3">
+                          <label for="validationTextarea">About your self</label>
+                          <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+                          <div class="invalid-feedback"> Please enter a message in the textarea. </div>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                          <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+                          <div class="invalid-feedback">Example invalid feedback text</div>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                          <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                          <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                          <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
+                          <div class="invalid-feedback">More example invalid feedback text</div>
+                        </div>
+                        <div class="form-group mb-4">
+                          <label for="example-multiselect">Select your level</label>
+                          <select id="example-multiselect" multiple="" class="form-control" required>
+                            <option>Level 1</option>
+                            <option>Level 2</option>
+                            <option>Level 3</option>
+                            <option>Level 4</option>
+                            <option>Level 5</option>
+                          </select>
+                          <div class="invalid-feedback">Please select one option</div>
+                        </div>
+                        <div class="custom-file mb-3">
+                          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                          <div class="invalid-feedback">Example invalid custom file feedback</div>
+                        </div>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck"> Agree to terms and conditions </label>
+                            <div class="invalid-feedback"> You must agree before submitting. </div>
+                          </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
+                    </div> <!-- /.card-body -->
+                  </div> <!-- /.card -->
+                </div> <!-- /.col -->
                 
-                <div class="col-auto">
-                
-                <input type = "submit" value="확인" class="btn btn-secondary" id="search">
-                  
-                  <button type="button" class="btn btn-primary" id="save" onclick="window.print()">PDF저장</button>
-                </div>
-              </div>
-              <div class="card shadow">
-                <div class="card-body p-5">
-                  <div class="row mb-5">
-                    <div class="col-12 text-center mb-4">
-                     <img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" style="width:140px; " class="navbar-brand-img brand-sm mx-auto mb-4" alt="..." > 
-                      <h2 class="mb-0 text-uppercase">PlayHana Report</h2>
-                      <p class="text-muted"> Altavista<br /> 9022 Suspendisse Rd. </p>
-                    </div>
-                    
-                    <div class="col-md-7">
-                      <p class="small text-muted text-uppercase mb-2">Invoice from</p>
-                      
-                      <form method="post" action="${pageContext.request.contextPath }/admin/report" id="getInfo">
-                      <p class="mb-4">
-                       <strong><input type="text" id="name" name="name" style="border:none; font-weight:bold"></strong><br />
-                         학교 <input type="text" id="school" name="school" style="border:none"><br />
-                         학번 <input type="text" id="stu_id" name="stu_id" style="border:none"><br />
-                      </p>
-                         <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <p id="date"></p><br /> 
-                         <i class="fa fa-mobile" aria-hidden="true"></i> <p id="phone"></p><br />
-                    
-         				</form>            
-                      <p >
-                        <span class="small text-muted text-uppercase">주소</span><br />
-                        
-                        
-                        <p id="add"><strong></strong></p>
-                        
-                      </p>
-                    </div>
-                     
-                    <div class="col-md-5">
-                      <p class="small text-muted text-uppercase mb-2">Invoice to</p>
-                      <p class="mb-4">
-                        <strong>Walter Sawyer</strong><br /> Human Resources<br /> Ap #992-8933 Sagittis Street<br /> Ivanteyevka<br /> (803) 792-2559<br />
-                      </p>
-                      <p>
-                        <small class="small text-muted text-uppercase">Due date</small><br />
-                        <strong>April, 20, 2020</strong>
-                      </p>
-                    </div>
-                  </div> <!-- /.row -->
-                  <table class="table table-borderless table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Description</th>
-                        <th scope="col" class="text-right">Rate</th>
-                        <th scope="col" class="text-right">Hours</th>
-                        <th scope="col" class="text-right">Ammout</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td> Creative Design<br />
-                          <span class="small text-muted">Design responsive website with existing prototype</span>
-                        </td>
-                        <td class="text-right">$15.00</td>
-                        <td class="text-right">2</td>
-                        <td class="text-right">$30.00</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td> Front-End Development<br />
-                          <span class="small text-muted">Markup conversion and adding JavaScript</span>
-                        </td>
-                        <td class="text-right">$20.00</td>
-                        <td class="text-right">5</td>
-                        <td class="text-right">$100.00</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td> Back-End Development<br />
-                          <span class="small text-muted">Database intergration with model functions</span>
-                        </td>
-                        <td class="text-right">$25.00</td>
-                        <td class="text-right">7</td>
-                        <td class="text-right">$155.00</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div class="row mt-5">
-                    <div class="col-2 text-center">
-                      <img src="./assets/images/qrcode.svg" class="navbar-brand-img brand-sm mx-auto my-4" alt="...">
-                    </div>
-                    <div class="col-md-5">
-                      <p class="text-muted small">
-                        <strong>Note :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. </p>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="text-right mr-2">
-                        <p class="mb-2 h6">
-                          <span class="text-muted">Subtotal : </span>
-                          <strong>$285.00</strong>
-                        </p>
-                        <p class="mb-2 h6">
-                          <span class="text-muted">VAT (10%) : </span>
-                          <strong>$28.50</strong>
-                        </p>
-                        <p class="mb-2 h6">
-                          <span class="text-muted">Total : </span>
-                          <span>$313.50</span>
-                        </p>
-                      </div>
-                    </div>
-                  </div> <!-- /.row -->
-                </div> <!-- /.card-body -->
-              </div> <!-- /.card -->
-            </div> <!-- /.col-12 -->
-          </div> <!-- .row -->
         </div> <!-- .container-fluid -->
-  
         <div class="modal fade modal-notif modal-slide" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
@@ -639,10 +575,8 @@
           </div>
         </div>
       </main> <!-- main -->
-      
     </div> <!-- .wrapper -->
-   <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="${pageContext.request.contextPath }/adminpage/js/report.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/popper.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/moment.min.js"></script>
@@ -652,7 +586,218 @@
     <script src='${pageContext.request.contextPath }/adminpage/js/jquery.stickOnScroll.js'></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/tinycolor-min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/config.js"></script>
-    <script src="${pageContext.request.contextPath }/adminpage/js/apps.js"></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/jquery.mask.min.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/select2.min.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/jquery.steps.min.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/jquery.validate.min.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/jquery.timepicker.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/dropzone.min.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/uppy.min.js'></script>
+    <script src='${pageContext.request.contextPath }/adminpage/js/quill.min.js'></script>
+    <script>
+      $('.select2').select2(
+      {
+        theme: 'bootstrap4',
+      });
+      $('.select2-multi').select2(
+      {
+        multiple: true,
+        theme: 'bootstrap4',
+      });
+      $('.drgpicker').daterangepicker(
+      {
+        singleDatePicker: true,
+        timePicker: false,
+        showDropdowns: true,
+        locale:
+        {
+          format: 'MM/DD/YYYY'
+        }
+      });
+      $('.time-input').timepicker(
+      {
+        'scrollDefault': 'now',
+        'zindex': '9999' /* fix modal open */
+      });
+      /** date range picker */
+      if ($('.datetimes').length)
+      {
+        $('.datetimes').daterangepicker(
+        {
+          timePicker: true,
+          startDate: moment().startOf('hour'),
+          endDate: moment().startOf('hour').add(32, 'hour'),
+          locale:
+          {
+            format: 'M/DD hh:mm A'
+          }
+        });
+      }
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end)
+      {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+      $('#reportrange').daterangepicker(
+      {
+        startDate: start,
+        endDate: end,
+        ranges:
+        {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+      }, cb);
+      cb(start, end);
+      $('.input-placeholder').mask("00/00/0000",
+      {
+        placeholder: "__/__/____"
+      });
+      $('.input-zip').mask('00000-000',
+      {
+        placeholder: "____-___"
+      });
+      $('.input-money').mask("#.##0,00",
+      {
+        reverse: true
+      });
+      $('.input-phoneus').mask('(000) 000-0000');
+      $('.input-mixed').mask('AAA 000-S0S');
+      $('.input-ip').mask('0ZZ.0ZZ.0ZZ.0ZZ',
+      {
+        translation:
+        {
+          'Z':
+          {
+            pattern: /[0-9]/,
+            optional: true
+          }
+        },
+        placeholder: "___.___.___.___"
+      });
+      // editor
+      var editor = document.getElementById('editor');
+      if (editor)
+      {
+        var toolbarOptions = [
+          [
+          {
+            'font': []
+          }],
+          [
+          {
+            'header': [1, 2, 3, 4, 5, 6, false]
+          }],
+          ['bold', 'italic', 'underline', 'strike'],
+          ['blockquote', 'code-block'],
+          [
+          {
+            'header': 1
+          },
+          {
+            'header': 2
+          }],
+          [
+          {
+            'list': 'ordered'
+          },
+          {
+            'list': 'bullet'
+          }],
+          [
+          {
+            'script': 'sub'
+          },
+          {
+            'script': 'super'
+          }],
+          [
+          {
+            'indent': '-1'
+          },
+          {
+            'indent': '+1'
+          }], // outdent/indent
+          [
+          {
+            'direction': 'rtl'
+          }], // text direction
+          [
+          {
+            'color': []
+          },
+          {
+            'background': []
+          }], // dropdown with defaults from theme
+          [
+          {
+            'align': []
+          }],
+          ['clean'] // remove formatting button
+        ];
+        var quill = new Quill(editor,
+        {
+          modules:
+          {
+            toolbar: toolbarOptions
+          },
+          theme: 'snow'
+        });
+      }
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function()
+      {
+        'use strict';
+        window.addEventListener('load', function()
+        {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form)
+          {
+            form.addEventListener('submit', function(event)
+            {
+              if (form.checkValidity() === false)
+              {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+    <script>
+      var uptarg = document.getElementById('drag-drop-area');
+      if (uptarg)
+      {
+        var uppy = Uppy.Core().use(Uppy.Dashboard,
+        {
+          inline: true,
+          target: uptarg,
+          proudlyDisplayPoweredByUppy: false,
+          theme: 'dark',
+          width: 770,
+          height: 210,
+          plugins: ['Webcam']
+        }).use(Uppy.Tus,
+        {
+          endpoint: 'https://master.tus.io/files/'
+        });
+        uppy.on('complete', (result) =>
+        {
+          console.log('Upload complete! We’ve uploaded these files:', result.successful)
+        });
+      }
+    </script>
+    <script src="js/apps.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
@@ -665,10 +810,5 @@
       gtag('js', new Date());
       gtag('config', 'UA-56159088-1');
     </script>
-    <script>
-    
-</script>
- 
- 
   </body>
 </html>

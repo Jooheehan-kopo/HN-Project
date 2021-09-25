@@ -116,5 +116,13 @@ public class AdminController {
 		System.out.println("report: "+ report);
 		return report;
 	}
+	
+	//메일발송페이지
+	
+	@GetMapping("admin/email")
+	public String sendEmail() {
+		System.out.println("admin/email");
+		return "admin/email";
+	}
 
 }

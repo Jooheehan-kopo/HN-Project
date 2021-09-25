@@ -11,6 +11,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.crawler.CrawlingMapper;
@@ -18,6 +19,7 @@ import kr.ac.kopo.crawler.dao.StockDAO;
 import kr.ac.kopo.crawler.vo.StockVO;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
+
 
 @Service
 @Log4j
@@ -29,7 +31,7 @@ public class CrawlingServiceImpl implements CrawlingService {
 	@Setter
 	private CrawlingMapper mapper;
 
-	@Scheduled(fixedDelay=10000)
+	
 	public void insert(String url) {
 
 		url = "https://finance.naver.com/sise/lastsearch2.nhn"; // 크롤링할 url지정
@@ -93,7 +95,7 @@ public class CrawlingServiceImpl implements CrawlingService {
 
 		// System.out.println("list");
 	}
-
+	
 	public static void main(String[] args) {
 		CrawlingServiceImpl c = new CrawlingServiceImpl();
 		c.insert("https://finance.naver.com/sise/lastsearch2.nhn");

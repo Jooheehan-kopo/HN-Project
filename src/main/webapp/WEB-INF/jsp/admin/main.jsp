@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="${pageContext.request.contextPath }/adminpage/favicon.ico">
     <script src="https://use.fontawesome.com/73d95e52a3.js"></script>
     <title>PlayHana Admin | 플레이하나 관리자페이지</title>
     <!-- Simple bar CSS -->
@@ -145,10 +145,10 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="forms">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_elements.html"><span class="ml-1 item-text">Basic Elements</span></a>
+                  <a class="nav-link pl-3" href="${pageContext.request.contextPath}/admin/report"><span class="ml-1 item-text">리포트 생성</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_advanced.html"><span class="ml-1 item-text">Advanced Elements</span></a>
+                  <a class="nav-link pl-3" href="${pageContext.request.contextPath}/admin/email"><span class="ml-1 item-text">메일발송</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./form_validation.html"><span class="ml-1 item-text">Validation</span></a>
@@ -453,7 +453,7 @@
                       </div>
                       <div class="row items-align-center">
                         <div class="col-4 text-center">
-                          <p class="text-muted mb-1">Cost</p>
+                          <p class="text-muted mb-1">참여도</p>
                           <h6 class="mb-1">$1,823</h6>
                           <p class="text-muted mb-0">+12%</p>
                         </div>
@@ -588,7 +588,10 @@
                     </div> <!-- / .card-body -->
                   </div> <!-- / .card -->
                 </div> <!-- / .col-md-6 -->
-                <!-- Striped rows -->
+
+
+<!-- 학교협약 rows -->
+                
                 <div class="col-md-12 col-lg-8">
                   <div class="card shadow">
                     <div class="card-header">
@@ -625,78 +628,7 @@
                               </div>
                             </td>
                           </tr>
-                          <tr>
-                            <td>2786</td>
-                            <th scope="col">Leblanc, Yoshio V.</th>
-                            <td>287-8300 Nisl. St.</td>
-                            <td>04/05/2019</td>
-                            <td>
-                              <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="text-muted sr-only">Action</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr2">
-                                  <a class="dropdown-item" href="#">Edit</a>
-                                  <a class="dropdown-item" href="#">Remove</a>
-                                  <a class="dropdown-item" href="#">Assign</a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>2747</td>
-                            <th scope="col">Hester, Nissim L.</th>
-                            <td>4577 Cras St.</td>
-                            <td>04/06/2019</td>
-                            <td>
-                              <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="text-muted sr-only">Action</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#">Edit</a>
-                                  <a class="dropdown-item" href="#">Remove</a>
-                                  <a class="dropdown-item" href="#">Assign</a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>2639</td>
-                            <th scope="col">Gardner, Leigh S.</th>
-                            <td>P.O. Box 228, 7512 Lectus Ave</td>
-                            <td>04/08/2019</td>
-                            <td>
-                              <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="text-muted sr-only">Action</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr4">
-                                  <a class="dropdown-item" href="#">Edit</a>
-                                  <a class="dropdown-item" href="#">Remove</a>
-                                  <a class="dropdown-item" href="#">Assign</a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>2238</td>
-                            <th scope="col">Higgins, Uriah L.</th>
-                            <td>Ap #377-5357 Sed Road</td>
-                            <td>04/01/2019</td>
-                            <td>
-                              <div class="dropdown">
-                                <button class="btn btn-sm dropdown-toggle more-vertical" type="button" id="dr5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="text-muted sr-only">Action</span>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dr5">
-                                  <a class="dropdown-item" href="#">Edit</a>
-                                  <a class="dropdown-item" href="#">Remove</a>
-                                  <a class="dropdown-item" href="#">Assign</a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
+                      
                         </tbody>
                       </table>
                     </div>
@@ -831,6 +763,7 @@
         </div>
       </main> <!-- main -->
     </div> <!-- .wrapper -->
+      <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/popper.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/moment.min.js"></script>
@@ -851,6 +784,7 @@
       Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
       Chart.defaults.global.defaultFontColor = colors.mutedColor;
     </script>
+
     <script src="${pageContext.request.contextPath }/adminpage/js/gauge.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/jquery.sparkline.min.js"></script>
     <script src="${pageContext.request.contextPath }/adminpage/js/apexcharts.min.js"></script>
