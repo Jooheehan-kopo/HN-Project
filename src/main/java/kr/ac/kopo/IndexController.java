@@ -42,11 +42,7 @@ public class IndexController {
 	
 	
 	
-	@GetMapping("member/rank")
-	public String rank() {
-		System.out.println("member/rank");
-		return "member/rank";
-	}
+
 	
 	@GetMapping("media/hanaTV")
 	public String hanaTV() {

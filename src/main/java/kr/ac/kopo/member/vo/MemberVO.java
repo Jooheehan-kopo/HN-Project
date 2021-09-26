@@ -17,6 +17,7 @@ public class MemberVO {
 	private int input_cost; //사고 파는 주식 가격.
 	
 	private int rank;
+	private String group;
 
 	
 	
@@ -35,10 +36,22 @@ public class MemberVO {
 
 
 
+
+
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
 
+	
+	public String getGroup() {
+		return group;
+	}
+	
+	
+	
+	public void setGroup(String group) {
+		this.group = group;
+	}
 
 
 	public String getSchool() {
@@ -78,11 +91,11 @@ public class MemberVO {
 		this.type = type;
 	}
 
-	
+
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", type=" + type + ", school="
-				+ school + ", stock_acc=" + stock_acc + ", stock_bal=" + stock_bal + ", rank=" + rank + "]";
+		return "MemberVO [id=" + id + ", name=" + name + ", type=" + type + ", school=" + school + ", stock_acc="
+				+ stock_acc + ", stock_bal=" + stock_bal + ", rank=" + rank + ", group=" + group + "]";
 	}
 
 
