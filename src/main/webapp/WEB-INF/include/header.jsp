@@ -35,7 +35,13 @@
 							    </ul>
                         </li>
                         <li><a href="${pageContext.request.contextPath }/member/rank">친구순위</a></li>
-                        <li><a href="${pageContext.request.contextPath }/member/mbti">금융 MBTI</a></li>
+                        <li class="dropdown">
+                        	<a href="${pageContext.request.contextPath }/member/mbti" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">금융 MBTI<span class="navbar-collapse collapse"></span></a>
+                        		<ul class="dropdown-menu" role="menu">
+                        		<li><a href="${pageContext.request.contextPath }/member/quiz">퀴즈시작</a></li>
+                        		<li><a href="${pageContext.request.contextPath }/member/mbti">나의 결과</a></li>
+                        		</ul>
+                        </li>
                         <li><a href="${pageContext.request.contextPath }/media/hanaTV">하나티비</a></li>
                     
                         <li><a href="testimonials.html">머니뉴스</a></li>
