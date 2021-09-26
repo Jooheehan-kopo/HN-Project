@@ -21,5 +21,6 @@ public interface StockMainService {
 
 	//매도
 	void stockSell(StockMainVO sell,MemberVO user);
+	List<MyStockVO> MyList2( MemberVO user);
 	
 }

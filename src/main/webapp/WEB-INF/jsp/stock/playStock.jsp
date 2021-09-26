@@ -923,6 +923,18 @@
                                                                             
                                                                         </tr>
                                                                         </c:forEach>
+                                                                        <c:forEach items="${mystock2}" var="mystockVO2" varStatus="loop">
+                                                                        <tr>
+                                                                            
+                                                                            <td><c:out value="${mystockVO2.log_no}"/></td>
+                                                                            <td><c:out value="${mystockVO2.stock_name}"/></td>
+                                                                            <td><c:out value="${mystockVO2.state}"/></td>
+                                                                            <td><c:out value="${mystockVO2.end_p}"/></td>
+                                                                            <td><c:out value="${mystockVO2.count}"/></td>
+                                                                            <td><span class="label label-success">체결</span></td>
+                                                                            
+                                                                        </tr>
+                                                                        </c:forEach>
                                                                         </tbody>
                                                                         
                                                                     </table>

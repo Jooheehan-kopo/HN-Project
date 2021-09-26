@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.ac.kopo.board.vo.BoardVO;
 import kr.ac.kopo.crawler.dao.StockDAO;
 import kr.ac.kopo.crawler.service.CrawlingService;
-
+import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.sms.service.certificationService;
 import kr.ac.kopo.stock.dao.StockMainDAO;
 import kr.ac.kopo.stock.service.StockMainService;
@@ -110,6 +110,7 @@ public class StockDAOTest {
 
 		
 	}
+
 	
 
 

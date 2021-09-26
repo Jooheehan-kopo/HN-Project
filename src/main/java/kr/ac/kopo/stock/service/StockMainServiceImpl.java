@@ -107,10 +107,11 @@ public class StockMainServiceImpl implements StockMainService {
 	}
 	//매도목록
 	public List<MyStockVO> MyList2( @SessionAttribute("userVO") MemberVO user) {
-		System.out.println("아이디만전달해 서비스:"+ user.getId());
+		System.out.println("mylist 2222:"+ user.getId());
 		//stockMDAO.getMyList(user);
 		
 		List<MyStockVO> mystock = stockMDAO.getMyList2(user);
+		System.out.println("매도 서비스: "+ mystock);
 		return mystock;
 		
 	}

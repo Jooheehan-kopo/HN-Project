@@ -64,6 +64,7 @@
 		from(select log_no,id, stock_name, count, end_p,buy_date, case when state like '11%' then '매수' else '매도' end as state 
 		    from mem_stock_buy) b , member_stock s
 		where s.id=b.id
+		and count <![CDATA[ > ]]> 0 
 		and s.id=#{id}
 		order by b.log_no desc
 	</select>
@@ -76,15 +77,22 @@
 		where id=#{memberVO.id}
 	</update> 
 
-<!-- 플레이스톡: 매도 가격 아이디 찾아 거래내역 테이블업뎃 -->
-	<update id="stockBuy2" parameterType="hashmap">
-		update mem_stock_buy set count =
-		    (select (b.count-s.count) count
-		    from mem_stock_buy b,mem_stock_sell s
-		    where b.stock_name = s.stock_name
-		    and b.id =#{memberVO.id})
-		where stock_name=(select stock_name from mem_stock_sell where id=#{memberVO.id})
-	</update> 
+<!-- 플레이스톡: 매도 가격 아이디 찾아 count 테이블업뎃 -->
+	<insert id="stockBC" statementType="CALLABLE" parameterType="hashmap">
+		{call buynsell(
+		 		#{stockmainVO.stock_name}, #{stockmainVO.count})
+         }
+	</insert> 
+	
+	
+	
+	
+	<insert id="stockSell" parameterType="hashmap">
+		insert into mem_stock_sell(log_no, state, id, stock_name, count, end_p )
+			values( mem_stock_log_seq.nextval, 22||round(dbms_random.value(10000,99999)) , #{memberVO.id}, #{stockmainVO.stock_name}, #{stockmainVO.count}, #{stockmainVO.end_p})
+	</insert> 
+	
+	
 <!-- 플레이스톡: 거래내역 출력-->
 	<select id="myStock2" parameterType="String" resultType="mystockVO">
 		select b.log_no log_no, b.id id, s.stock_acc stock_acc, trim(to_char(s.stock_bal,'999,999,999')) stock_bal, b.stock_name stock_name, b.count count, b.end_p end_p, b.sell_date sell_date, b.state state

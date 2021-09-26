@@ -54,16 +54,23 @@ public class StockMainDAOImpl implements StockMainDAO {
 		
 	}
 	
+	
+	
 	//매도 후 테이블 잔액 및 로그 저장
 	public void updateBal2(HashMap<String, Object> map) {
 		
 		//update 잔액
 		sqlsessionTemplate.update("crawl.stock.stockBal02", map);
-		//insert 산종목
-		sqlsessionTemplate.update("crawl.stock.stockSell", map);
-		System.out.println("dao cost:"+ map);
+		//update 산종목 개수 -buy 테이블
+		sqlsessionTemplate.insert("crawl.stock.stockBC", map);
+		System.out.println("dao cost sell :"+ map);
+		//insert 매도테이블 내역저장
+		sqlsessionTemplate.insert("crawl.stock.stockSell", map);
 		
 	}
+	
+	
+	
 	
 	public List<MyStockVO> getMyStock (){
 		List<MyStockVO> list = sqlsessionTemplate.selectList("crawl.stock.myStock" );

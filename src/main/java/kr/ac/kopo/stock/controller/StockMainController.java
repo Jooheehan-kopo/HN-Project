@@ -58,6 +58,8 @@ public class StockMainController {
 		
 		//리스트에 서비스에 있는 것 가져와서 저장 후 뷰에 전달(받기)
 		List<MyStockVO> mystockList = service.MyList(user);
+		List<MyStockVO> mystockList2 = service.MyList2(user);
+		
 		
 		//playStock
 		List<StockMainVO> psOneList = service.playStockOne();
@@ -66,8 +68,9 @@ public class StockMainController {
 		ModelAndView mav = new ModelAndView("stock/playStock");
 		mav.addObject("mystock", mystockList);
 		mav.addObject("list", psOneList);
+		mav.addObject("mystock2", mystockList2);
 		
-		
+		System.out.println("매도종목리스트: "+ mystockList2);
 		return mav;
 		
 		
@@ -102,8 +105,7 @@ public class StockMainController {
 	@PostMapping("stock/playStock2")
 	public String stockSell(StockMainVO sell, @SessionAttribute("userVO") MemberVO user) {
 		
-//		String id = (String)session.getAttribute("userVO");
-//		System.out.println(id);
+
 		System.out.println("파는종목 매도!:" +sell.getStock_name());
 		
 		

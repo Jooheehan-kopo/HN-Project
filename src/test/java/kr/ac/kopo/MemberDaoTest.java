@@ -21,6 +21,8 @@ import kr.ac.kopo.member.service.MemberServiceImpl;
 import kr.ac.kopo.member.vo.BankAccountVO;
 import kr.ac.kopo.member.vo.BankTransVO;
 import kr.ac.kopo.member.vo.MemberVO;
+import kr.ac.kopo.stock.dao.StockMainDAO;
+import kr.ac.kopo.stock.vo.StockMainVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:config/spring/spring-mvc.xml" })
@@ -78,6 +80,17 @@ public class MemberDaoTest {
 		sessionTemplate.insert("member.MemberDAO.myAccounts", trans);
 
 	}
+	
+	@Test
+	public void 매수매도프로시저DAOtest() throws Exception {
+		StockMainVO sb = new StockMainVO();
+		sb.setStock_name("삼성바이오로직스");
+		sb.setCount(1);
+		
+		System.out.println("매수매도프로시저DAOtest:" + sb);
+		StockMainDAO.updateBal2(sb);
+		
+	}
 
 	@Ignore
 	@Test
@@ -134,7 +147,7 @@ public class MemberDaoTest {
 		System.out.println("infolist" + infolist);
 
 	}
-
+	@Ignore
 	@Test
 	public void 학교목록조회() throws Exception {
 
