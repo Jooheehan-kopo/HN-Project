@@ -22,4 +22,6 @@ public interface MemberDAO {
 	void trans(BankTransVO transVO);
 	
 	List<BankTransVO> transAcc(MemberVO user);
+	
+	List<MemberVO> rank(MemberVO user);
 }

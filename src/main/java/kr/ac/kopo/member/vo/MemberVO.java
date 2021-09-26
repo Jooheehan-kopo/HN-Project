@@ -7,6 +7,7 @@ public class MemberVO {
 	private String password;
 	private String name;
 	private String type;
+	private String school;
 	
 	//주식계좌개설
 	private String stock_acc;
@@ -15,14 +16,8 @@ public class MemberVO {
 	private String stock_acc_date;
 	private int input_cost; //사고 파는 주식 가격.
 	
+	private int rank;
 
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	//
@@ -34,6 +29,30 @@ public class MemberVO {
 	
 	//회원가입
 	
+	public int getRank() {
+		return rank;
+	}
+
+
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+
+
+	public String getSchool() {
+		return school;
+	}
+
+
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+
+
 	public String getName() {
 		return name;
 	}
@@ -58,12 +77,16 @@ public class MemberVO {
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	
 	@Override
 	public String toString() {
-		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", type=" + type + "]";
+		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", type=" + type + ", school="
+				+ school + ", stock_acc=" + stock_acc + ", stock_bal=" + stock_bal + ", rank=" + rank + "]";
 	}
-	
-	
+
+
+
 	//
 	public String getStock_acc() {
 		return stock_acc;

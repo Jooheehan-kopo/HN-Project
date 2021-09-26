@@ -80,17 +80,7 @@ public class MemberDaoTest {
 		sessionTemplate.insert("member.MemberDAO.myAccounts", trans);
 
 	}
-	
-	@Test
-	public void 매수매도프로시저DAOtest() throws Exception {
-		StockMainVO sb = new StockMainVO();
-		sb.setStock_name("삼성바이오로직스");
-		sb.setCount(1);
-		
-		System.out.println("매수매도프로시저DAOtest:" + sb);
-		StockMainDAO.updateBal2(sb);
-		
-	}
+
 
 	@Ignore
 	@Test
@@ -155,4 +145,18 @@ public class MemberDaoTest {
 		System.out.println(avo);
 
 	}
+	
+	
+	@Test
+	public void 랭킹조회() throws Exception {
+		MemberVO user = new MemberVO();
+		user.setId("s10101");
+		user.setSchool("백신중");
+		List<MemberVO> ranking = memberDAO.rank(user);
+		System.out.println(ranking);
+		System.out.println(ranking);
+
+	}
+	
+	
 }

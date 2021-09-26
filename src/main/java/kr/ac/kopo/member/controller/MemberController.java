@@ -129,6 +129,23 @@ public class MemberController {
 	}
 	
 	
+	//////////////
+	//ranking
+	@RequestMapping("member/rank")
+	public ModelAndView ranking (@SessionAttribute("userVO") MemberVO user) {
+		System.out.println("랭킹:"+ user);
+		
+		List<MemberVO> rank = service.rank(user);
+		
+		ModelAndView mav = new ModelAndView("member/rank");
+		mav.addObject("rank", rank);
+		
+		
+		
+		return mav;
+		
+	}
+	
 	
 	
 	

@@ -80,5 +80,15 @@ public class MemberServiceImpl implements MemberServicce {
 		List<BankTransVO> transVO = memberDAO.transAcc(user);
 		return transVO;
 	}
+	
+	
+	/////
+	//ranking
+	public List<MemberVO> rank(@SessionAttribute("userVO") MemberVO user){
+		
+		 List<MemberVO> ranking = memberDAO.rank(user);
+		 System.out.println("service ranking: "+ ranking);
+		 return ranking;
+	}
 
 }

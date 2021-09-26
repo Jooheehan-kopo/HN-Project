@@ -56,6 +56,7 @@ public class MemberDAOImpl implements MemberDAO {
 		
 	}
 	
+	//이체내역
 	public List<BankTransVO> transAcc(@Param("id") MemberVO user){
 		String id = user.getId();
 		System.out.println("*****dao id"+ id);
@@ -64,5 +65,15 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println("transList: "+ transVO);
 		return transVO;
 	}
+	
+	//랭킹 조회
+	public List<MemberVO> rank(MemberVO user) {
+		List<MemberVO> rank = sqlsessionTemplate.selectList("member.MemberDAO.rank", user);
+		System.out.println("랭킹목록 DAO: "+ rank);
+		return rank;
+	}
+	
+	
+	
 
 }

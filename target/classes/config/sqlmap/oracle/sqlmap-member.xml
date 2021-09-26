@@ -6,7 +6,7 @@
 
 
 	<select id="login" parameterType="memberVO" resultType="memberVO">
-		select id, name, password, type
+		select id, name, password, type,school
 		from member
 		where id= #{id} and password= #{password}
 	</select>
@@ -48,5 +48,19 @@
 		and m.user_id= #{id}
 
 	</select>
+	
+	
+	<!-- 랭킹 조회 -->
+	<select id="rank" parameterType="memberVO" resultType="memberVO">
+			select a.id, a.name, a.class, a.stock_bal, a.stock_acc,
+				rank() over(order by a.stock_bal desc) rank
+				from
+				(select m.id,substr(m.id,2,3) class, m.name, s.stock_bal, s.stock_acc From member m
+				, member_stock s
+				where m.id=s.id
+				and m.school=#{school})a
+			where a.class = substr(#{id},2,3)
+	</select>
+	
 	
 </mapper>

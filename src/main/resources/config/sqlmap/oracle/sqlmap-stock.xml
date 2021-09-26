@@ -84,9 +84,6 @@
          }
 	</insert> 
 	
-	
-	
-	
 	<insert id="stockSell" parameterType="hashmap">
 		insert into mem_stock_sell(log_no, state, id, stock_name, count, end_p )
 			values( mem_stock_log_seq.nextval, 22||round(dbms_random.value(10000,99999)) , #{memberVO.id}, #{stockmainVO.stock_name}, #{stockmainVO.count}, #{stockmainVO.end_p})
@@ -103,6 +100,9 @@
 		and s.id =#{id}
 		order by b.log_no desc
 	</select>
+	
+	
+
 
 
 	

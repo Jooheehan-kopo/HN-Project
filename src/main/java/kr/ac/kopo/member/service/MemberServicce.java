@@ -17,4 +17,6 @@ public interface MemberServicce {
 	void trans(BankTransVO transVO);
 	
 	List<BankTransVO> transList(MemberVO user);
+	
+	List<MemberVO> rank( MemberVO user);
 }
