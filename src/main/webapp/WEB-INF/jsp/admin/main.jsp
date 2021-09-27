@@ -396,21 +396,21 @@
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4 mb-2">
                         <p class="mb-1 small text-muted">은행계좌 참여수</p>
-                        <span class="h3">$260</span><br />
-                        <span class="small text-muted">+6%</span>
+                        <span class="h3"><c:out value="${bank.bankCount}"/>개</span><br />
+                        <span class="small text-muted">개설계좌 총 개수</span>
                         <span class="fe fe-arrow-up text-success fe-12"></span>
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4">
                         <p class="mb-1 small text-muted">주식참여도</p>
-                        <span class="h3">26</span><br />
-                        <span class="small text-muted">+20%</span>
+                        <span class="h3"><c:out value="${stock.stockCount}"/>명</span><br />
+                        <span class="small text-muted">계좌개설여부</span>
                         <span class="fe fe-arrow-up text-success fe-12"></span>
                       </div>
                       <div class="col-6 col-lg-2 text-center py-4">
                         <p class="mb-1 small text-muted">금융 MBTI 참여횟수</p>
                         <span class="h3"><c:out value="${mbti.countMbti}"/>번</span><br />
-                        <span class="small text-muted">-2%</span>
-                        <span class="fe fe-arrow-down text-danger fe-12"></span>
+                        <span class="small text-muted">총회원대비</span>
+                       
                       </div>
                     </div>
                     
@@ -431,7 +431,7 @@
                         <div class="col-md-6 border-top py-3">
                           <p class="mb-1"><strong class="text-muted">발송건수</strong></p>
                           <h4 class="mb-0">108</h4>
-                          <p class="small text-muted mb-0"><span>37.7% Last week</span></p>
+                          <p class="small text-muted mb-0"><span></span></p>
                         </div> <!-- .col -->
                         <div class="col-md-6 border-top py-3">
                           <p class="mb-1"><strong class="text-muted"></strong></p>
@@ -439,7 +439,7 @@
 	                          </i><button style="background-color: #008485; border: 1px solid white; border-radius: 10px;">
 	                          <a href="${pageContext.request.contextPath}/admin/report" class="btn-gradient white small" style="color:white; padding:2px">리포트 생성</a></button>
                           </h4>
-                          <p class="small text-muted mb-0"><span>-18.9% Last week</span></p>
+                          <p class="small text-muted mb-0"><span></span></p>
                         </div> <!-- .col -->
                       </div>
                     </div> <!-- .card-body -->
@@ -476,9 +476,9 @@
                     <div class="card-body">
                       <div class="d-flex mt-3 mb-4">
                         <div class="flex-fill pt-2">
-                          <p class="mb-0 text-muted">Total</p>
-                          <h4 class="mb-0">108</h4>
-                          <span class="small text-muted">+37.7%</span>
+                          <p class="mb-0 text-muted">학년별진도</p>
+                          <h4 class="mb-0">34</h4>
+                          <span class="small text-muted"></span>
                         </div>
                         <div class="flex-fill chart-box mt-n2">
                           <div id="barChartWidget"></div>
@@ -486,12 +486,12 @@
                       </div> <!-- .d-flex -->
                       <div class="row border-top">
                         <div class="col-md-6 pt-4">
-                          <h6 class="mb-0">108 <span class="small text-muted">+37.7%</span></h6>
-                          <p class="mb-0 text-muted">Cost</p>
+                          <h6 class="mb-0">34 <span class="small text-muted">+</span></h6>
+                          <p class="mb-0 text-muted">명 기준</p>
                         </div>
                         <div class="col-md-6 pt-4">
-                          <h6 class="mb-0">1168 <span class="small text-muted">-18.9%</span></h6>
-                          <p class="mb-0 text-muted">Revenue</p>
+                          <h6 class="mb-0">학생 조회 바로가기 <span class="small text-muted"></span></h6>
+                          <p class="mb-0 text-muted">click!</p>
                         </div>
                       </div> <!-- .row -->
                     </div> <!-- .card-body -->

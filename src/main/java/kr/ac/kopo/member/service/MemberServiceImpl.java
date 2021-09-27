@@ -57,6 +57,13 @@ public class MemberServiceImpl implements MemberServicce {
 		return bankVO;
 		}
 	
+	//같은반 친구들 계좌목록불러오기: 이체페이지
+	public  List<BankAccountVO> classAcc (@SessionAttribute("userVO") MemberVO user){
+		
+		 List<BankAccountVO> transList = memberDAO.classAcc(user);
+		System.out.println("classAcc ser:"+ transList);
+		return transList;
+	}
 	
 	//이체 프로시저 insert
 	public void trans(BankTransVO transVO) {

@@ -29,6 +29,19 @@
 		where user_id = #{id}
 	</select>
 	
+	<select id="classAcc" parameterType="memberVO" resultType="bankVO">
+	select a.id,a.bank_username, a.bank_id
+		from
+		(select m.id,substr(m.id,2,3) class, m.name, s.bank_username, s.bank_id From member m
+		, member_bank s
+		where m.id=s.user_id
+		and m.school=#{school})a
+		where a.class = substr(#{id},2,3)
+		and not a.id=#{id}
+	
+	</select>
+	
+	
 	<!-- 계좌이체 -->
 	<insert id="transMoney" statementType="CALLABLE" parameterType="transVO">
 		 {call trans(

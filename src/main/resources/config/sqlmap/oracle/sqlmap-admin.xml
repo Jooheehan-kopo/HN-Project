@@ -33,6 +33,15 @@
 		select count(*) countMbti from mbti
 	</select>
 	
+	<!-- 은행계좌수 -->
+	<select id="mainFour" resultType="adminVO">
+		select count(*) bankCount from member_bank
+	</select>
+	
+	<select id="mainFive" resultType="adminVO">
+		select count(*) stockCount from member_stock
+	</select>
+	
 	<!-- 협약학교 목록 -->
 	<select id="schoolList" resultType="adminVO">
 		select s.no, s.school, s.address, a.stu , s.add_date

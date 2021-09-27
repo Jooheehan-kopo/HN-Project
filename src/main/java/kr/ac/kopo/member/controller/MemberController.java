@@ -109,8 +109,13 @@ public class MemberController {
 	
 	//이체진행화면
 	@GetMapping("account/accountTrans")
-	public String accTrans() {
-		return "account/accountTrans";
+	public ModelAndView accTrans(@SessionAttribute("userVO") MemberVO user) {
+		
+		List<BankAccountVO> classAcc = service.classAcc(user);
+		ModelAndView mav = new ModelAndView("account/accountTrans");
+		mav.addObject("select",classAcc);
+		
+		return mav;
 	}
 	
 	@PostMapping("account/accountTrans")

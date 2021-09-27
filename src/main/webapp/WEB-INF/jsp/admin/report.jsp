@@ -412,7 +412,7 @@
                     </div>
                     
                     <div class="col-md-7">
-                      <p class="small text-muted text-uppercase mb-2">Invoice from</p>
+                      <p class="small text-muted text-uppercase mb-2">개인정보</p>
                       
                       <form method="post" action="${pageContext.request.contextPath }/admin/report" id="getInfo">
                       <p class="mb-4">
@@ -420,13 +420,12 @@
                          학교 <input type="text" id="school" name="school" style="border:none"><br />
                          학번 <input type="text" id="stu_id" name="stu_id" style="border:none"><br />
                       </p>
-                         <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <p id="date"></p><br /> 
-                         <i class="fa fa-mobile" aria-hidden="true"></i> <p id="phone"></p><br />
+                         <i class="fa fa-calendar-check-o" aria-hidden="true"></i> <p id="date"></p> 
+                         <i class="fa fa-mobile" aria-hidden="true"></i> <p id="phone"></p>
                     
          				</form>            
                       <p >
                         <span class="small text-muted text-uppercase">주소</span><br />
-                        
                         
                         <p id="add"><strong></strong></p>
                         

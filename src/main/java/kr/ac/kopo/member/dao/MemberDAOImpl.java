@@ -48,6 +48,13 @@ public class MemberDAOImpl implements MemberDAO {
 		return bankVO;
 	
 	}
+	//같은반사람들 계좌가져오기(이름,학교)
+	public List<BankAccountVO> classAcc( MemberVO user){
+		List<BankAccountVO> cacc = sqlsessionTemplate.selectList("member.MemberDAO.classAcc",user);
+		System.out.println("classAcc dao: "+ cacc);
+		return cacc;
+	}
+	
 	
 	//이체 -프로시저 입력
 	public void trans (BankTransVO transVO) {

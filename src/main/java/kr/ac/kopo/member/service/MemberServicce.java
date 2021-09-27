@@ -19,4 +19,6 @@ public interface MemberServicce {
 	List<BankTransVO> transList(MemberVO user);
 	
 	List<MemberVO> rank( MemberVO user);
+	
+	 List<BankAccountVO> classAcc ( MemberVO user);
 }

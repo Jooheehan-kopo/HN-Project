@@ -42,6 +42,17 @@ public class AdminServiceImpl implements AdminService {
 		AdminVO count = adminDAO.countSchool();
 		return count;
 	}
+	//은행계좌수 보여주기
+	public AdminVO bankCount() {
+		AdminVO bank = adminDAO.bankCount();
+		return bank;
+	}
+	//주식참여자수
+	public AdminVO stockCount() {
+		AdminVO stock = adminDAO.stockCount();
+		return stock;
+	}
+	
 	//mbti보여주기
 	public AdminVO countMbti() {
 		AdminVO count = adminDAO.countMbti();

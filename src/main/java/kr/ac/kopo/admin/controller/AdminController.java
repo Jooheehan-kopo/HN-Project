@@ -63,6 +63,8 @@ public class AdminController {
 	public ModelAndView main() {
 		AdminVO count = service.countMemer();
 		AdminVO countS = service.countSchool();
+		AdminVO countB =service.bankCount();
+		AdminVO countSt =service.stockCount();
 		AdminVO countM = service.countMbti();
 		List<AdminVO>schoolList = service.schoolList();
 		
@@ -75,6 +77,8 @@ public class AdminController {
 		mav.addObject("count",count);
 		mav.addObject("date", time1);//날짜출력
 		mav.addObject("school",countS);
+		mav.addObject("bank",countB);
+		mav.addObject("stock",countSt);
 		mav.addObject("mbti",countM);
 		mav.addObject("sList", schoolList);//학교목록출력
 		

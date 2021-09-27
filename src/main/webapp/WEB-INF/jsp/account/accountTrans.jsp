@@ -218,6 +218,14 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 
 									<div class="col-md-9 mb-3">
 										<label for="nickname">입금 계좌번호</label> 
+										<div class="col-md-9 mb-3">
+										<c:forEach items="${select}" var="a" varStatus="loop">
+										<select class="" style="width: 80%; height: 45px">
+											<option selected>계좌번호</option>
+											<option value="acc"><c:out value="${a.bank_username}"></c:out><c:out value="${a.bank_id}"></c:out></option>
+										</select>
+										</c:forEach>
+										<br>
 										<input type="password" class="form-control" name="your_bank_id" id="your_bank_id"
 											placeholder="- 없이 계좌번호를 입력하세요" value="" required>
 
@@ -227,7 +235,7 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 									
 								</div>
 							<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/accountTransFin'"  style="width:50%">이체</button>
-							 <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+							 <input type="button" onClick="sendLinkCustom();" value="카톡으로 알림보내기!"/>
 							</form>
 						</div>
 

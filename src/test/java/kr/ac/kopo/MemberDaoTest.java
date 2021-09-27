@@ -146,7 +146,7 @@ public class MemberDaoTest {
 
 	}
 	
-	
+	@Ignore
 	@Test
 	public void 랭킹조회() throws Exception {
 		MemberVO user = new MemberVO();
@@ -156,6 +156,22 @@ public class MemberDaoTest {
 		System.out.println(ranking);
 		System.out.println(ranking);
 
+	}
+	
+	
+	
+	@Test
+	public void 같은반계좌번호이체() throws Exception {
+		MemberVO user = new MemberVO();
+		user.setId("s20101");
+		user.setSchool("백신중");
+		 List<BankAccountVO> transList = memberDAO.classAcc(user);
+		System.out.println(transList);
+//		List<BankAccountVO> list = sessionTemplate.selectList("member.MemberDAO.classAcc", user);
+//		for (BankAccountVO bank : list) {
+//			System.out.println("list"+ list);
+//		}
+		
 	}
 	
 	

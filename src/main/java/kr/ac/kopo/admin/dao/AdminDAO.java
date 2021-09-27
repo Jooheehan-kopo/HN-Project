@@ -15,6 +15,8 @@ public interface AdminDAO {
 	
 	AdminVO countSchool();
 	AdminVO countMbti() ;
+	 AdminVO bankCount();
+	 AdminVO stockCount(); 
 
 	List<InfoVO> getInfo(InfoVO info);
 	List<AdminVO> schoolList();

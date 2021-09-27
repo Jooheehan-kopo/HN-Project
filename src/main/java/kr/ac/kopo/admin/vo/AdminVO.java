@@ -11,7 +11,9 @@ public class AdminVO {
 	//메인화면 정보가져오기
 	private int countMember; //총회원수
 	private int countSchool; //총학교수 + 일반회원
-	private int countMbti;
+	private int countMbti; //엠비티아이
+	private int bankCount; //은행계좌수
+	private int stockCount; //주식계좌수
 	
 	//협약학교 목록 현황
 	private int no;
@@ -26,6 +28,18 @@ public class AdminVO {
 	
 	
 	
+	public int getStockCount() {
+		return stockCount;
+	}
+	public void setStockCount(int stockCount) {
+		this.stockCount = stockCount;
+	}
+	public int getBankCount() {
+		return bankCount;
+	}
+	public void setBankCount(int bankCount) {
+		this.bankCount = bankCount;
+	}
 	public int getNo() {
 		return no;
 	}

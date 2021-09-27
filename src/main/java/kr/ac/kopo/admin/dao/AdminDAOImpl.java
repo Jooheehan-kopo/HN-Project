@@ -44,6 +44,20 @@ public class AdminDAOImpl implements AdminDAO {
 		System.out.println("총학교수: "+ count);
 		return count;
 	}
+	//은행계좌참여개수
+	public AdminVO bankCount() {
+		AdminVO bank = sqlsessionTemplate.selectOne("admin.AdminDAO.mainFour");
+		System.out.println("은행계좌수: "+ bank);
+		return bank;
+	}
+	//주식계좌수
+	public AdminVO stockCount() {
+		AdminVO stock = sqlsessionTemplate.selectOne("admin.AdminDAO.mainFive");
+		System.out.println("주식 수: "+ stock);
+		return stock;
+	}
+	
+	
 	//mbti 참여횟수
 	public AdminVO countMbti() {
 		AdminVO count = sqlsessionTemplate.selectOne("admin.AdminDAO.mainThree");
