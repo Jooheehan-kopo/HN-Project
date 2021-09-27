@@ -190,13 +190,14 @@
 						</td>
 						<td>
 							<div class="d-flex align-items-baseline">
-								<h1 class="mr-1"> <i class="fa fa-user" aria-hidden="true" style="color:#008485"></i>  김하나<c:out value=""/></h1><small class="text-success"></small>
+								<h1 class="mr-1"> <i class="fa fa-user" aria-hidden="true" style="color:#008485"></i><c:out value="${rank[4].name}"/><c:out value=""/></h1><small class="text-success"></small>
 							</div>
 						</td>
 						<td style=" font-size:20px; font-weight: bold;"><c:out value=""/>s20101</td>
 						<td><c:out value=""/></td>
 						<td style=" font-size:20px; font-weight: bold;">
-							6,349,900<c:out value=""/>
+							
+							<fmt:formatNumber value="${rank[4].stock_bal}" pattern="#,###,###"/><c:out value=""/>
 						</td>
 						<td style=" font-size:20px; font-weight: bold;">
 							11180435051934<c:out value=""/>

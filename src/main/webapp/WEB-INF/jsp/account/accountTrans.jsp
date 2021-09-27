@@ -77,35 +77,7 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 
 
 	<!-- LOADER -->
-	<div id="preloader">
-		<div class="loading">
-			<div class="finger finger-1">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="finger finger-2">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="finger finger-3">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="finger finger-4">
-				<div class="finger-item">
-					<span></span><i></i>
-				</div>
-			</div>
-			<div class="last-finger">
-				<div class="last-finger-item">
-					<i></i>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- END LOADER -->
 
 	<!-- header -->
@@ -136,28 +108,24 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 				<div class="col-md-8 col-md-offset-2">
 					<h3>
 						<c:out value="${userVO.name}" />
-						님 보유계좌
+						님 이체진행
 					</h3>
-
-					<p class="lead">계좌목록</p>
-
-
 				</div>
 			</div>
 			<!-- end title -->
 			<div>
 				<div class="container">
-					<div class="input-form-backgroud row">
+					<div class="input-form-backgroud row" style="margin-left: 50px; margin-right: 50px">
 						<div class="input-form forms">
 							<h2 class="mb-3" style="font-weight: blod">이체진행</h2>
 							<input type="button" class="btn btn-info"
-								style="float: right; width: 120px; height: 25px; display: relative; font-size: small; padding: 2px"
+								style="float: right; width: 120px; background-color:#008485;height: 25px; display: relative; font-size: small; padding: 2px; margin-right:50px; margin-bottom: 10px"
 								value="다른은행계좌 이체" />
 
 							<hr>
 
 							<form method="post" action="${pageContext.request.contextPath}/account/accountTrans" class="validation-form" novalidate>
-								<div class="row">
+								<div class="row" style="margin:30px">
 									<div class="col-md-6 mb-3">
 										<label for="name"><h3>출금정보</h3></label>
 
@@ -165,9 +133,9 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 
 
 									<div class="col-md-9 mb-3">
-									<label for="nickname" style="float:left"><h5>하나은행 출금계좌</h5></label>
-									<input type="text" class="form-control" name="bank_id" id="text"
-											placeholder="출금 계좌번호를 입력하세요" " value="" required>
+									<label for="nickname" style=" font-size: 15px">하나은행 출금계좌</label>
+									<input type="text" style="width:500px; height:50px" class="form-control" name="bank_id" id="text"
+											placeholder="출금 계좌번호를 입력하세요"  value="" required>
 										<!-- <select class="" style="width: 80%; height: 45px; ">
 											<option selected>선택하세요</option>
 											<option value="1">
@@ -177,37 +145,38 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 										</select> -->
 
 									</div>
-
+									<br>
 									<div class="col-md-9 mb-3">
-										<label for="nickname">계좌비밀번호</label> 
-										<input type="password" class="form-control" name="bank_password" id="password"
+										<label for="nickname"  style=" font-size: 15px">비밀번호</label> 
+										<input type="password" style="width:500px; height:50px"  class="form-control" name="bank_password" id="password"
 											placeholder="비밀번호 4자리를 입력하세요" value="" required>
-
+										
 									</div>
 									<br>
 
-									<div class="col-md-9 mb-3">
-										<br> <label for="phone">이체금액</label> <input id="phoneNumber" name="trans_money" type="text" class="form-control" style="width: 100%"></input> <input
-											type="button" id="phoneckBtn" value="이체한도 조회"
-											style="display: flex"> <br> 
-										<label for="phone">내통장 표시</label> 
-										<input id="phoneNumber" name="" type="text"class="form-control" style="width: 100%"></input>
+									<div class="col-md-9 mb-3" >
+										<br> <label for="phone" style=" font-size: 15px">이체금액</label> 
+										<input id="phoneNumber" placeholder="이체금액을 입력하세요" name="trans_money" type="text" class="form-control" style="width:500px; height:50px"></input> 
+										<input type="button" class="btn btn-primary btn-lg btn-block" value="이체한도 조회" style="display: flex;background-color: #008485;width:70px; height:30px; font-size:10px;padding:2px;margin:inherit"> <br> 
+										
+										<label for="phone" style="font-size: 15px">내통장 표시</label> 
+										<input placeholder="30자 이내" name="" type="text"class="form-control" style="width: 80%;font-size: 15px"></input>
 									</div>
 								</div>
 						<!-- ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ  -->
 						
 						<br><br><br>
 						<hr>
-								<div class="row">
+								<div class="row" style="margin:30px">
 									<div class="col-md-6 mb-3">
-										<label for="name"><h3>입금은행</h3></label>
+										<label for="name" style=" font-size: 15px">입금은행</label>
 
 									</div>
 
 
 
-									<div class="col-md-9 mb-3">
-										<select class="" style="width: 80%; height: 45px">
+									<div class="col-md-9 mb-3" >
+										<select class="" style="width: 80%; height: 45px;font-size: 15px;font-size: 15px">
 											<option selected>하나은행</option>
 											<option value="1">하나은행</option>
 											<option value="2">Two</option>
@@ -217,27 +186,29 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 									</div>
 
 									<div class="col-md-9 mb-3">
-										<label for="nickname">입금 계좌번호</label> 
+										<label for="nickname" style="font-size: 15px">입금 계좌번호</label> 
+									</div>
 										<div class="col-md-9 mb-3">
-										<c:forEach items="${select}" var="a" varStatus="loop">
-										<select class="" style="width: 80%; height: 45px">
+										<select class="" style="width: 80%; height: 45px;font-size: 15px">
 											<option selected>계좌번호</option>
+										<c:forEach items="${select}" var="a" varStatus="loop">
 											<option value="acc"><c:out value="${a.bank_username}"></c:out><c:out value="${a.bank_id}"></c:out></option>
-										</select>
 										</c:forEach>
-										<br>
-										<input type="password" class="form-control" name="your_bank_id" id="your_bank_id"
+										</select>
+										<br><br>
+										    <input type="password" class="form-control" style="width: 80%;" name="your_bank_id" id="your_bank_id"
 											placeholder="- 없이 계좌번호를 입력하세요" value="" required>
 
-									</div>
-									<br>
+										</div>
+									
 
 									
-								</div>
-							<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/accountTransFin'"  style="width:50%">이체</button>
-							 <input type="button" onClick="sendLinkCustom();" value="카톡으로 알림보내기!"/>
+								
+							<button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/accountTransFin'"  style="width:200px; margin-top: 30px; background-color:#008485 ">이체</button>
+							 <input class="btn btn-primary btn-lg btn-block" type="button" onClick="sendLinkCustom();"  style="width:200px; margin-top: 30px;background-color: gold; color:black " value="카톡으로 알림보내기!"/>
 							</form>
 						</div>
+					
 
 
 					</div>
@@ -265,71 +236,14 @@ catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
 	</div>
 	<!-- end col -->
 
-	<div class="col-md-4 col-sm-6 col-xs-12">
-		<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-			data-wow-delay="0.4s">
-			<i class="flaticon-world-wide-web global-radius effect-1 alignleft"></i>
-			<h3>1 Domain Free</h3>
-			<p>
-				We offer pixel perfect icons, graphic sources for high-resolution
-				devices! Landigoo compatible retina display! <small class="readmore"><a
-					href="#">Read more</a></small>
-			</p>
-		</div>
-		<!-- end icon-wrapper -->
-	</div>
+	
 	<!-- end col -->
 	</div>
 	<!-- end row -->
 
 	<hr class="hr3">
 
-	<div class="row">
-		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-				data-wow-delay="0.2s">
-				<i class="flaticon-cup global-radius effect-1 alignleft"></i>
-				<h3>Awards Winner Support</h3>
-				<p>
-					Our Landigoo responsive site template elements 100% compatible with
-					all mobile devices and modern browsers! <small class="readmore"><a
-						href="#">Read more</a></small>
-				</p>
-			</div>
-			<!-- end icon-wrapper -->
-		</div>
-		<!-- end col -->
-
-		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-				data-wow-delay="0.4s">
-				<i class="flaticon-cer-file-format global-radius effect-1 alignleft"></i>
-				<h3>Free SSL Certifica</h3>
-				<p>
-					We offer pixel perfect icons, graphic sources for high-resolution
-					devices! Landigoo compatible retina display! <small
-						class="readmore"><a href="#">Read more</a></small>
-				</p>
-			</div>
-			<!-- end icon-wrapper -->
-		</div>
-		<!-- end col -->
-
-		<div class="col-md-4 col-sm-6 col-xs-12">
-			<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-				data-wow-delay="0.6s">
-				<i class="flaticon-locked global-radius effect-1 alignleft"></i>
-				<h3>High Security</h3>
-				<p>
-					When you need anything about for Landigoo template, just drop an
-					email or leave a feedback from TF!<small class="readmore"><a
-						href="#">Read more</a></small>
-				</p>
-			</div>
-			<!-- end icon-wrapper -->
-		</div>
-		<!-- end col -->
-	</div>
+	
 	<!-- end row -->
 	</div>
 	<!-- end container -->

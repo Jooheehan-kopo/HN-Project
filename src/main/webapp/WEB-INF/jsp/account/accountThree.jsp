@@ -260,31 +260,23 @@ body {
 			<div class="container">
 				<div class="input-form-backgroud row">
 					<div class="input-form forms">
-						<h4 class="mb-3">
+					<img src="${pageContext.request.contextPath }/resources/images/logos/hana.png" style="width:40%">
+						<h2 class="mb-3" style="margin:30px">
 							<c:out value="${userVO.name }"></c:out>
-							님,<br> 신청절차가 성공적으로 완료되었습니다!
-						</h4>
+							님,
+						<br> 신청절차가 성공적으로 완료되었습니다!
+						</h2>
 
 						<div class="row">
 							<div class="mb-3">
-								<label>계좌 조회하러가기</label>
+							<button style="background-color: #008485; width:auto; margin-left:220px" class="btn btn-primary btn-lg btn-block" onclick="location.href='${pageContext.request.contextPath }/account/accountSearch'" >
+							계좌 조회하러가기</button>
+								
 
 								
 								<!-- template -->
 
-								<div class="col-md-6 col-xl-9">
-									<div class="card bg-c-yellow order-card" style="width: 500px;">
-										<div class="card-block" style="height: 100px">
-											<h6 class="m-b-20" id="">주문가능</h6>
-											<h2 class="text-right">
-												<i class="ti-reload f-left"></i><span>$42,562</span>
-											</h2>
-											<p class="m-b-0">
-												This Month<span class="f-right">$5,032</span>
-											</p>
-										</div>
-									</div>
-								</div>
+								
 
 							</div>
 						</div>
@@ -299,53 +291,7 @@ body {
 
 				<hr class="hr3">
 
-				<div class="row">
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-							data-wow-delay="0.2s">
-							<i class="flaticon-cup global-radius effect-1 alignleft"></i>
-							<h3>Awards Winner Support</h3>
-							<p>
-								Our Landigoo responsive site template elements 100% compatible
-								with all mobile devices and modern browsers! <small
-									class="readmore"><a href="#">Read more</a></small>
-							</p>
-						</div>
-						<!-- end icon-wrapper -->
-					</div>
-					<!-- end col -->
-
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-							data-wow-delay="0.4s">
-							<i
-								class="flaticon-cer-file-format global-radius effect-1 alignleft"></i>
-							<h3>Free SSL Certifica</h3>
-							<p>
-								We offer pixel perfect icons, graphic sources for
-								high-resolution devices! Landigoo compatible retina display! <small
-									class="readmore"><a href="#">Read more</a></small>
-							</p>
-						</div>
-						<!-- end icon-wrapper -->
-					</div>
-					<!-- end col -->
-
-					<div class="col-md-4 col-sm-6 col-xs-12">
-						<div class="icon-wrapper wow fadeIn" data-wow-duration="1s"
-							data-wow-delay="0.6s">
-							<i class="flaticon-locked global-radius effect-1 alignleft"></i>
-							<h3>High Security</h3>
-							<p>
-								When you need anything about for Landigoo template, just drop an
-								email or leave a feedback from TF!<small class="readmore"><a
-									href="#">Read more</a></small>
-							</p>
-						</div>
-						<!-- end icon-wrapper -->
-					</div>
-					<!-- end col -->
-				</div>
+				
 				<!-- end row -->
 			</div>
 			<!-- end container -->
