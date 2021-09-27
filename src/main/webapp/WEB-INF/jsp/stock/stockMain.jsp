@@ -74,14 +74,15 @@
         <div class="container">
             <div class="section-title text-center">
                 <h3>인기순위 30개 종목</h3>
-                <p class="lead">출처: 네이버증권 <strong>15분 지연</strong> <br> 15분 마다 실시간 정보를 제공합니다.</p>
+                <p class="lead"> <strong style="color:#008485">15분 </strong> 마다 실시간 정보를 제공합니다.
+                 </p>
             </div><!-- end title -->
 
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
                     <div class="message-box">
                         <ul class="nav nav-pills nav-stacked" id="myTabs">
-                            <li class="active"><a href="#tab1" data-toggle="pill">현재 인기종목순위</a></li>
+                            <li class="active" style="color:#008485"><a href="#tab1" data-toggle="pill">현재 인기종목순위</a></li>
                             <li><a href="#tab2" data-toggle="pill">과거 인기종목순위</a></li>
                         </ul>
                     </div>
@@ -96,21 +97,22 @@
                         <div class="tab-pane active fade in" id="tab1">
                             <div class="row text-center">
                                 <div class="">
-                               
+                               <p style="float:right">출처: 네이버증권 </p>
+                               <p style="float:left ; color:black;font-weight: bold"><c:out value="${list[0].crawl_date}"/> 기준</p>
                                <!-- 현재 주식 인기 검색 순위(30개) -->
                                <table class="table table-striped table-hover table-bordered">
 								  <thead>
 								    <tr style="color: #008485">
 								      <th scope="col">#</th>
-								      <th scope="col">이름</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">이름</th>
 								   <!--    <th scope="col">검색비율</th> -->
-								      <th scope="col">현재가</th>
-								      <th scope="col">전일비</th>
-								      <th scope="col">등략률</th>
-								      <th scope="col">거래량</th>
-								      <th scope="col">시가</th>
-								      <th scope="col">고가</th>
-								      <th scope="col">저가</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">현재가</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">전일비</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">등략률</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">거래량</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">시가</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">고가</th>
+								      <th scope="col" style="font-size: 15px; text-align: center">저가</th>
 								    </tr>
 								  </thead>
 								  <tbody>
@@ -120,10 +122,10 @@
 								    <tr>
 										
 								      <th scope="row"><c:out value="${stockVO.no}"/></th>
-								      <td><c:out value="${stockVO.name}"/></td>
+								      <td style="color:black;font-weight: bold"><c:out value="${stockVO.name}"/></td>
 								     <%--  <td><c:out value="${stockVO.search_per}"/></td> --%>
-								      <td><c:out value="${stockVO.now_p}"/></td>
-								      <td><c:out value="${stockVO.ntob}"/></td>
+								      <td style="color:black; "><c:out value="${stockVO.now_p}"/></td>
+								      <td style="color:black; "><c:out value="${stockVO.ntob}"/></td>
 								      <td><c:out value="${stockVO.updown}"/></td>
 								      <td><c:out value="${stockVO.howmany}"/></td>
 								      <td><c:out value="${stockVO.start_p}"/></td>
@@ -211,84 +213,27 @@
 						내 돈으로 투자하기, 복잡하고 어렵지 않아요~!<br>
 						원하는 종목 담아담아~ 친구들과 함께 결과 공유! 질문사항은 피드백으로 고고!
 					</p>
-					<br><br><br>
-					
-			
-					
-					<button type="button"><img src="${pageContext.request.contextPath }/resources/images/stock1.png" alt="">
-					<a href="${pageContext.request.contextPath}/stock/resisterStock"></a>주식계좌개설</button>
-					<button type="button"><img src="${pageContext.request.contextPath }/resources/images/stock2.png" alt="">버튼명</button>
-
-					
-					
-                    <button style="background-color: #008485; color:white; font-size:20px; padding:2px"><a href="${pageContext.request.contextPath}/stock/resisterStock">주식계좌개설</a></button>
-                   
-
-					<p>이미 계정이 있다면? <br>
-					지금 바로 시작하기!</p>
-					<br><br><br>
-					<button style="background-color: #008485; color:white; font-size:20px; padding:2px" onclick="myFunction()">play 스톡하나</button>
-					
-					
-
+							
                 </div>
+               
             </div><!-- end title -->
+             <div >
+					<div style=" display:flex;" >
+					<button type="button" onclick="location.href='${pageContext.request.contextPath}/stock/resisterStock'" style=" display:flex; margin:20px;height:200">
+					<img src="${pageContext.request.contextPath }/resources/images/stockMain01.png" alt=""></button>
+					<br>
+					
+					<button type="button" onclick="myFunction()" style="display:flex; margin:20px; height:200">
+					<img src="${pageContext.request.contextPath }/resources/images/stockMain02.png" alt=""></button>
+					</div>
+				</div>
 
             <hr class="invis"> 
 
-            <div class="row"> 
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <i class="flaticon-server global-radius effect-1 alignleft"></i>
-                        <h3>Unlimited Bandwidth</h3>
-                        <p>Our Landigoo responsive site template elements 100% compatible with all mobile devices and modern browsers! <small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                        <i class="flaticon-cloud-computing-1 global-radius effect-1 alignleft"></i>
-                        <h3>Unlimited Traffic</h3>
-                        <p>When you need anything about for Landigoo template, just drop an email or leave a feedback from TF!<small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                        <i class="flaticon-world-wide-web global-radius effect-1 alignleft"></i>
-                        <h3>1 Domain Free</h3>
-                        <p>We offer pixel perfect icons, graphic sources for high-resolution devices! Landigoo compatible retina display! <small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-
+            
             <hr class="hr3"> 
 
-            <div class="row"> 
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <i class="flaticon-cup global-radius effect-1 alignleft"></i>
-                        <h3>Awards Winner Support</h3>
-                        <p>Our Landigoo responsive site template elements 100% compatible with all mobile devices and modern browsers! <small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                        <i class="flaticon-cer-file-format global-radius effect-1 alignleft"></i>
-                        <h3>Free SSL Certifica</h3>
-                        <p>We offer pixel perfect icons, graphic sources for high-resolution devices! Landigoo compatible retina display! <small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
-
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="icon-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                        <i class="flaticon-locked global-radius effect-1 alignleft"></i>
-                        <h3>High Security</h3>
-                        <p>When you need anything about for Landigoo template, just drop an email or leave a feedback from TF!<small class="readmore"><a href="#">Read more</a></small></p>
-                    </div><!-- end icon-wrapper -->
-                </div><!-- end col -->
-            </div><!-- end row -->
+            
         </div><!-- end container -->
     </div><!-- end section -->
 

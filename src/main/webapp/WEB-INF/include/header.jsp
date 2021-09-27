@@ -44,8 +44,8 @@
                         </li>
                         <li><a href="${pageContext.request.contextPath }/media/hanaTV">하나티비</a></li>
                     
-                        <li><a href="testimonials.html">머니뉴스</a></li>
-                        <li><a href="${pageContext.request.contextPath }/member/quiz">퀴즈연습</a></li>
+                        <li><a href="http://www.bok.or.kr/portal/bbs/B0000273/list.do?menuNo=201037">머니뉴스</a></li>
+                        
                         
                     </ul>
                     <c:if test="${empty userVO }">

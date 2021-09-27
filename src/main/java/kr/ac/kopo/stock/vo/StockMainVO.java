@@ -15,6 +15,7 @@ public class StockMainVO {
 	private String low_p;
 	private String per;
 	private String roe;
+	private String crawl_date;
 	
 	//모의주식할 주식정보
 	private String ticker;
@@ -35,6 +36,16 @@ public class StockMainVO {
 	
 	
 	
+	public String getCrawl_date() {
+		return crawl_date;
+	}
+
+
+	public void setCrawl_date(String crawl_date) {
+		this.crawl_date = crawl_date;
+	}
+
+
 	public int getCount() {
 		return count;
 	}
@@ -192,10 +203,14 @@ public class StockMainVO {
 	public String toString() {
 		return "StockMainVO [no=" + no + ", name=" + name + ", search_per=" + search_per + ", now_p=" + now_p
 				+ ", ntob=" + ntob + ", updown=" + updown + ", howmany=" + howmany + ", start_p=" + start_p
-				+ ", high_p=" + high_p + ", low_p=" + low_p + ", per=" + per + ", roe=" + roe + ", ticker=" + ticker
-				+ ", stock_name=" + stock_name + ", end_p=" + end_p + ", compare=" + compare + ", stocks_totalprice="
-				+ stocks_totalprice + "]";
+				+ ", high_p=" + high_p + ", low_p=" + low_p + ", per=" + per + ", roe=" + roe + ", crawl_date="
+				+ crawl_date + ", ticker=" + ticker + ", stock_name=" + stock_name + ", end_p=" + end_p + ", compare="
+				+ compare + ", stocks_totalprice=" + stocks_totalprice + ", input_cost=" + input_cost + ", count="
+				+ count + "]";
 	}
+
+
+	
 	
 	
 

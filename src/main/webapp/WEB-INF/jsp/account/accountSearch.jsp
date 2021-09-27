@@ -161,41 +161,46 @@
 					data-wow-duration="1s" data-wow-delay="0.4s">
 					<div class="widget clearfix">
 						<img src="uploads/hosting_02.jpg" alt="" class="img-responsive">
-						<div class="widget-title">
-							<h3>Reseller Hosting</h3>
-							<small>Starting from $80/month</small>
-						</div>
+						<div>
+                   
+                      <input type = "submit" value="검색" class="btn btn-secondary" id="search" style="float:right; margin:5px">
+                      <input type = "text" placeholder="검색어를 입력하세요" id="keyword" name="name" style="float:right;margin:10px; height:30px; width:200px; ">
+                      <select style="float:right; margin:5px;height:30px;margin-top:9px;font-size: 14px ">
+						<option selected>날짜</option>
+						<option>이름</option>
+						<option>학교</option>
+						<option>아이디</option>
+					  </select>
+                      </div>
 						<!-- end title -->
-						<p>Internet lorem Ipsum generators on the tend to repeat
-							predefined chunks as necessary, finally its release!</p>
-
+						
 						<hr>
 
 						<div class="footer-social">
 						
-							<table class="table" id="dt1">
+							<table class="table" id="dt1" >
 							  <thead style="text-align: center">
 							    <tr>
-							      <th scope="col">통장명</th>
-							      <th scope="col">내계좌</th>
-							      <th scope="col">이체금액</th>
-							      <th scope="col">상대계좌</th>
-							      <th scope="col">입출금여부</th>
-							      <th scope="col">잔액</th>
-							      <th scope="col">일시</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">통장명</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">내계좌</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">이체금액</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">상대계좌</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">입출금여부</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">잔액</th>
+							      <th scope="col" style="font-size: 15px; text-align: center">일시</th>
 							    </tr>
 							  </thead>
 							  <c:forEach items="${transVO}" var="trans" varStatus="loop">
 							  <tbody>
 							    <tr>
 							      
-							      <td><c:out value="${trans.bank_type}" /></td>
-							      <td><c:out value="${trans.bank_id}" /></td>
-							      <td><c:out value="${trans.trans_money}" /></td>
-							      <td><c:out value="${trans.your_bank_id}" /></td>
-							      <td><c:out value="${trans.trans_info}" /></td>
-							      <td><c:out value="${trans.bank_id_bal}" /></td>
-							      <td><c:out value="${trans.trans_date}" /></td>
+							      <td style="font-size: 14px;"><c:out value="${trans.bank_type}" /></td>
+							      <td style="font-size: 14px;"><c:out value="${trans.bank_id}" /></td>
+							      <td style="font-size: 14px;"><c:out value="${trans.trans_money}" /></td>
+							      <td style="font-size: 14px;"><c:out value="${trans.your_bank_id}" /></td>
+							      <td style="font-size: 14px; font-weight: bold;"><c:out value="${trans.trans_info}" /></td>
+							      <td style="font-size: 14px;"><c:out value="${trans.bank_id_bal}" /></td>
+							      <td style="font-size: 14px;"><c:out value="${trans.trans_date}" /></td>
 							    </tr>
 							 </tbody>
 							 </c:forEach>
