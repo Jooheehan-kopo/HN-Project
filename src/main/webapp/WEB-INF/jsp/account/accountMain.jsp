@@ -437,7 +437,7 @@ $(document).ready(function() {
   <div class="container">
     <div class="input-form-backgroud row">
     	<div class="input-form forms">
-        <h4 class="mb-3">반갑습니다!</h4>
+        <h4 class="mb-3">PlayHana은행 계좌개설</h4>
         <form method ="post" action="${pageContext.request.contextPath}/account/accountMain" class="validation-form" novalidate>
           <div class="row">
             <div class="col-md-6 mb-3">
@@ -465,7 +465,7 @@ $(document).ready(function() {
           </div>
 
        
-          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/two'"  style="width:50%">다음</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick = "locatin.href='${pageContext.request.contextPath}/account/two'"  style="width:50%; background-color: #008485">다음</button>
        
         </form>
       </div>

@@ -236,7 +236,7 @@
                 
                 <div class="col-auto">
                 
-                <input type = "submit" value="확인" class="btn btn-secondary" id="search">
+                <input type = "submit" value="확인" class="btn btn-secondary" id="search" onclick="show();">
                   
                   <button type="button" class="btn btn-primary" id="save" onclick="window.print()">PDF저장</button>
                 </div>
@@ -247,7 +247,7 @@
                     <div class="col-12 text-center mb-4">
                      <img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" style="width:140px; " class="navbar-brand-img brand-sm mx-auto mb-4" alt="..." > 
                       <h2 class="mb-0 text-uppercase">PlayHana Report</h2>
-                      <p class="text-muted"> Altavista<br /> 9022 Suspendisse Rd. </p>
+                      <p class="text-muted"> 플레이하나<br /> 금융 총괄 리포트입니다. </p>
                     </div>
                     
                     <div class="col-md-7">
@@ -272,13 +272,16 @@
                     </div>
                      
                     <div class="col-md-5">
-                      <p class="small text-muted text-uppercase mb-2">Invoice to</p>
+                    <div id="Sh" style="display:none">
+                      <p class="small text-muted text-uppercase mb-2">나의 차트</p>
+                      <img id="chart" src="${pageContext.request.contextPath }/resources/images/Rchart.png" style="width:250px;heigth:250">
                       <p class="mb-4">
-                        <strong>Walter Sawyer</strong><br /> Human Resources<br /> Ap #992-8933 Sagittis Street<br /> Ivanteyevka<br /> (803) 792-2559<br />
+                        
                       </p>
-                      <p>
-                        <small class="small text-muted text-uppercase">Due date</small><br />
-                        <strong>April, 20, 2020</strong>
+                     </div>
+                      <p >
+                        <small class="small text-muted text-uppercase"></small><br />
+                        <strong></strong>
                       </p>
                     </div>
                   </div> <!-- /.row -->
@@ -287,18 +290,15 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">은행계좌</th>
-                        <th scope="col" >개설<br>여부</th>
-                        <th scope="col" >송금<br>친구</th>
-                        <th scope="col" >송금<br>횟수</th>
-                        <th scope="col" >입금<br>횟수</th>
-                        <th scope="col" >계좌<br>목록</th>
+                        <th scope="col" >잔액</th>
+                        <th scope="col" >개설일</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th >1</th>
-                        <td id="bank_id"> <br />
-                          <span ></span>
+                        <td id="bank_id">
                         </td>
                         <td id ="bank_id_bal"></td>
                         <td id="bank_id_date"></td>
@@ -306,36 +306,60 @@
                         <td ></td>
                         <td ></td>
                       </tr>
-                     
-                  
+                    </tbody>
+                  </table>
+                  <!--주식  -->
+                  <table class="table table-borderless table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">주식계좌</th>
+                        <th scope="col" >잔액</th>
+                        <th scope="col" >개설일</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th >1</th>
+                        <td id="stock_acc">
+                        </td>
+                        <td id ="stock_bal"></td>
+                        <td id="stock_acc_date"></td>
+                        <td id=""></td>
+                        <td ></td>
+                        <td ></td>
+                      </tr>
                     </tbody>
                   </table>
                   
                   
-                  <div class="row mt-5">
-                    <div class="col-2 text-center">
-                      
-                    </div>
-                    <div class="col-md-5">
-                      <p class="text-muted small"  >
-                        <strong id ="stock_bal"></strong>  </p>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="text-right mr-2">
-                        <p class="mb-2 h6">
-                          <span class="text-muted" > : </span>
-                          <strong id="stock_acc"></strong>
-                        </p>
-                        <p class="mb-2 h6">
-                          <span class="text-muted"> </span>
-                          <strong id="stock_acc_date"></strong>
-                        </p>
-                        <p class="mb-2 h6">
-                          <span class="text-muted"></span>
-                          <span></span>
-                        </p>
-                      </div>
-                    </div>
+                  <div class="col-md-7" style="display:none" id="mbti">
+                    
+                       <p style="color:#008485">금융성향테스트 | 금융 MBTI</p>
+                    <table class="table table-borderless table-striped">
+                    <thead>
+                      <tr>
+                       <th scope="col">#</th>
+                        <th scope="col">맞은개수</th>
+                        <th scope="col" >성향</th>
+                        <th scope="col" >참여횟수</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th >1</th>
+                        <td>5 개
+                        </td>
+                        <td>투자계의 프로환승러</td>
+                        <td >1</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>             
+                   
+                   
                   </div> <!-- /.row -->
                 </div> <!-- /.card-body -->
               </div> <!-- /.card -->
@@ -494,6 +518,11 @@
       gtag('config', 'UA-56159088-1');
     </script>
     <script>
+    function show(){
+    	document.getElementById("Sh").style.display="";
+    	document.getElementById("mbti").style.display="";
+    	
+    }
     
 </script>
  
