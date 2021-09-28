@@ -1,20 +1,28 @@
 package kr.ac.kopo.sms.controller;
 
+import java.io.File;
 import java.util.Random;
 
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.ac.kopo.sms.service.certificationService;
+import kr.ac.kopo.sms.vo.MailVO;
 
 @CrossOrigin({"*"})
 @Controller
@@ -50,8 +58,33 @@ public class sendSMSController {
 		return numStr;
 	}
 	
+	//이메일 전송
+	@Autowired
+	private JavaMailSenderImpl mailSender;
+
+	@PostMapping("admin/email")
+	public String sendMail(final MailVO vo) {
+		final MimeMessagePreparator preparator = new MimeMessagePreparator() {
+			@Override
+			public void prepare(MimeMessage mimeMessage) throws Exception {
+				final MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true, "UTF-8");
+				helper.setFrom("angki_95@naver.com");
+				helper.setTo(vo.getTo());
+				helper.setSubject(vo.getSubject());
+				helper.setText(vo.getContents(), true);
+				System.out.println("mail: "+ helper);
+				
+				FileSystemResource file = new FileSystemResource(new File("C:/Users/HP/Desktop/IMG/dd.pdf"));
+				helper.addAttachment("dd.pdf", file);
+
+			}
+		};
+		mailSender.send(preparator);
+		return "result";
+	}
 	
 	
+
 	
 }
 
@@ -83,7 +116,3 @@ public class sendSMSController {
 	
 	
 	
-	
-	/*
-	
-*/

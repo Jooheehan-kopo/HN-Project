@@ -43,9 +43,6 @@
         </property>
     </bean>
     
-	
-	
-	
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	<property name="location" value="classpath:config/prop/db.properties"/>
 	<property name="fileEncoding" value="UTF-8"/>

@@ -31,7 +31,7 @@ public class MailTest {
 		vo.setContents("안녕메일이야");
 		vo.setFrom("angki_95@naver.com");
 		vo.setTo("hjh847@gmail.com");
-		vo.setSubject("do you play hana?");
+		vo.setSubject("PlayHana Report | 플레이하나 리포트");
 		
 		final MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			@Override

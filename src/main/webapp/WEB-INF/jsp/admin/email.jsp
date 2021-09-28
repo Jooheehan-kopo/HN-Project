@@ -362,80 +362,34 @@
                       <strong class="card-title">메일 보내기</strong>
                     </div>
                     <div class="card-body">
-                      <form class="needs-validation" novalidate>
+                      <form class="needs-validation" novalidate method="post"  action="${pageContext.request.contextPath }/admin/email">
                         <div class="form-row">
                           <div class="col-md-8 mb-3">
                             <label for="exampleInputEmail1">Email 주소</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <input type="email" class="form-control" name="to" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                             <div class="invalid-feedback"> 메일주소 형식에 맞게 작성해주세요 </div>
                             <small id="emailHelp" class="form-text text-muted"><a href="${pageContext.request.contextPath }/admin/table" >메일주소 확인하기</a></small>
                           </div>
-                          <div class="col-md-4 mb-3">
-                            <label for="validationCustomUsername">받는이</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                              </div>
-                              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                              <div class="invalid-feedback"> Please choose a username. </div>
-                            </div>
+                          <div class="col-md-8 mb-3">
+                            <label for="exampleInputEmail1">제목</label>
+                            <input type="text" class="form-control" name="subject" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <div class="invalid-feedback"> 제목 없음으로 보내시겠습니까? </div>
+                            
                           </div>
+                          
                          
                         </div>
-                        <div class="form-row">
-                          <div class="col-md-6 mb-3">
-                            <label for="validationCustom03">학교</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
-                            <div class="invalid-feedback">  </div>
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="validationCustom04">주소</label>
-                            <select class="custom-select" id="validationCustom04" required>
-                              <option selected disabled value="">Choose...</option>
-                              <option>...</option>
-                            </select>
-                            <div class="invalid-feedback"> 학교 주소를 입력해주세요 </div>
-                          </div>
-                          <div class="col-md-3 mb-3">
-                            <label for="validationCustom05">우편번호</label>
-                            <input type="text" class="form-control" id="validationCustom05" required>
-                            <div class="invalid-feedback"> Please provide a valid zip. </div>
-                          </div>
-                        </div>
+                        
                         <div class="form-group mb-3">
-                          <label for="validationTextarea">About your self</label>
-                          <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
-                          <div class="invalid-feedback"> Please enter a message in the textarea. </div>
+                          <label for="validationTextarea">내용</label>
+                          <textarea style="width:80%; height:400px"class="form-control" name="contents" id="validationTextarea" placeholder="내용을 입력해주세요" required></textarea>
+                          <div class="invalid-feedback"> 내용을 입력하여주세요.</div>
                         </div>
-                        <div class="custom-control custom-checkbox mb-3">
-                          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-                          <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
-                          <div class="invalid-feedback">Example invalid feedback text</div>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
-                          <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
-                        </div>
-                        <div class="custom-control custom-radio mb-3">
-                          <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
-                          <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
-                          <div class="invalid-feedback">More example invalid feedback text</div>
-                        </div>
-                        <div class="form-group mb-4">
-                          <label for="example-multiselect">Select your level</label>
-                          <select id="example-multiselect" multiple="" class="form-control" required>
-                            <option>Level 1</option>
-                            <option>Level 2</option>
-                            <option>Level 3</option>
-                            <option>Level 4</option>
-                            <option>Level 5</option>
-                          </select>
-                          <div class="invalid-feedback">Please select one option</div>
-                        </div>
+                        
                         <div class="custom-file mb-3">
-                          <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                          <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                          <div class="invalid-feedback">Example invalid custom file feedback</div>
+                          <input type="file" class="custom-file-input" name="file" id="validatedCustomFile" >
+                          <label class="custom-file-label" for="validatedCustomFile">파일첨부</label>
+                          <div class="invalid-feedback"></div>
                         </div>
                         <div class="form-group">
                           <div class="form-check">
@@ -444,7 +398,7 @@
                             <div class="invalid-feedback"> You must agree before submitting. </div>
                           </div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit form</button>
+                        <button class="btn btn-primary" type="submit">보내기</button>
                       </form>
                     </div> <!-- /.card-body -->
                   </div> <!-- /.card -->
