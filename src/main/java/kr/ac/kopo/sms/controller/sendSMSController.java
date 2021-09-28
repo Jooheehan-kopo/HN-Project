@@ -80,7 +80,12 @@ public class sendSMSController {
 			}
 		};
 		mailSender.send(preparator);
-		return "result";
+		return "admin/email_check";
+	}
+	
+	@GetMapping("admin/email_check")
+	public String emailSend() {
+		return "admin/email_check";
 	}
 	
 	

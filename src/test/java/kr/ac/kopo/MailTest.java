@@ -28,7 +28,7 @@ public class MailTest {
 	@Test
 	public void 메일테스트() throws Exception {
 		MailVO vo = new MailVO();
-		vo.setContents("안녕메일이야");
+		vo.setContents("Play하나 개별 리포트 보내드립니다.");
 		vo.setFrom("angki_95@naver.com");
 		vo.setTo("hjh847@gmail.com");
 		vo.setSubject("PlayHana Report | 플레이하나 리포트");
