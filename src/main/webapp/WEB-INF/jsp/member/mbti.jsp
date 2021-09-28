@@ -122,14 +122,14 @@
 						<p>금융성향테스트 결과입니다</p>
 					</div>
 					<div class="para">
-					<div>
-						<p>1 Domain</p>
-						<p>10 GB Disk Space</p>
-						<p>50 GB Bandwidth</p>
-						<p>Free Domain</p>
+					<div style="display:center">
+						<h1 style="font-weight:bold;text-align: center">맞은 개수: 총 3개</h1>
+						
+						<img src="${pageContext.request.contextPath }/resources/images/mbti01.png" style="width:450px; height:600px; margin-left: 320px">
+						
 					</div>
 					<div class="sign text-center pricing-table-sign-up">
-						<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1">BUY</a>
+					<h1 style="text-align: center">친구에게 공유하기!</h1>
 					</div>
 				</div>
 			</div>
@@ -161,79 +161,11 @@
     <div class="row pt-5 m-auto">
       <div class="col-md-6 col-lg-4 pb-3">
 
-        <!-- Copy the content below until next comment -->
-        <div class="card card-custom bg-white border-white border-0">
-          
-          <div class="card-custom-avatar">
-            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
-          </div>
-          <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Card has minimum height set but will expand if more space is needed for card body content. You can use Bootstrap <a href="https://getbootstrap.com/docs/4.0/components/card/#card-decks" target="_blank">card-decks</a> to align multiple cards nicely in a row.</p>
-          </div>
-          <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-primary">Option</a>
-            <a href="#" class="btn btn-outline-primary">Other option</a>
-          </div>
-        </div>
-        <!-- Copy until here -->
+        <img src="${pageContext.request.contextPath }/resources/images/mbti02.png" style="width:450px; height:600px; float:left; display: flex">
+        <img src="${pageContext.request.contextPath }/resources/images/mbti03.png" style="width:450px; height:600px; float:left;display: flex">
+        <img src="${pageContext.request.contextPath }/resources/images/mbti04.png" style="width:450px; height:600px; float:left">
+        <img src="${pageContext.request.contextPath }/resources/images/mbti05.png" style="width:450px; height:600px; float:left">
 
-      </div>
-      <div class="col-md-6 col-lg-4 pb-3">
-
-        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
-        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
-         
-          <div class="card-custom-avatar">
-            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
-          </div>
-          <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
-            <p class="card-text">Some example text to show the scrollbar.</p>
-            <p class="card-text">Lorem ipsum dolor sit amet, te vix omittam fastidii, enim paulo omnes ea has, illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
-              antiopam. At altera facilisis mel.</p>
-          </div>
-          <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-primary">Option</a>
-            <a href="#" class="btn btn-outline-primary">Other option</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-6 col-lg-4 pb-3">
-
-        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
-        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
-         
-          <div class="card-custom-avatar">
-            <img class="img-fluid" src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg" alt="Avatar" />
-          </div>
-          <div class="card-body" style="overflow-y: auto; margin:10px;">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">You can also set maximum height on and the card will not expand, instead a scrollbar in the card body will appear.</p>
-            <p class="card-text">Some example text to show the scrollbar.</p>
-            <p class="card-text">Lorem ipsum dolor sit amet, te vix omittam fastidii, enim paulo omnes ea has, illud luptatum no qui. Sed ea qualisque urbanitas, purto elit nec te. Possim inermis antiopam ut eum. Eos te zril labore laboramus, quem erant nam in. Ut sed molestie
-              antiopam. At altera facilisis mel.</p>
-          </div>
-          <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-primary">Option</a>
-            <a href="#" class="btn btn-outline-primary">Other option</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-6 col-lg-4 pb-3">
-
-        <div class="card card-custom bg-white border-white border-0">
-          <div class="card-body">
-         
-            <p>You can use this card together with standard Bootstrap 4 cards and use card features on it.</p>
-            <p class="h5 text-center pt-3">See the card on GitHub:</p>
-            <p class="h1 text-center"><a href="https://github.com/peterdanis/custom-bootstrap-cards" target="_blank"><i class="fa fa-github"></i></a></p>
-
-          </div>
-        </div>
 
       </div>
     </div>
