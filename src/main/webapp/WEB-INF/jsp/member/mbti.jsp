@@ -156,16 +156,26 @@
   }
 </style>
 
-<body>
+
   <div class="container">
     <div class="row pt-5 m-auto">
-      <div class="col-md-6 col-lg-4 pb-3">
-
+      <div class="">
+       <hr>
+     <h1 style="text-align: center; color:#008485; font-weight: bold">다른 유형 살펴보기!</h1>
+     
+     <hr>
+	<div style="float:left;margin-left:100px">
         <img src="${pageContext.request.contextPath }/resources/images/mbti02.png" style="width:450px; height:600px; float:left; display: flex">
-        <img src="${pageContext.request.contextPath }/resources/images/mbti03.png" style="width:450px; height:600px; float:left;display: flex">
-        <img src="${pageContext.request.contextPath }/resources/images/mbti04.png" style="width:450px; height:600px; float:left">
-        <img src="${pageContext.request.contextPath }/resources/images/mbti05.png" style="width:450px; height:600px; float:left">
-
+    </div> 
+      <div  style="float:left; margin-left:10px">
+        <img src="${pageContext.request.contextPath }/resources/images/mbti03.png" style="width:450px; height:600px; display: flex">
+        </div>
+        <div style="float:left; margin-left:100px;margin-top: 10px">
+        <img src="${pageContext.request.contextPath }/resources/images/mbti04.png" style="width:450px; height:600px; ">
+        </div>
+        <div style="float:left; margin-left:10px;margin-top: 10px">
+        <img src="${pageContext.request.contextPath }/resources/images/mbti05.png" style="width:450px; height:600px; ">
+		</div>
 
       </div>
     </div>
