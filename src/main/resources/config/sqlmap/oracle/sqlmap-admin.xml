@@ -53,8 +53,17 @@
 	
 	<!-- report info: 개인 -->
 	<select id="report" parameterType="infoVO" resultType="infoVO">
-		select * from member
-		where stu_id= #{stu_id} and school= #{school}
+		select a.*, b.bank_type, b.bank_id, b.bank_id_bal, b.bank_id_date
+		from
+		(select m.id,m.stu_id,m.name,m.school,m.phone, m.addr1, m.addr2, m.addr3,m.join_date, s.stock_bal, s.stock_acc, s.stock_acc_date
+		from member m, member_stock s
+		where m.id=s.id) a,
+		 
+		(select user_id,bank_type,bank_id,bank_id_date,bank_id_bal
+		from member_bank)b
+		where a.id = b.user_id
+		and a.school =#{school}
+		and a.stu_id=#{stu_id}
 	</select>
 	
 <!-- 	 개설된 계좌 정보 보여주기 

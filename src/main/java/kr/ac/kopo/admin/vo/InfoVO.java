@@ -29,7 +29,7 @@ public class InfoVO {
 	
 	//mem_stock_buy
 	//member_bank
-	private int bank_id;
+	private String bank_id;
 	private int bank_id_bal;
 	private String bank_id_date;
 	private String bank_password;
@@ -193,11 +193,11 @@ public class InfoVO {
 		this.stock_acc_date = stock_acc_date;
 	}
 
-	public int getBank_id() {
+	public String getBank_id() {
 		return bank_id;
 	}
 
-	public void setBank_id(int bank_id) {
+	public void setBank_id(String bank_id) {
 		this.bank_id = bank_id;
 	}
 

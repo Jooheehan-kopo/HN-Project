@@ -67,12 +67,18 @@ $(document).ready(function(){
 				
 				dataType:'json',
 				success : function(data){
-					alert('dd');
+					
 					console.log("ajax sending:"+data);
 					
 					var html=""
 					var date=""
 					var phone=""
+					var stock_bal=""
+					var stock_acc=""
+					var stock_acc_date=""
+					var bank_id=""
+					var bank_id_date=""
+					var bank_id_bal=""
 					
 						data.forEach(function(d){
 					console.log(d.addr1)
@@ -84,6 +90,12 @@ $(document).ready(function(){
 					date += d.join_date;
 					
 					phone += d.phone;
+					stock_bal += d.stock_bal;
+					stock_acc += d.stock_acc;
+					stock_acc_date += d.stock_acc_date;
+					bank_id += d.bank_id;
+					bank_id_date += d.bank_id_date;
+					bank_id_bal += d.bank_id_bal;
 					})
 					
 					
@@ -91,6 +103,14 @@ $(document).ready(function(){
 				$('#add').append(html);
 				$('#date').append(date);
 				$('#phone').append(phone);
+				$('#stock_bal').append(stock_bal);
+				$('#stock_acc').append(stock_acc);
+				$('#stock_acc_date').append(stock_acc_date);
+				$('#bank_id').append(bank_id);
+				$('#bank_id_date').append(bank_id_date);
+				$('#bank_id_bal').append(bank_id_bal);
+				
+				
 				}
 			})
 	})

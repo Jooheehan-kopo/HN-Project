@@ -159,7 +159,7 @@ public class MemberDaoTest {
 	}
 	
 	
-	
+	@Ignore
 	@Test
 	public void 같은반계좌번호이체() throws Exception {
 		MemberVO user = new MemberVO();
@@ -172,6 +172,15 @@ public class MemberDaoTest {
 //			System.out.println("list"+ list);
 //		}
 		
+	}
+	@Test
+	public void report() {
+		
+		InfoVO info = new InfoVO();
+		info.setSchool("백신중");
+		info.setStu_id("20101");
+		List<InfoVO> getInfo = sessionTemplate.selectList("admin.AdminDAO.report", info);
+		System.out.println(getInfo);
 	}
 	
 	
