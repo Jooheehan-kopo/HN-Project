@@ -42,8 +42,8 @@ public class MailTest {
 				helper.setSubject(vo.getSubject());
 				helper.setText(vo.getContents(), true);
 
-				FileSystemResource file = new FileSystemResource(new File("C:/Users/HP/Desktop/IMG/dd.pdf"));
-				helper.addAttachment("dd.pdf", file);
+				FileSystemResource file = new FileSystemResource(new File("C:/Users/HP/Desktop/IMG/PlayHanaReport.pdf"));
+				helper.addAttachment("PlayHanaReport.pdf", file);
 
 			}
 		};

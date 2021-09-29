@@ -43,6 +43,19 @@
         </property>
     </bean>
     
+    	<!-- locale 다국어지원 -->
+    		<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		        <property name="basename" value="classpath:languages/lang"/>
+		        <property name="defaultEncoding" value="UTF-8"/>
+		        <property name="cacheSeconds" value="3600" />
+		    </bean>
+				    
+		    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		        <property name="defaultLocale" value="chn"/>
+		    </bean>
+		    <!-- properties 캐시를 확인하는 주기 지정 -->
+    
+    
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	<property name="location" value="classpath:config/prop/db.properties"/>
 	<property name="fileEncoding" value="UTF-8"/>

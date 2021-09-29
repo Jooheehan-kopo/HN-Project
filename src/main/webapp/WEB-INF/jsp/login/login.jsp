@@ -256,7 +256,7 @@ body{
 				</select>
 			</div>
 			<div class="logo-wrap">
-				<img src="img/logo.png">
+				<img src="${pageContext.request.contextPath }/resources/images/logos/hana.png">
 			</div>
 		</header>
 		<section class="login-input-section-wrap">

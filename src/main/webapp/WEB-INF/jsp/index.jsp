@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +71,7 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
-									<h2 data-animation="animated zoomInRight">let's <strong>	PLAY HANA</strong> with us! </h2>
+									<h2 data-animation="animated zoomInRight">let's <strong>	<spring:message code="main.hello" arguments="" text="defalut" /></strong> with us! </h2>
 									<p class="lead" data-animation="animated fadeInLeft"> </p>
 									 <a data-scroll href="${pageContext.request.contextPath }/member/resister" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
