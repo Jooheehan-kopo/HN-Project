@@ -89,7 +89,7 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
-									<h2 data-animation="animated zoomInRight"><spring:message code="main.pagetwo" arguments="" text="defalut" /></h2>
+									<h2 data-animation="animated zoomInRight">내가 원하는 종목에<strong> 직접 투자</strong>해보기!</h2>
 									<p class="lead" data-animation="animated fadeInLeft">맛보기 주식체험을 통해 투자습관 up! 내 기록을 친구들과 함께 공유해요~<br> 1등에겐 서프라이즈 이벤트가 기다리고 있어요 후후!  </p>
 									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">주식체험 바로가기</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
