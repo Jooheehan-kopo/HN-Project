@@ -71,7 +71,7 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
-									<h2 data-animation="animated zoomInRight">let's <strong>	<spring:message code="main.hello" arguments="" text="defalut" /></strong> with us! </h2>
+									<h2 data-animation="animated zoomInRight">let's <strong>PlayHana</strong> with us! </h2>
 									<p class="lead" data-animation="animated fadeInLeft"> </p>
 									 <a data-scroll href="${pageContext.request.contextPath }/member/resister" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">회원가입</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -89,8 +89,8 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
-									<h2 data-animation="animated zoomInRight">나의 가상계좌로  <strong>투자</strong>해보기!</h2>
-									<p class="lead" data-animation="animated fadeInLeft">맛보기 주식체험을 통해 투자습관 up! 내 기록을 친구들과 함께 공유해요~ 1등에겐 서프라이즈 이벤트를!  </p>
+									<h2 data-animation="animated zoomInRight"><spring:message code="main.pagetwo" arguments="" text="defalut" /></h2>
+									<p class="lead" data-animation="animated fadeInLeft">맛보기 주식체험을 통해 투자습관 up! 내 기록을 친구들과 함께 공유해요~<br> 1등에겐 서프라이즈 이벤트가 기다리고 있어요 후후!  </p>
 									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">주식체험 바로가기</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">지금바로 회원가입</a>
@@ -107,12 +107,14 @@
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
 									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
-									<h2 data-animation="animated zoomInRight">나의 금융지식<strong>성향테스트</strong> Company</h2>
+									<h2 data-animation="animated zoomInRight">2021<strong>투자능력고사<strong> </h2>
 									<p class="lead" data-animation="animated fadeInLeft">
-										14문제를 통한 나의 금융지식 투자 성향 테스트! 완료 후 SNS에 공유하기~~ 친구들의 성향도 파악해보자! 누가누가 잘하나!</p>
-									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">View Plans</a>
+										유퀴즈~?  투자능력고사로 나의 금융지식 확인해보기! 나의 유형도 알 수 있어요! 
+										<br> 완료 후 SNS에 공유하고 이벤트 참여하기~! <br>
+										친구들의 유형도 파악해보자! 누가누가 잘하나!</p>
+									 <a data-scroll href="#pricing" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInLeft">시작하기</a>
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">All Features</a>
+									<a data-scroll href="#overviews" class="btn btn-light btn-radius btn-brd effect-1 slide-btn" data-animation="animated fadeInRight">랭킹보기</a>
 								</div>
 							</div>
 						</div><!-- end row -->            

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>play하나 나의금융성향테스트</title>
+    <title>play하나 금융지식 능력고사</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery/jquery.min.js"></script>
     <!-- FontAweome CDN Link for Icons -->
@@ -13,11 +13,11 @@
 </head>
 <body>
     <!-- start Quiz button -->
-    <div class="start_btn"><button> 나의 금융성향테스트 <br>시작하기!</button></div>
+    <div class="start_btn"><button> 2021 투자능력고사 <br>시작하기!</button></div>
 
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info-title"><span>금융 MBTI 시작시 공지사항</span></div>
+        <div class="info-title"><span>퀴즈 시작시 공지사항</span></div>
         <div class="info-list">
             <div class="info">1. 질문에 대한 답변은 <span>15 초 이내</span>에 해주세요.</div>
             <div class="info">2. 한번 답을 고르면, 다시 선택하실 수 없습니다.</div>
@@ -35,7 +35,7 @@
     <!-- Quiz Box -->
     <div class="quiz_box">
         <header>
-            <div class="title">PlayHana 금융 MBTI</div>
+            <div class="title">PlayHana 투자능력고사</div>
             <div class="timer">
                 <div class="time_left_txt">시간</div>
                 <div class="timer_sec">15</div>
@@ -66,7 +66,7 @@
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
-        <div class="complete_text">성향테스트 완료!</div>
+        <div class="complete_text">투자능력고사 완료!</div>
         <div class="score_text">
             <!-- 점수-->
         </div>

@@ -12,16 +12,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/hanaek.png" style="width:140px; " ></a>
+                    <a class="navbar-brand" href="${ pageContext.request.contextPath }/"><img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" style="width:140px; " ></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a class="active" href="${ pageContext.request.contextPath }/index">Home</a></li>
                        
                         <li class="dropdown">
-						   <a href="${pageContext.request.contextPath }/accountMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">은행계좌 <span class="navbar-collapse collapse"></span></a>
+						   <a href="${pageContext.request.contextPath }/accountMain" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">금융거래 <span class="navbar-collapse collapse"></span></a>
 						    <ul class="dropdown-menu" role="menu">
-						       <li><a href="${pageContext.request.contextPath }/account/accountMain">개설</a></li>
+						       <li><a href="${pageContext.request.contextPath }/account/accountMain">계좌개설</a></li>
 						       <li><a href="${pageContext.request.contextPath }/account/accountSearch">조회</a></li>
 						       <li><a href="${pageContext.request.contextPath }/account/accountTrans">이체</a></li>
 						    </ul>
@@ -36,7 +36,7 @@
                         </li>
                         <li><a href="${pageContext.request.contextPath }/member/rank">친구순위</a></li>
                         <li class="dropdown">
-                        	<a href="${pageContext.request.contextPath }/member/mbti" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">금융 MBTI<span class="navbar-collapse collapse"></span></a>
+                        	<a href="${pageContext.request.contextPath }/member/mbti" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">유퀴즈?!<span class="navbar-collapse collapse"></span></a>
                         		<ul class="dropdown-menu" role="menu">
                         		<li><a href="${pageContext.request.contextPath }/member/quiz">퀴즈시작</a></li>
                         		<li><a href="${pageContext.request.contextPath }/member/mbti">나의 결과</a></li>
@@ -46,9 +46,20 @@
                     
                         <li><a href="http://www.bok.or.kr/portal/bbs/B0000273/list.do?menuNo=201037">머니뉴스</a></li>
                         
+                       
                         
                     </ul>
-                    <c:if test="${empty userVO }">
+                     <div class="nav navbar-nav navbar-right">
+                    
+						<select class="lang-select">
+							<option>한국어</option>
+							<option>중국어</option>
+							<option>영어</option>
+						</select>
+					</div>
+					
+                     
+                                        <c:if test="${empty userVO }">
 	                    <ul class="nav navbar-nav navbar-right">
 	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/login" ><i class="flaticon-padlock"></i>로그인</a></li>
 	                    </ul>
@@ -68,6 +79,7 @@
 	                        <li><a class="btn-light btn-radius btn-brd log" href="${pageContext.request.contextPath }/logout" ><i class="flaticon-padlock"></i>로그아웃</a></li>
 	  					 </ul>
   					 </c:if>
+  					
                 </div>
             </div>
         </nav>
