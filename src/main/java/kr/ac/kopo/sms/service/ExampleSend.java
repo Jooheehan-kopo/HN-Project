@@ -11,8 +11,8 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 public class ExampleSend {
 	
 	 public static void main(String[] args) {
-		    String api_key = "NCSW6RU4SQNS5VIQ";
-		    String api_secret = "3RHUZTW7LJQIII68TPKRT5PP5LBWB4WU";
+		    String api_key = "NCSD96QJMM8FLWZF";
+		    String api_secret = "M9SHBJTLXHDP2NQBEDGY71PUIQNNML2T";
 		    Message coolsms = new Message(api_key, api_secret);
 
 		    // 4 params(to, from, type, text) are mandatory. must be filled

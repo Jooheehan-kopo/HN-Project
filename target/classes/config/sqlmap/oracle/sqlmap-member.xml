@@ -54,7 +54,7 @@
 	<select id="transList" parameterType="String" resultType="transVO">
 		select m.user_id, m.bank_type,m.bank_id, t.trans_money,t.your_bank_id, t.trans_info, m.bank_id_bal, t.trans_date
 		from member_bank m,
-		(select bank_id, trans_money, your_bank_id, decode(trans_info,'S','송금','출금') trans_info, trans_date
+		(select bank_id, trans_money, your_bank_id, decode(trans_info,'S','송금','입금') trans_info, trans_date
 		from bank_trans 
 		order by trans_code desc) t
 		where m.bank_id=t.bank_id

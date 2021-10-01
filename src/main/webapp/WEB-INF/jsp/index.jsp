@@ -106,7 +106,7 @@
 						<div class="row">
 							<div class="col-md-12 col-sm-12 text-center">
 								<div class="big-tagline">
-									<img src="${ pageContext.request.contextPath }/resources/images/logos/hana.png" alt="image">
+									<img src="${ pageContext.request.contextPath }/resources/images/logos/hanaya.png">
 									<h2 data-animation="animated zoomInRight">2021<strong>투자능력고사<strong> </h2>
 									<p class="lead" data-animation="animated fadeInLeft">
 										유퀴즈~?  투자능력고사로 나의 금융지식 확인해보기! 나의 유형도 알 수 있어요! 

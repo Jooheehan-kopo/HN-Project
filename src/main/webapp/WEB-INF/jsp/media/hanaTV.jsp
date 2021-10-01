@@ -53,7 +53,7 @@
 	
 	<div class="all-title-box">
 		<div class="container text-center" >
-			<h1>하나티비<span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
+			<h1>하나티비<span class="m_1">하나금융그룹 유투브채널에서 경제영상 시청하기!</span></h1>
 		</div>
 	</div>
 	<hr>

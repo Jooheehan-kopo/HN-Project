@@ -150,203 +150,16 @@
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="${pageContext.request.contextPath}/admin/email"><span class="ml-1 item-text">메일발송</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_validation.html"><span class="ml-1 item-text">Validation</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_wizard.html"><span class="ml-1 item-text">Wizard</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_layouts.html"><span class="ml-1 item-text">Layouts</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./form_upload.html"><span class="ml-1 item-text">File upload</span></a>
-                </li>
+               
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-grid fe-16"></i>
-                <span class="ml-3 item-text">Tables</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="tables">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">Basic Tables</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Advanced Tables</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">Data Tables</span></a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#charts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-pie-chart fe-16"></i>
-                <span class="ml-3 item-text">Charts</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="charts">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./chart-inline.html"><span class="ml-1 item-text">Inline Chart</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./chart-chartjs.html"><span class="ml-1 item-text">Chartjs</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./chart-apexcharts.html"><span class="ml-1 item-text">ApexCharts</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./datamaps.html"><span class="ml-1 item-text">Datamaps</span></a>
-                </li>
-              </ul>
-            </li>
+            
+            
           </ul>
-          <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Apps</span>
-          </p>
-          <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item w-100">
-              <a class="nav-link" href="calendar.html">
-                <i class="fe fe-calendar fe-16"></i>
-                <span class="ml-3 item-text">Calendar</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#contact" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-book fe-16"></i>
-                <span class="ml-3 item-text">Contacts</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="contact">
-                <a class="nav-link pl-3" href="./contacts-list.html"><span class="ml-1">Contact List</span></a>
-                <a class="nav-link pl-3" href="./contacts-grid.html"><span class="ml-1">Contact Grid</span></a>
-                <a class="nav-link pl-3" href="./contacts-new.html"><span class="ml-1">New Contact</span></a>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-user fe-16"></i>
-                <span class="ml-3 item-text">Profile</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="profile">
-                <a class="nav-link pl-3" href="./profile.html"><span class="ml-1">Overview</span></a>
-                <a class="nav-link pl-3" href="./profile-settings.html"><span class="ml-1">Settings</span></a>
-                <a class="nav-link pl-3" href="./profile-security.html"><span class="ml-1">Security</span></a>
-                <a class="nav-link pl-3" href="./profile-notification.html"><span class="ml-1">Notifications</span></a>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#fileman" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-folder fe-16"></i>
-                <span class="ml-3 item-text">File Manager</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="fileman">
-                <a class="nav-link pl-3" href="./files-list.html"><span class="ml-1">Files List</span></a>
-                <a class="nav-link pl-3" href="./files-grid.html"><span class="ml-1">Files Grid</span></a>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#support" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-compass fe-16"></i>
-                <span class="ml-3 item-text">Help Desk</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="support">
-                <a class="nav-link pl-3" href="./support-center.html"><span class="ml-1">Home</span></a>
-                <a class="nav-link pl-3" href="./support-tickets.html"><span class="ml-1">Tickets</span></a>
-                <a class="nav-link pl-3" href="./support-ticket-detail.html"><span class="ml-1">Ticket Detail</span></a>
-                <a class="nav-link pl-3" href="./support-faqs.html"><span class="ml-1">FAQs</span></a>
-              </ul>
-            </li>
-          </ul>
-          <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Extra</span>
-          </p>
-          <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item dropdown">
-              <a href="#pages" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-file fe-16"></i>
-                <span class="ml-3 item-text">Pages</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100 w-100" id="pages">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./page-orders.html">
-                    <span class="ml-1 item-text">Orders</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./page-timeline.html">
-                    <span class="ml-1 item-text">Timeline</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./page-invoice.html">
-                    <span class="ml-1 item-text">Invoice</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./page-404.html">
-                    <span class="ml-1 item-text">Page 404</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./page-500.html">
-                    <span class="ml-1 item-text">Page 500</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./page-blank.html">
-                    <span class="ml-1 item-text">Blank</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#auth" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-shield fe-16"></i>
-                <span class="ml-3 item-text">Authentication</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="auth">
-                <a class="nav-link pl-3" href="./auth-login.html"><span class="ml-1">Login 1</span></a>
-                <a class="nav-link pl-3" href="./auth-login-half.html"><span class="ml-1">Login 2</span></a>
-                <a class="nav-link pl-3" href="./auth-register.html"><span class="ml-1">Register</span></a>
-                <a class="nav-link pl-3" href="./auth-resetpw.html"><span class="ml-1">Reset Password</span></a>
-                <a class="nav-link pl-3" href="./auth-confirm.html"><span class="ml-1">Confirm Password</span></a>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#layouts" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-layout fe-16"></i>
-                <span class="ml-3 item-text">Layout</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="layouts">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./index.html"><span class="ml-1 item-text">Default</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./index-horizontal.html"><span class="ml-1 item-text">Top Navigation</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./index-boxed.html"><span class="ml-1 item-text">Boxed</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <p class="text-muted nav-heading mt-4 mb-1">
-            <span>Documentation</span>
-          </p>
-          <ul class="navbar-nav flex-fill w-100 mb-2">
-            <li class="nav-item w-100">
-              <a class="nav-link" href="../docs/index.html">
-                <i class="fe fe-help-circle fe-16"></i>
-                <span class="ml-3 item-text">Getting Start</span>
-              </a>
-            </li>
-          </ul>
-          <div class="btn-box w-100 mt-4 mb-1">
-            <a href="https://themeforest.net/item/tinydash-bootstrap-html-admin-dashboard-template/27511269" target="_blank" class="btn mb-2 btn-primary btn-lg btn-block">
-              <i class="fe fe-shopping-cart fe-12 mx-2"></i><span class="small">Buy now</span>
-            </a>
-          </div>
+          
+          
+          
+        
         </nav>
       </aside>
       
@@ -453,19 +266,19 @@
                       </div>
                       <div class="row items-align-center">
                         <div class="col-4 text-center">
+                          <p class="text-muted mb-1"></p>
+                          <h6 class="mb-1"></h6>
+                          <p class="text-muted mb-0"></p>
+                        </div>
+                        <div class="col-4 text-center">
                           <p class="text-muted mb-1">참여도</p>
-                          <h6 class="mb-1">$1,823</h6>
-                          <p class="text-muted mb-0">+12%</p>
+                          <h6 class="mb-1"></h6>
+                          <p class="text-muted mb-0"></p>
                         </div>
                         <div class="col-4 text-center">
-                          <p class="text-muted mb-1">Revenue</p>
-                          <h6 class="mb-1">$6,830</h6>
-                          <p class="text-muted mb-0">+8%</p>
-                        </div>
-                        <div class="col-4 text-center">
-                          <p class="text-muted mb-1">Earning</p>
-                          <h6 class="mb-1">$4,830</h6>
-                          <p class="text-muted mb-0">+8%</p>
+                          <p class="text-muted mb-1"></p>
+                          <h6 class="mb-1"></h6>
+                          <p class="text-muted mb-0"></p>
                         </div>
                       </div>
                     </div> <!-- .card-body -->
@@ -476,7 +289,7 @@
                     <div class="card-body">
                       <div class="d-flex mt-3 mb-4">
                         <div class="flex-fill pt-2">
-                          <p class="mb-0 text-muted">학년별진도</p>
+                          <p class="mb-0 text-muted">학년별 가입일</p>
                           <h4 class="mb-0">34</h4>
                           <span class="small text-muted"></span>
                         </div>
@@ -501,93 +314,37 @@
               <div class="row">
                 <!-- Recent Activity -->
                 <div class="col-md-12 col-lg-4 mb-4">
-                  <div class="card timeline shadow">
-                    <div class="card-header">
-                      <strong class="card-title">Recent Activity</strong>
-                      <a class="float-right small text-muted" href="#!">View all</a>
-                    </div>
-                    <div class="card-body" data-simplebar style="height:355px; overflow-y: auto; overflow-x: hidden;">
-                      <h6 class="text-uppercase text-muted mb-4">학교 승인</h6>
-                      <div class="pb-3 timeline-item item-primary">
-                        <div class="pl-5">
-                          <div class="mb-1"><strong>@Brown Asher</strong><span class="text-muted small mx-2">Just create new layout Index, form, table</span><strong>Tiny Admin</strong></div>
-                          <p class="small text-muted">Creative Design <span class="badge badge-light">1h ago</span>
-                          </p>
+                 
+                  <div class="card shadow eq-card ">
+                    <div class="card-body mb-n3">
+                      <div class="row items-align-baseline h-100">
+                        <div class="" style="padding:10px">
+                          <p class="mb-0"><strong class="mb-0 text-uppercase text-muted">초,중,고</strong></p>
+                          <h3><i class="fa fa-search" aria-hidden="true" style="color:#008485"></i>학교별 평균 및 지역평가</h3>
+                          <p class="text-muted">우리지점, 우리지역 학교 외의 학교와의 비교 리포트를 생성합니다.</p>
                         </div>
+                       
+                        <div class="col-md-6 border-top py-3">
+                          <p class="mb-1"><strong class="text-muted">일산지점</strong></p>
+                          <h4 class="mb-0"></h4>
+                          <p class="small text-muted mb-0"><span></span></p>
+                        </div> <!-- .col -->
+                        <div class="col-md-6 border-top py-3">
+                          <p class="mb-1"><strong class="text-muted"></strong></p>
+                          <h4 class="mb-0"><button style="background-color: #008485; border: 1px solid white; border-radius: 10px; float:right">
+	                          <a href="${pageContext.request.contextPath}/admin/report" class="btn-gradient white small" style="color:white; padding:2px">조회 하기</a></button>
+                          </h4>
+                          <p class="small text-muted mb-0"><span></span></p>
+                        </div> <!-- .col -->
                       </div>
-                      <div class="pb-3 timeline-item item-warning">
-                        <div class="pl-5">
-                          <div class="mb-3"><strong>@Hester Nissim</strong><span class="text-muted small mx-2">has upload new files to</span><strong>Tiny Admin</strong></div>
-                          <div class="row mb-3">
-                            <div class="col"><img src="./assets/products/p1.jpg" alt="..." class="img-fluid rounded"></div>
-                            <div class="col"><img src="./assets/products/p2.jpg" alt="..." class="img-fluid rounded"></div>
-                            <div class="col"><img src="./assets/products/p3.jpg" alt="..." class="img-fluid rounded"></div>
-                            <div class="col"><img src="./assets/products/p4.jpg" alt="..." class="img-fluid rounded"></div>
-                          </div>
-                          <p class="small text-muted">Front-End Development <span class="badge badge-light">1h ago</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="pb-3 timeline-item item-success">
-                        <div class="pl-5">
-                          <div class="mb-3"><strong>@Kelley Sonya</strong><span class="text-muted small mx-2">has commented on</span><strong>Advanced table</strong></div>
-                          <div class="card d-inline-flex mb-2">
-                            <div class="card-body bg-light py-2 px-3 small rounded"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nulla eu quam cursus placerat. Vivamus non odio ullamcorper, lacinia ante nec, blandit leo. </div>
-                          </div>
-                          <p class="small text-muted">Back-End Development <span class="badge badge-light">1h ago</span>
-                          </p>
-                        </div>
-                      </div>
-                      <h6 class="text-uppercase text-muted mb-4">Yesterday</h6>
-                      <div class="pb-3 timeline-item item-warning">
-                        <div class="pl-5">
-                          <div class="mb-3"><strong>@Fletcher Everett</strong><span class="text-muted small mx-2">created new group for</span><strong>Tiny Admin</strong></div>
-                          <ul class="avatars-list mb-3">
-                            <li>
-                              <a href="#!" class="avatar avatar-sm">
-                                <img alt="..." class="avatar-img rounded-circle" src="./assets/avatars/face-1.jpg">
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#!" class="avatar avatar-sm">
-                                <img alt="..." class="avatar-img rounded-circle" src="./assets/avatars/face-4.jpg">
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#!" class="avatar avatar-sm">
-                                <img alt="..." class="avatar-img rounded-circle" src="./assets/avatars/face-3.jpg">
-                              </a>
-                            </li>
-                          </ul>
-                          <p class="small text-muted">Front-End Development <span class="badge badge-light">1h ago</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="pb-3 timeline-item item-success">
-                        <div class="pl-5">
-                          <div class="mb-3"><strong>@Bertha Ball</strong><span class="text-muted small mx-2">has commented on</span><strong>Advanced table</strong></div>
-                          <div class="card d-inline-flex mb-2">
-                            <div class="card-body bg-light py-2 px-3"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim nulla eu quam cursus placerat. Vivamus non odio ullamcorper, lacinia ante nec, blandit leo. </div>
-                          </div>
-                          <p class="small text-muted">Back-End Development <span class="badge badge-light">1h ago</span>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="pb-3 timeline-item item-danger">
-                        <div class="pl-5">
-                          <div class="mb-3"><strong>@Lillith Joseph</strong><span class="text-muted small mx-2">has upload new files to</span><strong>Tiny Admin</strong></div>
-                          <div class="row mb-3">
-                            <div class="col"><img src="./assets/products/p4.jpg" alt="..." class="img-fluid rounded"></div>
-                            <div class="col"><img src="./assets/products/p1.jpg" alt="..." class="img-fluid rounded"></div>
-                            <div class="col"><img src="./assets/products/p2.jpg" alt="..." class="img-fluid rounded"></div>
-                          </div>
-                          <p class="small text-muted">Front-End Development <span class="badge badge-light">1h ago</span>
-                          </p>
-                        </div>
-                      </div>
-                    </div> <!-- / .card-body -->
-                  </div> <!-- / .card -->
-                </div> <!-- / .col-md-6 -->
+                    </div> <!-- .card-body -->
+                  </div> <!-- .card -->
+                </div> <!-- .col -->
+                  
+                  
+                  
+                  
+                  
 
 
 <!-- 학교협약 rows -->

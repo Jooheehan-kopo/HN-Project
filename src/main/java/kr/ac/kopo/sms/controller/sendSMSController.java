@@ -74,8 +74,8 @@ public class sendSMSController {
 				helper.setText(vo.getContents(), true);
 				System.out.println("mail: "+ helper);
 				
-				FileSystemResource file = new FileSystemResource(new File("C:/Users/HP/Desktop/IMG/dd.pdf"));
-				helper.addAttachment("dd.pdf", file);
+				FileSystemResource file = new FileSystemResource(new File("C:/Users/HP/Desktop/IMG/[PlayHana]나의 금융성과리포트(한주희).pdf"));
+				helper.addAttachment("안녕하세요, 플레이하나 [나의 금융성과리포트] 보내드립니다. 감사합니다.pdf", file);
 
 			}
 		};
